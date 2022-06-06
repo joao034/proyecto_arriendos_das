@@ -1,0 +1,14 @@
+.centrado{
+    text-align: center;
+}
+
+.titulo-nosotros{
+    color: #D5BDAF;
+    font-size: 50px;
+    font-weight: normal;
+}
+.contenedor-nosotros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
