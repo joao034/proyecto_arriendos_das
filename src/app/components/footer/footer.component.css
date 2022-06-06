@@ -1,0 +1,20 @@
+.footer{
+    background-color: #E3D5CA;
+}
+.footer a{
+    color: black;
+    text-decoration: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
