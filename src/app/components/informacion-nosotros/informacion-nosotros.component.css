@@ -1,0 +1,46 @@
+.centrado{
+    text-align: center;
+}
+
+.centrado-vertical{
+    align-items: center;
+}
+
+.titulo-nosotros{
+    color: #D5BDAF;
+    font-size: 50px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+.contenedor-nosotros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icono{
+    width: 100px;
+    height: 100px;
+}
+
+.icono-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-info{
+    background-image:url(/assets/hero_2.jpg);
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.texto-info-nosotros{
+    width: 200px;
+    text-align: center;
+    line-height: 2;
+}

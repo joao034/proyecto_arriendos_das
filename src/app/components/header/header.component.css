@@ -1,0 +1,29 @@
+.header{
+    background-image:url(/assets/hero_2.jpg);
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.header a{
+    color: #fff;
+    text-decoration: none;
+}
+.header__texto{
+    text-align: center;
+    color: white;
+    margin-top: 150px;
+}
+
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    margin-top: 50px;
+}
