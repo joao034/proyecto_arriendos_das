@@ -9,6 +9,9 @@ import { InformacionNosotrosComponent } from './components/informacion-nosotros/
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { CardComponent } from './components/card/card.component';
+import { ContenedorCardComponent } from './components/contenedor-card/contenedor-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { MaterialModule } from './material/material.module';
     HeaderComponent,
     FooterComponent,
     InformacionNosotrosComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    LandingPageComponent,
+    CardComponent,
+    ContenedorCardComponent
   ],
   imports: [
     BrowserModule,
