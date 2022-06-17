@@ -9,6 +9,8 @@ D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arrien
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Humanizer.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\MessagePack.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.Build.Locator.dll
@@ -53,6 +55,7 @@ D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arrien
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\MySqlConnector.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\NuGet.Common.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\NuGet.Configuration.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
@@ -262,7 +265,3 @@ D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arrien
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\obj\Debug\net6.0\ref\backend_arriendos.dll
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\obj\Debug\net6.0\backend_arriendos.pdb
 D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\obj\Debug\net6.0\backend_arriendos.genruntimeconfig.cache
-D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
-D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-D:\Joao\UTA\1. Septimo Semestre\Desarrollo Asistido por Software\proyecto_arriendos_das\backend_arriendos\backend_arriendos\obj\Debug\net6.0\backend_arriendos.csproj.AssemblyReference.cache
