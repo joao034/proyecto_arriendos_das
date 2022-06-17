@@ -1,6 +1,8 @@
+using Arriendos.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,10 @@ namespace backend_arriendos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<ArriendosContext>(
+              context => context.UseMySql(Configuration.GetConnectionString("ArriendosDB"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.26-mysql"))
+            );
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,7 +39,7 @@ namespace backend_arriendos
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+              }
 
             app.UseRouting();
 
