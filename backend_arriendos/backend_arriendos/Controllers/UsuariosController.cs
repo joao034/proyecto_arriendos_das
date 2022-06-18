@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +10,7 @@ using Arriendos.Models;
 
 namespace backend_arriendos.Controllers
 {
+  //Controlador
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
