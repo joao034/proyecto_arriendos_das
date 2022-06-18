@@ -44,6 +44,7 @@ namespace backend_arriendos.Controllers
         }
 
         // PUT: api/Usuarios/5
+        //Insersión usuario
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)

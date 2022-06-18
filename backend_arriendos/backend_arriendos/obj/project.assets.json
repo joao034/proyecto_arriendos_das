@@ -9834,11 +9834,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ro-da\\Downloads\\ArriendosDas\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj",
+      "projectUniqueName": "C:\\Users\\ro-da\\OneDrive\\Escritorio\\Arriendos\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj",
       "projectName": "backend_arriendos",
-      "projectPath": "C:\\Users\\ro-da\\Downloads\\ArriendosDas\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj",
+      "projectPath": "C:\\Users\\ro-da\\OneDrive\\Escritorio\\Arriendos\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj",
       "packagesPath": "C:\\Users\\ro-da\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ro-da\\Downloads\\ArriendosDas\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\obj\\",
+      "outputPath": "C:\\Users\\ro-da\\OneDrive\\Escritorio\\Arriendos\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ro-da\\AppData\\Roaming\\NuGet\\NuGet.Config",
