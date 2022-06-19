@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -374,6 +374,16 @@ namespace Arriendos.Data
                     .HasForeignKey(d => d.TipoUsu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("TIPO_USER_INCORRECTO");
+
+                entity.Property(e => e.UsernameUsu)
+                      .IsRequired()
+                      .HasMaxLength(50)
+                      .HasColumnName("USERNAME_USU");
+
+                entity.Property(e => e.PasswordUsu)
+                      .IsRequired()
+                      .HasMaxLength(50)
+                      .HasColumnName("PASSWORD_USU");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Arriendos.Models
@@ -18,8 +18,10 @@ namespace Arriendos.Models
         public string Tel2Usu { get; set; }
         public string CorreoUsu { get; set; }
         public int TipoUsu { get; set; }
+        public string UsernameUsu { get; set; }
+        public string PasswordUsu { get; set; }
 
-        public virtual TipoUsuario TipoUsuNavigation { get; set; }
+    public virtual TipoUsuario TipoUsuNavigation { get; set; }
         public virtual ICollection<Arriendo> Arriendos { get; set; }
     }
 }
