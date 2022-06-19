@@ -19,7 +19,7 @@ namespace Arriendos.Models
         public string CorreoUsu { get; set; }
         public int TipoUsu { get; set; }
 
-        public virtual TipoUsuario IdUsuNavigation { get; set; }
+        public virtual TipoUsuario TipoUsuNavigation { get; set; }
         public virtual ICollection<Arriendo> Arriendos { get; set; }
     }
 }

@@ -70,7 +70,11 @@ namespace Arriendos.Data
                     .HasMaxLength(200)
                     .HasColumnName("DIR_ARR");
 
-                entity.Property(e => e.Fecha).HasColumnName("FECHA");
+                entity.Property(e => e.Fecha)
+                    .HasColumnType("datetime")
+                    .ValueGeneratedOnAddOrUpdate()
+                    .HasColumnName("FECHA")
+                    .HasDefaultValueSql("current_timestamp()");
 
                 entity.Property(e => e.Garage).HasColumnName("GARAGE");
 
@@ -204,7 +208,7 @@ namespace Arriendos.Data
 
                 entity.Property(e => e.Imagenes)
                     .IsRequired()
-                    .HasColumnType("blob")
+                    .HasMaxLength(5000)
                     .HasColumnName("IMAGENES");
 
                 entity.HasOne(d => d.IdArrNavigation)
@@ -283,11 +287,13 @@ namespace Arriendos.Data
                     .HasColumnName("ID_TIP_ARR");
 
                 entity.Property(e => e.DescTipArr)
-                    .HasColumnType("int(11)")
+                    .IsRequired()
+                    .HasMaxLength(70)
                     .HasColumnName("DESC_TIP-ARR");
 
                 entity.Property(e => e.NomTipArr)
-                    .HasColumnType("int(11)")
+                    .IsRequired()
+                    .HasMaxLength(50)
                     .HasColumnName("NOM_TIP_ARR");
             });
 
@@ -326,9 +332,10 @@ namespace Arriendos.Data
                 entity.HasCharSet("utf8")
                     .UseCollation("utf8_general_ci");
 
+                entity.HasIndex(e => e.TipoUsu, "TIPO_USER_INCORRECTO");
+
                 entity.Property(e => e.IdUsu)
                     .HasColumnType("int(11)")
-                    .ValueGeneratedOnAdd()
                     .HasColumnName("ID_USU");
 
                 entity.Property(e => e.ApeUsu)
@@ -362,9 +369,9 @@ namespace Arriendos.Data
                     .HasColumnType("int(11)")
                     .HasColumnName("TIPO_USU");
 
-                entity.HasOne(d => d.IdUsuNavigation)
-                    .WithOne(p => p.Usuario)
-                    .HasForeignKey<Usuario>(d => d.IdUsu)
+                entity.HasOne(d => d.TipoUsuNavigation)
+                    .WithMany(p => p.Usuarios)
+                    .HasForeignKey(d => d.TipoUsu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("TIPO_USER_INCORRECTO");
             });

@@ -16,7 +16,7 @@ namespace Arriendos.Models
         public string DirArr { get; set; }
         public bool Publicado { get; set; }
         public decimal Superficie { get; set; }
-        public DateOnly Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public bool Garage { get; set; }
         public string DescArr { get; set; }
         public bool ChechArrendar { get; set; }
