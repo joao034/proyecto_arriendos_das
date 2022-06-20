@@ -11,8 +11,8 @@ namespace Arriendos.Models
         }
 
         public int IdTipArr { get; set; }
-        public int NomTipArr { get; set; }
-        public int DescTipArr { get; set; }
+        public string NomTipArr { get; set; }
+        public string DescTipArr { get; set; }
 
         public virtual ICollection<Arriendo> Arriendos { get; set; }
     }
