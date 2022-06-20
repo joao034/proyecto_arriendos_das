@@ -21,14 +21,14 @@ namespace backend_arriendos.Controllers
             _context = context;
         }
 
-        // GET: api/Arriendoes
+        // GET: api/Arriendos, obtiene la lista de arriendos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Arriendo>>> GetArriendos()
         {
             return await _context.Arriendos.ToListAsync();
         }
 
-        // GET: api/Arriendoes/5
+        // GET: api/Arriendos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Arriendo>> GetArriendo(int id)
         {
@@ -42,9 +42,9 @@ namespace backend_arriendos.Controllers
             return arriendo;
         }
 
-        // PUT: api/Arriendoes/5
+        // PUT: api/Arriendos/1
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        /*[HttpPut("{id}")]
         public async Task<IActionResult> PutArriendo(int id, Arriendo arriendo)
         {
             if (id != arriendo.IdArr)
@@ -73,7 +73,7 @@ namespace backend_arriendos.Controllers
             return NoContent();
         }
 
-        // POST: api/Arriendoes
+        // POST: api/Arriendos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Arriendo>> PostArriendo(Arriendo arriendo)
@@ -84,7 +84,7 @@ namespace backend_arriendos.Controllers
             return CreatedAtAction("GetArriendo", new { id = arriendo.IdArr }, arriendo);
         }
 
-        // DELETE: api/Arriendoes/5
+        // DELETE: api/Arriendos/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteArriendo(int id)
         {
@@ -103,6 +103,6 @@ namespace backend_arriendos.Controllers
         private bool ArriendoExists(int id)
         {
             return _context.Arriendos.Any(e => e.IdArr == id);
-        }
+        }*/
     }
 }
