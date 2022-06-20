@@ -11,6 +11,7 @@ using Arriendos.Models;
 namespace backend_arriendos.Controllers
 {
     [Route("api/[controller]")]
+    
     [ApiController]
     public class UsuariosController : ControllerBase
     {
@@ -105,17 +106,28 @@ namespace backend_arriendos.Controllers
             return _context.Usuarios.Any(e => e.IdUsu == id);
         }
 
-       // [HttpGet("{id}")]
-        public async Task<ActionResult<Usuario>> login(string user, string password)
+        [HttpGet("{user}/{password}")]
+        //[HttpPost]
+        
+        public async Task<ActionResult<Usuario>> Login(string user, string password)
         {
-          var usuario = await _context.Usuarios.FindAsync(user,password);
+      
+      /*
+         var usuario = (from Usuario in _context.Usuarios
+                       where Usuario.UsernameUsu == user && Usuario.PasswordUsu == password
+                       select Usuario);
+      */
 
-          if (usuario == null)
+      var usuario = await _context.Usuarios.FirstOrDefaultAsync(s => s.UsernameUsu == user && s.PasswordUsu ==password);
+
+      if (usuario == null)
           {
             return NotFound();
           }
-
-          return usuario;
+      //CreatedAtAction("GetUsuario", new { id = usuario.IdUsu }, usuario);;          
+      return usuario;
         }
+
+
   }
 }
