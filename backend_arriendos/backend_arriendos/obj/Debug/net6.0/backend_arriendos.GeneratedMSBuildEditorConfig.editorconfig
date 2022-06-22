@@ -8,18 +8,9 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = backend_arriendos
 build_property.RootNamespace = backend_arriendos
-<<<<<<< HEAD
 build_property.ProjectDir = C:\angular\proyecto_arriendos_das\backend_arriendos\backend_arriendos\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\angular\proyecto_arriendos_das\backend_arriendos\backend_arriendos
 build_property._RazorSourceGeneratorDebug = 
-=======
-build_property.ProjectDir = C:\Users\PC\Documents\GitHub\proyecto_arriendos_das\backend_arriendos\backend_arriendos\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\PC\Documents\GitHub\proyecto_arriendos_das\backend_arriendos\backend_arriendos
-build_property._RazorSourceGeneratorDebug =
->>>>>>> 2b05f3ca90c135e09bb6e0539ded7fdce2d84858

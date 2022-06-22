@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\angular\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vladimir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\PC\\Documents\\GitHub\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\PC\\Documents\\GitHub\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj",
-        "projectName": "backend_arriendos",
-        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\backend_arriendos.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\proyecto_arriendos_das\\backend_arriendos\\backend_arriendos\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 2b05f3ca90c135e09bb6e0539ded7fdce2d84858
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
