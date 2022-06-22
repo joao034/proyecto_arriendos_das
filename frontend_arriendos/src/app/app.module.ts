@@ -12,6 +12,7 @@ import { MaterialModule } from './material/material.module';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { CardComponent } from './components/card/card.component';
 import { ContenedorCardComponent } from './components/contenedor-card/contenedor-card.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContenedorCardComponent } from './components/contenedor-card/contenedor
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
