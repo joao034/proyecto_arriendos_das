@@ -106,10 +106,10 @@ namespace backend_arriendos.Controllers
             return _context.Usuarios.Any(e => e.IdUsu == id);
         }
 
-        [HttpGet("{user}/{password}")]
-        //[HttpPost]
+        //[HttpGet("{user}/{password}")]
+        [HttpPost("Login")]
         
-        public async Task<ActionResult<Usuario>> Login(string user, string password)
+        public async Task<ActionResult<Usuario>> PostLogin(Usuario usuario)
         {
       
       /*
@@ -118,14 +118,14 @@ namespace backend_arriendos.Controllers
                        select Usuario);
       */
 
-      var usuario = await _context.Usuarios.FirstOrDefaultAsync(s => s.UsernameUsu == user && s.PasswordUsu ==password);
+      var sqlUsuario = await _context.Usuarios.FirstOrDefaultAsync(s => s.UsernameUsu == usuario.UsernameUsu && s.PasswordUsu == usuario.PasswordUsu);
 
-      if (usuario == null)
+      if (sqlUsuario == null)
           {
             return NotFound();
           }
       //CreatedAtAction("GetUsuario", new { id = usuario.IdUsu }, usuario);;          
-      return usuario;
+      return sqlUsuario;
         }
 
 
