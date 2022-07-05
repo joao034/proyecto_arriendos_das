@@ -13,6 +13,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { CardComponent } from './components/card/card.component';
 import { ContenedorCardComponent } from './components/contenedor-card/contenedor-card.component';
 import { HttpClientModule} from '@angular/common/http';
+import { ArriendosModule } from './arriendos/arriendos.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
