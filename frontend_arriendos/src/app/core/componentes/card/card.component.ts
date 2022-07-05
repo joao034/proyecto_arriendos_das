@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 
 @Component({
   selector: 'app-card',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiArriendo : ApiArriendosService) { }
 
   ngOnInit(): void {
+    this.cargarArriendos()
+  }
+
+  cargarArriendos(){
+    this.apiArriendo.listarArriendos().subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
 }

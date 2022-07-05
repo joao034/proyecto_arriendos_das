@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CardArriendoComponent } from './components/card-arriendo/card.component';
 import { ContainerArriendoComponent } from './components/container-arriendo/container.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -11,8 +12,9 @@ import { ContainerArriendoComponent } from './components/container-arriendo/cont
     CardArriendoComponent
   ],
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    MaterialModule
+  ]
 
 })
 export class ArriendosModule { }

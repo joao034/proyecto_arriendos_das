@@ -13,15 +13,12 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { CardComponent } from './core/componentes/card/card.component';
 import { ContenedorCardComponent } from './core/componentes/contenedor-card/contenedor-card.component';
 import { HttpClientModule} from '@angular/common/http';
-<<<<<<< HEAD
 import { ArriendosModule } from './arriendos/arriendos.module';
 import { ListaArriendosComponent } from './pages/lista-arriendos/lista-arriendos.component';
 
-=======
 import { LoginComponent } from './pages/login/login.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
 import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuenta.component';
->>>>>>> origin/PAD-22-componente-inicio-de-sesion
 
 @NgModule({
   declarations: [
@@ -33,13 +30,10 @@ import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuen
     LandingPageComponent,
     CardComponent,
     ContenedorCardComponent,
-<<<<<<< HEAD
-    ListaArriendosComponent
-=======
+    ListaArriendosComponent,
     LoginComponent,
     SiginComponent,
     CrearCuentaComponent
->>>>>>> origin/PAD-22-componente-inicio-de-sesion
   ],
   imports: [
     BrowserModule,
