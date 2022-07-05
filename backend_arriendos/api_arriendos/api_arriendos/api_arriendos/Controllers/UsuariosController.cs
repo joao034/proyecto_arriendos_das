@@ -104,5 +104,27 @@ namespace api_arriendos.Controllers
         {
             return _context.Usuarios.Any(e => e.IdUsu == id);
         }
+
+        [HttpPost("Login")]
+
+        public async Task<ActionResult<Usuario>> PostLogin(Usuario usuario)
+        {
+
+            /*
+               var usuario = (from Usuario in _context.Usuarios
+                             where Usuario.UsernameUsu == user && Usuario.PasswordUsu == password
+                             select Usuario);
+            */
+
+            var sqlUsuario = await _context.Usuarios.FirstOrDefaultAsync(s => s.UsernameUsu == usuario.UsernameUsu && s.PasswordUsu == usuario.PasswordUsu);
+
+            if (sqlUsuario == null)
+            {
+                return NotFound();
+            }
+            //CreatedAtAction("GetUsuario", new { id = usuario.IdUsu }, usuario);;          
+            return sqlUsuario;
+        }
+
     }
 }
