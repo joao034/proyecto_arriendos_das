@@ -14,6 +14,8 @@ import { CardComponent } from './components/card/card.component';
 import { ContenedorCardComponent } from './components/contenedor-card/contenedor-card.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ArriendosModule } from './arriendos/arriendos.module';
+import { ListaArriendosComponent } from './pages/lista-arriendos/lista-arriendos.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ArriendosModule } from './arriendos/arriendos.module';
     InicioSesionComponent,
     LandingPageComponent,
     CardComponent,
-    ContenedorCardComponent
+    ContenedorCardComponent,
+    ListaArriendosComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ export class ApiArriendosService {
   constructor(private http : HttpClient) { }
 
   listarArriendos() : Observable<any>{
-    return this.http.get(`${this.url}/arriendos`)
+    return this.http.get(`${this.url}/arriendoes`)
   }
 
   insertarArriendo(){

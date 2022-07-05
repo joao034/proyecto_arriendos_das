@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 
 @Component({
   selector: 'app-container-arriendo',
@@ -11,5 +12,6 @@ export class ContainerArriendoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }
