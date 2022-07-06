@@ -16,6 +16,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
 import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuenta.component';
+import { BuscarArriendoComponent } from './pages/buscar-arriendo/buscar-arriendo.component';
+import { BusquedaArriendoComponent } from './core/componentes/busqueda-arriendo/busqueda-arriendo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuen
     ContenedorCardComponent,
     LoginComponent,
     SiginComponent,
-    CrearCuentaComponent
+    CrearCuentaComponent,
+    BuscarArriendoComponent,
+    BusquedaArriendoComponent
   ],
   imports: [
     BrowserModule,
