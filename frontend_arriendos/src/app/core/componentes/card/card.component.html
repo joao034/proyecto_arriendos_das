@@ -1,34 +1,36 @@
-<div class="card">
+<div class="card" *ngFor="let arriendo of arriendos">
   <picture>
     <img class="imagen-card" src="/assets/casa.jpg" alt="" />
   </picture>
   <div class="contenido-card">
     <h3 class="centrado">Casa en huachi</h3>
-    <p class="centrado">"Casa en huachi con muchas cosas bonitas"</p>
+    <p class="centrado">{{arriendo.dirArr}}</p>
     <div class="info-precio-card">
-      <p>$300</p>
-      <label for="">Compartido <input type="checkbox" /></label>
+      <p>$ {{arriendo.precio}}</p>
+      <label for="">Compartido <input type="checkbox" disabled *ngIf="arriendo.numPersonas > 1" checked ></label>
     </div>
     <div class="info-lugar-card">
-        <label for="">Tungurahua-Ambato</label>
-    <label for="">Departamento</label>
+      <!--Ciudad - Provincia-->
+        <label for="">{{arriendo.ciuArr}}</label>
+    <label for="">{{arriendo.tipoArr}}</label>
     </div>
     <ul class="iconos-card">
       <li>
         <img src="/assets/cuartos.png" alt="" />
-        <p>3</p>
+        <p>{{arriendo.numHab}}</p>
       </li>
       <li>
         <img src="/assets/toilet.png" alt="" />
-        <p>3</p>
+        <p>{{arriendo.numBanos}}</p>
       </li>
       <li>
         <img src="/assets/garage.png" alt="" />
-        <input type="checkbox" />
+        <input type="checkbox" disabled  *ngIf="arriendo.garage" checked/>
       </li>
     </ul>
     <div class="ver-anuncio-card">
-      <p>Disponible</p>
+      <b><p *ngIf="arriendo.chechArrendar">Disponible</p></b>
+      <b><p *ngIf="!arriendo.chechArrendar">No Disponible</p></b>
       <button mat-raised-button color="primary">Ver anuncio</button>
     </div>
   </div>

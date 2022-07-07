@@ -8,6 +8,10 @@ import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 })
 export class CardComponent implements OnInit {
 
+  arriendos : any = []
+  disponible : boolean | undefined
+  garaje : boolean | undefined
+
   constructor(private apiArriendo : ApiArriendosService) { }
 
   ngOnInit(): void {
@@ -17,12 +21,17 @@ export class CardComponent implements OnInit {
   cargarArriendos(){
     this.apiArriendo.listarArriendos().subscribe(
       (data) => {
-        console.log(data);
+        this.arriendos = data
+        console.log(this.arriendos)
       },
       (error) => {
         console.log(error);
       }
     );
+  }
+
+  checkGaraje(){
+
   }
 
 }
