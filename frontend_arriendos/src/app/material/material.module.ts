@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
   exports:[
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ]
 })
 export class MaterialModule { }

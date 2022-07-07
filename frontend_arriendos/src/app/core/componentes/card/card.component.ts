@@ -9,8 +9,7 @@ import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 export class CardComponent implements OnInit {
 
   arriendos : any = []
-  disponible : boolean | undefined
-  garaje : boolean | undefined
+  arriendo : string = ""
 
   constructor(private apiArriendo : ApiArriendosService) { }
 
@@ -28,10 +27,6 @@ export class CardComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  checkGaraje(){
-
   }
 
 }
