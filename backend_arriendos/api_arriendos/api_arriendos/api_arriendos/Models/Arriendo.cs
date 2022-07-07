@@ -23,6 +23,12 @@ namespace Arriendos.Models
         public decimal Precio { get; set; }
         public bool Amueblado { get; set; }
         public bool Mascota { get; set; }
+        public string NombreProvincia { get; set; }
+        public string NombreCiudad { get; set; }
+        public string TipoArriendo{ get; set; }
+
+        public string Usuario { get;set }
+
 
         public virtual Ciudad CiudArrNavigation { get; set; }
         public virtual TipoArriendo TipoArrNavigation { get; set; }
