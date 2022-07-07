@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +20,10 @@ export class CargarSelectsService {
 
   cargarTipoArriendos(){
     return this.http.get('http://localhost:26951/api/TipoArriendoes')
+  }
+
+  cargarCantonesProvincia(id:number){
+    return this.http.get('http://localhost:26951/api/ciudads/provincia/'+id);
   }
 
 }

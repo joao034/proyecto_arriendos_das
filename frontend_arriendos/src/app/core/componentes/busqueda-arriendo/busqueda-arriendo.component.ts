@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProvinciaI } from 'src/app/models/provincia.interface';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
 
 @Component({
@@ -9,14 +10,14 @@ import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
 })
 export class BusquedaArriendoComponent implements OnInit {
 
-  provincias:any=[];
+  array:any=[];
+  provincias!: ProvinciaI[];
   cantones:any=[];
   tipoArriendos:any=[];
   constructor(private apiSelects:CargarSelectsService) { }
 
   ngOnInit(): void {
     this.cargarProvincias();
-    this.cargarCantones();
     this.cargarTipoArriendos();
   }
 
@@ -31,7 +32,8 @@ export class BusquedaArriendoComponent implements OnInit {
 
   cargarProvincias(){
     this.apiSelects.cargarProvincias().subscribe(provincias=>{
-      this.provincias=provincias;
+      this.array=provincias;
+      this.provincias=this.array;
     })
   }
 
@@ -45,6 +47,12 @@ export class BusquedaArriendoComponent implements OnInit {
     this.apiSelects.cargarTipoArriendos().subscribe(tipoArriendos=>{
       this.tipoArriendos=tipoArriendos;
     })
+  }
+
+  onSelectedValueChange(provincia:any){
+   this.apiSelects.cargarCantonesProvincia(provincia).subscribe(cantonesProvincia=>{
+    this.cantones=cantonesProvincia;
+   })
   }
 
 
