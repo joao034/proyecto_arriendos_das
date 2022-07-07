@@ -1,30 +1,30 @@
 <div>
-  <form action="" class="d-flex justify-content-around">
+  <form  [formGroup]="busquedaForm"  class="d-flex justify-content-around compartido" >
     <mat-form-field appearance="fill">
       <mat-label>Ciudad</mat-label>
       <mat-select>
-        <mat-option> Pichincha </mat-option>
+        <mat-option *ngFor="let provincia of provincias" [value]="provincia.nomPro"> {{provincia.nomPro}} </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Cantón</mat-label>
       <mat-select>
-        <mat-option>Cantón </mat-option>
+        <mat-option *ngFor="let canton of cantones" [value]="canton.nomCiu"> {{canton.nomCiu}} </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Tipo arriendo</mat-label>
       <mat-select>
-        <mat-option>Casa </mat-option>
+        <mat-option *ngFor="let tipo of tipoArriendos" [value]="tipo.nomTipArr"> {{tipo.nomTipArr}} </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field  appearance="fill">
         <mat-label>Habitaciones</mat-label>
-        <input matInput type="number" placeholder="Habitaciones" value="">
+        <input matInput type="number" placeholder="Habitaciones" value="" min="0" >
       </mat-form-field>
       <mat-form-field  appearance="fill">
         <mat-label>Baños</mat-label>
-        <input matInput type="number" placeholder="Habitaciones" value="">
+        <input matInput type="number" placeholder="Habitaciones" value="" min="0">
       </mat-form-field>
       <div class="">
       <mat-checkbox class="compartido">Compartido</mat-checkbox>

@@ -18,6 +18,7 @@ import { SiginComponent } from './pages/sigin/sigin.component';
 import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuenta.component';
 import { BuscarArriendoComponent } from './pages/buscar-arriendo/buscar-arriendo.component';
 import { BusquedaArriendoComponent } from './core/componentes/busqueda-arriendo/busqueda-arriendo.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BusquedaArriendoComponent } from './core/componentes/busqueda-arriendo/
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
