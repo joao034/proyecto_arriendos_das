@@ -16,5 +16,10 @@ namespace Arriendos.Models
 
         public virtual Provincia ProPerNavigation { get; set; }
         public virtual ICollection<Arriendo> Arriendos { get; set; }
+
+        public static implicit operator List<object>(Ciudad v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

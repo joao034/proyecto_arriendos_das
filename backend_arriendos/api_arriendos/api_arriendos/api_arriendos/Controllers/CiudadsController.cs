@@ -42,6 +42,21 @@ namespace api_arriendos.Controllers
             return ciudad;
         }
 
+        // GET: api/Ciudads/provinciaCiudad/5
+        [HttpGet("provincia/{id}")]
+        public async Task<ActionResult<IEnumerable<Ciudad>>> GetProvinciaCiudad(int id)
+        {
+            var ciudades = await _context.Ciudades.Where(ciudades=>ciudades.ProPer==id).ToListAsync();
+
+            if (ciudades == null)
+            {
+                return NotFound();
+            }
+
+            return ciudades;
+        }
+
+
         // PUT: api/Ciudads/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
