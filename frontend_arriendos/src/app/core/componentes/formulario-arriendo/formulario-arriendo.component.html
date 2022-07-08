@@ -1,0 +1,97 @@
+<div class="container">
+  <form action="" enctype="multipart/form-data">
+    <!--Info general-->
+    <div >
+      <h2>Información general</h2>
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Título</mat-label>
+          <input matInput placeholder="Título" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Precio</mat-label>
+          <input matInput placeholder="Precio" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput placeholder="Descripción"></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <div>
+          <label for="">Imagen</label>
+        </div>
+        <input
+          type="file"
+          placeholder="Precio"
+          accept="image/png, image/jpeg"
+        />
+      </div>
+      <hr />
+    </div>
+    <!--Info propiedad-->
+    <div>
+      <h2>Información propiedad</h2>
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Habitaciones</mat-label>
+          <input matInput placeholder="Habitaciones" type="number" min="0" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Baños</mat-label>
+          <input matInput placeholder="Baños" type="number" min="0" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Provincia</mat-label>
+          <mat-select (valueChange)="onSelectedValueChange($event)">
+            <mat-option
+              *ngFor="let provincia of provincias"
+              [value]="provincia.idPro"
+            >
+              {{ provincia.nomPro }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Cantón</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let canton of cantones" [value]="canton.idCiu">
+              {{ canton.nomCiu }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <hr>
+    </div>
+    <!--Info extra-->
+    <div>
+      <h2>Información extra</h2>
+      <div class="m-3">
+        <mat-checkbox class="example-margin">Garage</mat-checkbox>
+      </div>
+      <div class="m-3">
+        <mat-checkbox class="example-margin">Compartido</mat-checkbox>
+      </div>
+      <div class="m-3">
+        <mat-checkbox class="example-margin">Mascotas</mat-checkbox>
+      </div>
+      <div class="m-3">
+        <mat-checkbox class="example-margin">Disponible</mat-checkbox>
+      </div>
+      <hr>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button class="text-uppercase m-2" mat-raised-button color="primary">Crear anuncio</button>
+    </div>
+  </form>
+</div>

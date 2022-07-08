@@ -19,6 +19,8 @@ import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuen
 import { BuscarArriendoComponent } from './pages/buscar-arriendo/buscar-arriendo.component';
 import { BusquedaArriendoComponent } from './core/componentes/busqueda-arriendo/busqueda-arriendo.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormularioArriendoComponent } from './core/componentes/formulario-arriendo/formulario-arriendo.component';
+import { PageNuevoArriendoComponent } from './pages/page-nuevo-arriendo/page-nuevo-arriendo.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     SiginComponent,
     CrearCuentaComponent,
     BuscarArriendoComponent,
-    BusquedaArriendoComponent
+    BusquedaArriendoComponent,
+    FormularioArriendoComponent,
+    PageNuevoArriendoComponent
   ],
   imports: [
     BrowserModule,
