@@ -13,9 +13,9 @@
         <input type="password" id="passwordUsu" matInput placeholder="Contraseña" formControlName="passwordUsu" />
       </mat-form-field>
     </div>
-    <button class="" type="submit" mat-raised-button color="primary">Login</button>
+    <button class="mb-3" type="submit" mat-raised-button color="primary">Login</button>
   </form>
-  <div class="alert alert-danger w-25 mt-3">
+  <div class="alert alert-danger w-25" *ngIf="errorLogin">
     <p>Usuario o contraseña incorrecta</p>
   </div>
 </div>

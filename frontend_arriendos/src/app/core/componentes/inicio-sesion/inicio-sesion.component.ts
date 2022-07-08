@@ -9,6 +9,9 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./inicio-sesion.component.css'],
 })
 export class InicioSesionComponent implements OnInit {
+  
+  errorLogin:boolean=false;
+
   loginForm = new FormGroup({
     usernameUsu: new FormControl('', Validators.required),
     passwordUsu: new FormControl('', Validators.required),
@@ -23,6 +26,8 @@ export class InicioSesionComponent implements OnInit {
       if(usuario!=null){
         localStorage.setItem('usuario',JSON.stringify(usuario));
         this.route.navigate(['/']);
+      }else{
+        this.errorLogin=true;
       }
     })
   }
