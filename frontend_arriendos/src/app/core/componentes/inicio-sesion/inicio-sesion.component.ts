@@ -19,7 +19,9 @@ export class InicioSesionComponent implements OnInit {
 
   constructor(private login:LoginService,private route:Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkLocalStorage();
+  }
 
   onLogin(form: any) {
     this.login.loginByUser(form).subscribe(usuario=> {
@@ -31,4 +33,11 @@ export class InicioSesionComponent implements OnInit {
       }
     })
   }
+
+  checkLocalStorage(){
+    if(localStorage.getItem('usuario')){
+     this.route.navigate(['/']); 
+    }
+  }
+
 }
