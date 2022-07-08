@@ -118,10 +118,10 @@ namespace api_arriendos.Controllers
 
             var sqlUsuario = await _context.Usuarios.FirstOrDefaultAsync(s => s.UsernameUsu == usuario.UsernameUsu && s.PasswordUsu == usuario.PasswordUsu);
 
-            if (sqlUsuario == null)
+            /*if (sqlUsuario == null)
             {
                 return NotFound();
-            }
+            }*/
             //CreatedAtAction("GetUsuario", new { id = usuario.IdUsu }, usuario);;          
             return sqlUsuario;
         }
