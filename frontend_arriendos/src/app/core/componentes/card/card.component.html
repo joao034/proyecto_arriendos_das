@@ -1,15 +1,22 @@
-<mat-grid-list cols="4" rowHeight="480px">
+<mat-grid-list cols="4" rowHeight="440px">
   <mat-grid-tile *ngFor="let arriendo of arriendos">
     <div class="card">
       <picture>
         <img class="imagen-card" src="/assets/casa.jpg" alt="" />
       </picture>
       <div class="contenido-card">
-        <h3 class="centrado">Casa en huachi</h3>
+        <div class="centrado">
+          <b><h4>$ {{ arriendo.precio }}</h4></b>
+        </div>
+        <!--Ciudad - Provincia-->
+        <div class="centrado">
+          <label for="">{{ arriendo.nomCiu }}</label> -
+          <label for="">{{ arriendo.nomPro }}</label>
+        </div>
+
         <p class="centrado">{{ arriendo.dirArr }}</p>
-        <div class="info-precio-card">
-          <p>$ {{ arriendo.precio }}</p>
-          <label for=""
+        <p class="centrado"> Tipo Arriendo: <b>{{arriendo.nomTipArr}}</b></p>
+        <!--<label for=""
             >Compartido
             <input
               type="checkbox"
@@ -18,30 +25,26 @@
               checked
           /></label>
         </div>
-        <div class="info-lugar-card">
-          <!--Ciudad - Provincia-->
-          <label for="">{{ arriendo.ciudArr }}</label>
-          <label for="">{{ arriendo.tipoArr }}</label>
-        </div>
-        <ul class="iconos-card">
-          <li>
-            <img src="/assets/cuartos.png" alt="" />
-            <p>{{ arriendo.numHab }}</p>
-          </li>
-          <li>
-            <img src="/assets/toilet.png" alt="" />
-            <p>{{ arriendo.numBanos }}</p>
-          </li>
-          <li>
-            <img src="/assets/garage.png" alt="" />
-            <input type="checkbox" disabled *ngIf="arriendo.garage" checked />
-          </li>
-        </ul>
-        <div class="ver-anuncio-card">
-          <b><p *ngIf="arriendo.chechArrendar">Disponible</p></b>
-          <b><p *ngIf="!arriendo.chechArrendar">No Disponible</p></b>
-          <button mat-raised-button color="primary">Ver anuncio</button>
-        </div>
+        <div class="info-lugar-card">-->
+      </div>
+      <ul class="iconos-card">
+        <li>
+          <img src="/assets/cuartos.png" alt="" />
+          <p>{{ arriendo.numHab }}</p>
+        </li>
+        <li>
+          <img src="/assets/toilet.png" alt="" />
+          <p>{{ arriendo.numBanos }}</p>
+        </li>
+        <li>
+          <img src="/assets/garage.png" alt="" />
+          <input type="checkbox" disabled *ngIf="arriendo.garage" checked />
+        </li>
+      </ul>
+      <div class="ver-anuncio-card">
+        <b><p *ngIf="arriendo.chechArrendar">Disponible</p></b>
+        <b><p *ngIf="!arriendo.chechArrendar">No Disponible</p></b>
+        <button mat-raised-button color="primary">Ver anuncio</button>
       </div>
     </div>
   </mat-grid-tile>
