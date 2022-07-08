@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Inicio Sesión</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" action="" class="form-col">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" action="" class="form-col m-10">
     <div>
       <mat-form-field appearance="outline" class="col-md-4">
         <mat-label>Usuario</mat-label>
@@ -13,7 +13,9 @@
         <input type="password" id="passwordUsu" matInput placeholder="Contraseña" formControlName="passwordUsu" />
       </mat-form-field>
     </div>
-    <button type="submit" mat-raised-button color="primary">Login</button>
+    <button class="" type="submit" mat-raised-button color="primary">Login</button>
   </form>
-
+  <div class="alert alert-danger w-25 mt-3">
+    <p>Usuario o contraseña incorrecta</p>
+  </div>
 </div>
