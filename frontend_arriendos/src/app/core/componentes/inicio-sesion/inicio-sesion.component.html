@@ -1,18 +1,19 @@
 <div class="container">
   <h2>Inicio Sesión</h2>
-  <form action="" class="form-col">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" action="" class="form-col">
     <div>
       <mat-form-field appearance="outline" class="col-md-4">
         <mat-label>Usuario</mat-label>
-        <input matInput placeholder="Usuario" />
+        <input id="usernameUsu" matInput placeholder="Usuario" formControlName="usernameUsu" />
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="outline" class="col-md-4">
         <mat-label>Contraseña</mat-label>
-        <input matInput placeholder="Contraseña" />
+        <input type="password" id="passwordUsu" matInput placeholder="Contraseña" formControlName="passwordUsu" />
       </mat-form-field>
     </div>
-    <button mat-raised-button color="primary">Primary</button>
+    <button type="submit" mat-raised-button color="primary">Login</button>
   </form>
+
 </div>
