@@ -21,6 +21,8 @@ namespace Arriendos.Data
         public virtual DbSet<Calificaciones> Calificaciones { get; set; }
         public virtual DbSet<Ciudad> Ciudades { get; set; }
         public virtual DbSet<DetalleImagenes> DetalleImagenes { get; set; }
+        public virtual DbSet<Efmigrationshistory> Efmigrationshistories { get; set; }
+        public virtual DbSet<ListaArriendo> ListaArriendos { get; set; }
         public virtual DbSet<MisFavorito> MisFavoritos { get; set; }
         public virtual DbSet<Provincia> Provincias { get; set; }
         public virtual DbSet<TipoArriendo> TipoArriendos { get; set; }
@@ -216,6 +218,125 @@ namespace Arriendos.Data
                     .HasForeignKey(d => d.IdArr)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ARRIENDO_INCORRECTO_IMG");
+            });
+
+            modelBuilder.Entity<Efmigrationshistory>(entity =>
+            {
+                entity.HasKey(e => e.MigrationId)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("__efmigrationshistory");
+
+                entity.Property(e => e.MigrationId).HasMaxLength(150);
+
+                entity.Property(e => e.ProductVersion)
+                    .IsRequired()
+                    .HasMaxLength(32);
+            });
+
+            modelBuilder.Entity<ListaArriendo>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("lista_arriendos");
+
+                entity.Property(e => e.Amueblado).HasColumnName("AMUEBLADO");
+
+                entity.Property(e => e.ChechArrendar).HasColumnName("CHECH_ARRENDAR");
+
+                entity.Property(e => e.CiudArr)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("CIUD_ARR");
+
+                entity.Property(e => e.DescArr)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .HasColumnName("DESC_ARR")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.DirArr)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .HasColumnName("DIR_ARR")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.Fecha)
+                    .HasColumnType("datetime")
+                    .HasColumnName("FECHA")
+                    .HasDefaultValueSql("current_timestamp()");
+
+                entity.Property(e => e.Garage).HasColumnName("GARAGE");
+
+                entity.Property(e => e.IdArr)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_ARR");
+
+                entity.Property(e => e.Mascota).HasColumnName("MASCOTA");
+
+                entity.Property(e => e.NomCiu)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("NOM_CIU")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.NomPro)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("NOM_PRO")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.NomTipArr)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("NOM_TIP_ARR")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.NumBanos)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("NUM_BANOS");
+
+                entity.Property(e => e.NumHab)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("NUM_HAB");
+
+                entity.Property(e => e.NumPersonas)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("NUM_PERSONAS");
+
+                entity.Property(e => e.NumPisos)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("NUM_PISOS");
+
+                entity.Property(e => e.Precio)
+                    .HasPrecision(10, 2)
+                    .HasColumnName("PRECIO");
+
+                entity.Property(e => e.Publicado).HasColumnName("PUBLICADO");
+
+                entity.Property(e => e.Superficie)
+                    .HasPrecision(10, 2)
+                    .HasColumnName("SUPERFICIE");
+
+                entity.Property(e => e.TipoArr)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("TIPO_ARR");
+
+                entity.Property(e => e.UsuPro)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("USU_PRO");
+
+                entity.Property(e => e.Usuario)
+                    .IsRequired()
+                    .HasMaxLength(101)
+                    .HasColumnName("usuario")
+                    .HasDefaultValueSql("''")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
             });
 
             modelBuilder.Entity<MisFavorito>(entity =>

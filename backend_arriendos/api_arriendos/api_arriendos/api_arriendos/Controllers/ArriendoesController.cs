@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Arriendos.Data;
 using Arriendos.Models;
+using api_arriendos.Models;
 
 namespace api_arriendos.Controllers
 {

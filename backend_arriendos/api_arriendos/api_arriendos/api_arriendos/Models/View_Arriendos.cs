@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Arriendos.Models
+namespace api_arriendos.Models
 {
-    public partial class Arriendo
+    public partial class View_Arriendos
     {
         public int IdArr { get; set; }
         public int TipoArr { get; set; }
@@ -23,9 +25,13 @@ namespace Arriendos.Models
         public decimal Precio { get; set; }
         public bool Amueblado { get; set; }
         public bool Mascota { get; set; }
+        public string NombreCiudad { get; set; }
 
-        public virtual Ciudad CiudArrNavigation { get; set; }
-        public virtual TipoArriendo TipoArrNavigation { get; set; }
-        public virtual Usuario UsuProNavigation { get; set; }
+        public string NombreProvincia { get; set; }
+        
+        
+        public string NombreUsuario { get; set; }
+
+        public string NombreTipoArriendo { get; set; }
     }
 }
