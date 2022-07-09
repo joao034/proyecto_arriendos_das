@@ -7,6 +7,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -22,7 +23,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatSelectModule,
     MatCheckboxModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }
