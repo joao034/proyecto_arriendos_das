@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+  }
+
+.acciones{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}

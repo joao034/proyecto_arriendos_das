@@ -27,3 +27,9 @@
     gap: 70px;
     margin-top: 50px;
 }
+
+.logueado{
+    color:white;
+    display: flex;
+    gap: 5px;
+}

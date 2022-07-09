@@ -19,6 +19,13 @@ import { ListaArriendosComponent } from './pages/lista-arriendos/lista-arriendos
 import { LoginComponent } from './pages/login/login.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
 import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuenta.component';
+import { BuscarArriendoComponent } from './pages/buscar-arriendo/buscar-arriendo.component';
+import { BusquedaArriendoComponent } from './core/componentes/busqueda-arriendo/busqueda-arriendo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormularioArriendoComponent } from './core/componentes/formulario-arriendo/formulario-arriendo.component';
+import { PageNuevoArriendoComponent } from './pages/page-nuevo-arriendo/page-nuevo-arriendo.component';
+import { TablaAnunciosComponent } from './core/componentes/tabla-anuncios/tabla-anuncios.component';
+import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anuncios.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,13 @@ import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuen
     ListaArriendosComponent,
     LoginComponent,
     SiginComponent,
-    CrearCuentaComponent
+    CrearCuentaComponent,
+    BuscarArriendoComponent,
+    BusquedaArriendoComponent,
+    FormularioArriendoComponent,
+    PageNuevoArriendoComponent,
+    TablaAnunciosComponent,
+    PageTusAnunciosComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +54,7 @@ import { CrearCuentaComponent } from './core/componentes/crear-cuenta/crear-cuen
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
