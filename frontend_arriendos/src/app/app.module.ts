@@ -21,7 +21,8 @@ import { BusquedaArriendoComponent } from './core/componentes/busqueda-arriendo/
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormularioArriendoComponent } from './core/componentes/formulario-arriendo/formulario-arriendo.component';
 import { PageNuevoArriendoComponent } from './pages/page-nuevo-arriendo/page-nuevo-arriendo.component';
-import { TablaAnunciosComponent } from './tabla-anuncios/tabla-anuncios.component';
+import { TablaAnunciosComponent } from './core/componentes/tabla-anuncios/tabla-anuncios.component';
+import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anuncios.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TablaAnunciosComponent } from './tabla-anuncios/tabla-anuncios.componen
     BusquedaArriendoComponent,
     FormularioArriendoComponent,
     PageNuevoArriendoComponent,
-    TablaAnunciosComponent
+    TablaAnunciosComponent,
+    PageTusAnunciosComponent
   ],
   imports: [
     BrowserModule,

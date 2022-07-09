@@ -4,6 +4,7 @@ import { BuscarArriendoComponent } from './pages/buscar-arriendo/buscar-arriendo
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNuevoArriendoComponent } from './pages/page-nuevo-arriendo/page-nuevo-arriendo.component';
+import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anuncios.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'signin',component:SiginComponent},
   {path:'buscar-arriendo',component:BuscarArriendoComponent},
   {path:'nuevo-arriendo',component:PageNuevoArriendoComponent},
+  {path:'tus-anuncios',component:PageTusAnunciosComponent}
 ];
 
 @NgModule({
