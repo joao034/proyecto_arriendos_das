@@ -18,4 +18,7 @@ export interface ArriendoI{
     precio:number;
     amueblado:boolean;
     mascota:boolean;
+    nomCiu:string;
+    nomPro:string;
+    nomTipArr:string;
 }

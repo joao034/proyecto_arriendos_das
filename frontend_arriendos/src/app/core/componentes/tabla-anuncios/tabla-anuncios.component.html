@@ -1,62 +1,63 @@
-<table
-  mat-table
-  [dataSource]="ARRIENDOS"
-  class="mat-elevation-z8 container mt-3 mb-3"
->
-  <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+<div class="container">
+  <button  class="w-25 m-2" mat-raised-button color="primary" (click)="onClickNuevo()" >Nuevo</button>
+  <table mat-table [dataSource]="ARRIENDOS" class="mat-elevation-z8 mt-3 mb-3">
+    <!-- Position Column -->
+    <ng-container matColumnDef="idArr">
+      <th mat-header-cell *matHeaderCellDef>Id.</th>
+      <td mat-cell *matCellDef="let element">{{ element.idArr }}</td>
+    </ng-container>
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="idArr">
-    <th mat-header-cell *matHeaderCellDef>Id.</th>
-    <td mat-cell *matCellDef="let element">{{ element.idArr }}</td>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="descArr">
+      <th mat-header-cell *matHeaderCellDef>Titulo</th>
+      <td mat-cell *matCellDef="let element">{{ element.descArr }}</td>
+    </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="tipoArr">
-    <th mat-header-cell *matHeaderCellDef>Titulo</th>
-    <td mat-cell *matCellDef="let element">{{ element.tipoArr }}</td>
-  </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="numPisos">
+      <th mat-header-cell *matHeaderCellDef>Tipo</th>
+      <td mat-cell *matCellDef="let element">{{ element.numPisos }}</td>
+    </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="numPisos">
-    <th mat-header-cell *matHeaderCellDef>Tipo</th>
-    <td mat-cell *matCellDef="let element">{{ element.numPisos }}</td>
-  </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="numHab">
+      <th mat-header-cell *matHeaderCellDef>Cuartos</th>
+      <td mat-cell *matCellDef="let element">{{ element.numHab }}</td>
+    </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="numHab">
-    <th mat-header-cell *matHeaderCellDef>Cuartos</th>
-    <td mat-cell *matCellDef="let element">{{ element.numHab }}</td>
-  </ng-container>
+    <ng-container matColumnDef="numBanos">
+      <th mat-header-cell *matHeaderCellDef>Baños</th>
+      <td mat-cell *matCellDef="let element">{{ element.numBanos }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="numBanos">
-    <th mat-header-cell *matHeaderCellDef>Baños</th>
-    <td mat-cell *matCellDef="let element">{{ element.numBanos }}</td>
-  </ng-container>
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef>Precio</th>
+      <td mat-cell *matCellDef="let element">{{ element.precio }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="precio">
-    <th mat-header-cell *matHeaderCellDef>Precio</th>
-    <td mat-cell *matCellDef="let element">{{ element.precio }}</td>
-  </ng-container>
+    <ng-container matColumnDef="chechArrendar">
+      <th mat-header-cell *matHeaderCellDef>Disponible</th>
+      <td  class="p-3" mat-cell *matCellDef="let element">
+        <input   type="checkbox" disabled [checked]="element.chechArrendar" />
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="chechArrendar">
-    <th mat-header-cell *matHeaderCellDef>Disponible</th>
-    <td mat-cell *matCellDef="let element">
-      <input type="checkbox" disabled [checked]="element.chechArrendar" />
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="nomCiu">
+      <th mat-header-cell *matHeaderCellDef>Lugar</th>
+      <td  mat-cell *matCellDef="let element">{{ element.nomCiu }} - {{ element.nomPro }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="amueblado" >
-    <th mat-header-cell *matHeaderCellDef>Acciones</th>
-    <td mat-cell *matCellDef="let element">
-      <div class="acciones m-2">
-        <button class="w-50" mat-raised-button color="primary" >Editar</button>
-        <button class="w-50" mat-raised-button color="warn" >Eliminar</button>
-      </div>
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="amueblado">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="acciones m-2">
+          <button class="w-50" mat-raised-button color="primary">Editar</button>
+          <button class="w-50" mat-raised-button color="warn">Eliminar</button>
+        </div>
+      </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

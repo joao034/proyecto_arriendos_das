@@ -26,6 +26,8 @@ import { FormularioArriendoComponent } from './core/componentes/formulario-arrie
 import { PageNuevoArriendoComponent } from './pages/page-nuevo-arriendo/page-nuevo-arriendo.component';
 import { TablaAnunciosComponent } from './core/componentes/tabla-anuncios/tabla-anuncios.component';
 import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anuncios.component';
+import { PageNoLoginComponent } from './pages/page-no-login/page-no-login.component';
+import { NoLogComponent } from './core/componentes/no-log/no-log.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anu
     FormularioArriendoComponent,
     PageNuevoArriendoComponent,
     TablaAnunciosComponent,
-    PageTusAnunciosComponent
+    PageTusAnunciosComponent,
+    PageNoLoginComponent,
+    NoLogComponent,
   ],
   imports: [
     BrowserModule,
