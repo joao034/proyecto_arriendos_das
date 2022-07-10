@@ -27,6 +27,11 @@ import { PageNuevoArriendoComponent } from './pages/page-nuevo-arriendo/page-nue
 import { TablaAnunciosComponent } from './core/componentes/tabla-anuncios/tabla-anuncios.component';
 import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anuncios.component';
 
+//datepikcer
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +59,9 @@ import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anu
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,    
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
