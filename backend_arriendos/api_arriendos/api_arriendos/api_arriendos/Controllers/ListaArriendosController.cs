@@ -28,6 +28,13 @@ namespace api_arriendos.Controllers
         {
             return await _context.ListaArriendos.ToListAsync();
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<ListaArriendo>>> GetArriendosByIdUser(int id)
+        {
+            var anuncios = await _context.ListaArriendos.Where(anuncios => anuncios.UsuPro == id).ToListAsync();
+            return anuncios;
+        }
     }
 }
 
