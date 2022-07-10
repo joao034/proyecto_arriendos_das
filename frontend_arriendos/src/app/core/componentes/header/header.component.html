@@ -12,7 +12,7 @@
             <div><a href="/signin">Crear Cuenta</a></div>
           </div>
           <div class="logueado" *ngIf="!logueado">
-            <p >{{this.usuario.usernameUsu}}</p>
+            <p >{{usuario.usernameUsu}}</p>
             <button type="submit" (click)="onClickLogout()" >
               <mat-icon >logout</mat-icon>
             </button>

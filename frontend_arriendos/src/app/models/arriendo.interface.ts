@@ -19,9 +19,8 @@ export interface ArriendoI{
     chechArrendar:boolean;
     precio:number;
     amueblado:boolean;
+    garaje : boolean;
     mascota:boolean;
     imagenes : FotoI[]; 
-
-
-
+    compartido : boolean;
 }
