@@ -1,5 +1,7 @@
+import { FotoI } from "./foto.interface";
 
 export interface ArriendoI{
+    
     idArr:number;
     tipoArr:number;
     usuPro:number;
@@ -18,4 +20,8 @@ export interface ArriendoI{
     precio:number;
     amueblado:boolean;
     mascota:boolean;
+    imagenes : FotoI[]; 
+
+
+
 }
