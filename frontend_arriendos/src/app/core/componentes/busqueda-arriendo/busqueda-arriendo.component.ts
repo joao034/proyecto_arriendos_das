@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProvinciaI } from 'src/app/models/provincia.interface';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
@@ -14,6 +14,8 @@ export class BusquedaArriendoComponent implements OnInit {
   provincias!: ProvinciaI[];
   cantones:any=[];
   tipoArriendos:any=[];
+  @Output()
+  busqueda:EventEmitter<any>=new EventEmitter<any>();
   constructor(private apiSelects:CargarSelectsService) { }
 
   ngOnInit(): void {
@@ -56,7 +58,7 @@ export class BusquedaArriendoComponent implements OnInit {
   }
 
   onClickSearch(form:any){
-    console.log(form);
+    this.busqueda.emit(JSON.stringify(form));
   }
 
 }

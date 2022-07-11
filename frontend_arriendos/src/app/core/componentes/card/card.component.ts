@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 
 @Component({
@@ -8,8 +8,16 @@ import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 })
 export class CardComponent implements OnInit {
 
-  arriendos : any = []
-  arriendo : string = ""
+
+  arriendos : any = [];
+  arriendo : string = "";
+  public info:any;
+  
+  recogerBusqueda($event:any){
+    this.info = $event;
+    console.log('Hijo 2 = Info recibida => ');
+    console.log(JSON.parse(this.info));
+  }
 
   constructor(private apiArriendo : ApiArriendosService) { }
 
