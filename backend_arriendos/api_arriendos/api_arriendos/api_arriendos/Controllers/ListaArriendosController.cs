@@ -35,6 +35,19 @@ namespace api_arriendos.Controllers
             var anuncios = await _context.ListaArriendos.Where(anuncios => anuncios.UsuPro == id).ToListAsync();
             return anuncios;
         }
+
+        [HttpPost]
+        public async Task<ActionResult<IEnumerable<ListaArriendo>>> GetArriendosSearch(ListaArriendo busqueda)
+        {
+            var anuncios = await _context.ListaArriendos.Where(anuncios => anuncios.CiudArr==busqueda.CiudArr && 
+            anuncios.NomPro == busqueda.NomPro && 
+            anuncios.TipoArr == busqueda.TipoArr &&
+            anuncios.NumHab==busqueda.NumHab &&
+            anuncios.NumBanos==busqueda.NumBanos &&
+            anuncios.Mascota == busqueda.Mascota).ToListAsync();
+            return anuncios;
+        }
+
     }
 }
 
