@@ -41,12 +41,12 @@ namespace api_arriendos
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
-            services.Configure<FormOptions>( o=>
-            {
-                o.ValueLengthLimit = int.MaxValue;
-                o.MultipartBodyLengthLimit = int.MaxValue;
-                o.MemoryBufferThreshold = int.MaxValue;
-            })
+            services.Configure<FormOptions>(o =>
+           {
+               o.ValueLengthLimit = int.MaxValue;
+               o.MultipartBodyLengthLimit = int.MaxValue;
+               o.MemoryBufferThreshold = int.MaxValue;
+           });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

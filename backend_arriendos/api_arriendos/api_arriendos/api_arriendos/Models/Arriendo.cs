@@ -5,6 +5,11 @@ namespace Arriendos.Models
 {
     public partial class Arriendo
     {
+        public Arriendo()
+        {
+            DetalleImagenes = new HashSet<DetalleImagenes>();
+        }
+
         public int IdArr { get; set; }
         public int TipoArr { get; set; }
         public int UsuPro { get; set; }
@@ -23,10 +28,10 @@ namespace Arriendos.Models
         public decimal Precio { get; set; }
         public bool Amueblado { get; set; }
         public bool Mascota { get; set; }
-        //public virtual ICollection<DetalleImagenes> imagenes { get; set; }
 
         public virtual Ciudad CiudArrNavigation { get; set; }
         public virtual TipoArriendo TipoArrNavigation { get; set; }
         public virtual Usuario UsuProNavigation { get; set; }
+        public virtual ICollection<DetalleImagenes> DetalleImagenes { get; set; }
     }
 }
