@@ -1,38 +1,58 @@
 <div>
-  <form  [formGroup]="busquedaForm"  class="d-flex justify-content-around compartido" >
+  <form
+    [formGroup]="busquedaForm"
+    class="d-flex justify-content-around compartido"
+    (ngSubmit)="onClickSearch(busquedaForm.value)"
+  >
     <mat-form-field appearance="fill">
       <mat-label>Provincia</mat-label>
-      <mat-select  (valueChange)="onSelectedValueChange($event)" >
-        <mat-option *ngFor="let provincia of provincias" [value]="provincia.idPro"> {{provincia.nomPro}} </mat-option>
+      <mat-select (valueChange)="onSelectedValueChange($event)" formControlName="idPro">
+        <mat-option
+          *ngFor="let provincia of provincias"
+          [value]="provincia.idPro"
+        >
+          {{ provincia.nomPro }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Cantón</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let canton of cantones" [value]="canton.idCiu"> {{canton.nomCiu}} </mat-option>
+      <mat-select formControlName="idCiu">
+        <mat-option *ngFor="let canton of cantones" [value]="canton.idCiu">
+          {{ canton.nomCiu }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Tipo arriendo</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let tipo of tipoArriendos" [value]="tipo.idTipArr"> {{tipo.nomTipArr}} </mat-option>
+      <mat-select formControlName="idTipArr">
+        <mat-option *ngFor="let tipo of tipoArriendos" [value]="tipo.idTipArr">
+          {{ tipo.nomTipArr }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field  appearance="fill">
-        <mat-label>Habitaciones</mat-label>
-        <input matInput type="number" placeholder="Habitaciones" value="" min="0" >
-      </mat-form-field>
-      <mat-form-field  appearance="fill">
-        <mat-label>Baños</mat-label>
-        <input matInput type="number" placeholder="Baños" value="" min="0">
-      </mat-form-field>
-      <div>
-      <mat-checkbox class="compartido">Compartido</mat-checkbox>
-      </div>
-     <div>
-       <button type="submit" class="compartido">
-        <mat-icon >search</mat-icon>
-       </button>
-     </div>
-    </form>
+    <mat-form-field appearance="fill">
+      <mat-label>Habitaciones</mat-label>
+      <input
+        matInput
+        type="number"
+        placeholder="Habitaciones"
+        value=""
+        min="0"
+        formControlName="numHab"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Baños</mat-label>
+      <input matInput type="number" placeholder="Baños" value="" min="0" formControlName="numBanos" />
+    </mat-form-field>
+    <div>
+      <mat-checkbox class="compartido" formControlName="mascota">Compartido</mat-checkbox>
+    </div>
+    <div>
+      <button type="submit" class="compartido">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </form>
 </div>

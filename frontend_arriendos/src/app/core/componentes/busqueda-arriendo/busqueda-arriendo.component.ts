@@ -22,12 +22,12 @@ export class BusquedaArriendoComponent implements OnInit {
   }
 
   busquedaForm=new FormGroup({
-    ciudad:new FormControl('',Validators.required),
-    canton:new FormControl('',Validators.required),
-    tipoArriendo:new FormControl('',Validators.required),
-    habitaciones:new FormControl('',Validators.required),
-    banios:new FormControl('',Validators.required),
-    compartido:new FormControl('',Validators.required)
+    idPro:new FormControl('',Validators.required),
+    idCiu:new FormControl('',Validators.required),
+    idTipArr:new FormControl('',Validators.required),
+    numHab:new FormControl('',Validators.required),
+    numBanos:new FormControl('',Validators.required),
+    mascota:new FormControl('',Validators.required)
   })
 
   cargarProvincias(){
@@ -55,5 +55,8 @@ export class BusquedaArriendoComponent implements OnInit {
    })
   }
 
+  onClickSearch(form:any){
+    console.log(form);
+  }
 
 }
