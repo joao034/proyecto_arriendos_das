@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { FotoI } from 'src/app/models/foto.interface';
@@ -16,13 +17,12 @@ export class FormularioArriendoComponent implements OnInit {
   cantones: any = [];
   tipoArriendos: any = [];
   logueado: boolean = true;
+  nuevoArriendo : boolean = false;
 
   formArriendo: FormGroup;
   private arriendo: ArriendoI = {} as ArriendoI;
   fileToUpload: File | undefined;
-  imagen : FotoI = {} as FotoI;
-
-  resultadoNuevoArriendo: any;
+  private imagen : FotoI = {} as FotoI;
 
   private usuario: any;
 
@@ -33,7 +33,8 @@ export class FormularioArriendoComponent implements OnInit {
 
   constructor(
     private apiSelects: CargarSelectsService,
-    private apiArriendo: ApiArriendosService
+    private apiArriendo: ApiArriendosService,
+    private router: Router
   ) {
     this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
     this.formArriendo = new FormGroup({
@@ -96,15 +97,15 @@ export class FormularioArriendoComponent implements OnInit {
   //llamada del metodo en el boton crear anuncio
   insertarArriendo() {
     this.inicializarDatosArriendo();
-    console.log('imagen => ', this.imagen);
-    console.log('arriendo => ', this.arriendo);
-
     this.guardarArriendoCabecera();
   }
 
   guardarArriendoCabecera(){
     this.apiArriendo.insertarArriendo(this.arriendo).subscribe((arriendo) => {
-      console.log('Respuesta => ', arriendo);
+      if(arriendo != null){
+        this.nuevoArriendo = true;
+        this.router.navigate(['/arriendos']);
+      }
     });
   }
 
