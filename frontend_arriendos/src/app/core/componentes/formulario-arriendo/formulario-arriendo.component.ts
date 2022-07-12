@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { from } from 'rxjs';
 import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { FotoI } from 'src/app/models/foto.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
@@ -26,9 +25,6 @@ export class FormularioArriendoComponent implements OnInit {
 
   private usuario: any;
 
-  //atributos imagen
-  //public mensaje: string;
-  //public progeso: number;
   @Output() public cargarImagen = new EventEmitter<any>();
 
   constructor(
@@ -104,6 +100,7 @@ export class FormularioArriendoComponent implements OnInit {
     this.apiArriendo.insertarArriendo(this.arriendo).subscribe((arriendo) => {
       if(arriendo != null){
         this.nuevoArriendo = true;
+        //Redireccionar a la arriendos publicados por el usuario
         this.router.navigate(['/arriendos']);
       }
     });
@@ -116,6 +113,7 @@ export class FormularioArriendoComponent implements OnInit {
   }*/
 
   inicializarDatosArriendo() {
+
     this.arriendo.tipoArr = this.formArriendo.value.tipoArriendo;
     this.arriendo.usuPro = this.usuario.idUsu;
     this.arriendo.precio = this.formArriendo.value.precio;
@@ -123,17 +121,18 @@ export class FormularioArriendoComponent implements OnInit {
     this.arriendo.numBanos = this.formArriendo.value.numBanos;
     this.arriendo.ciudArr = this.formArriendo.value.idCanton;
     this.arriendo.dirArr = this.formArriendo.value.direccion;
-    this.arriendo.publicado = true;
-    this.arriendo.superficie = this.formArriendo.value.superficie;
-    this.arriendo.garage = this.formArriendo.value.garage;
+    this.arriendo.publicado = false;
+    this.arriendo.superficie = this.formArriendo.value.superficie === "" ? 0 : this.formArriendo.value.superficie;; 
+    this.arriendo.garage = this.formArriendo.value.garage === "" ? false : this.formArriendo.value.garage;
     this.arriendo.descArr = this.formArriendo.value.descripcion;
     this.arriendo.chechArrendar = false;
-    this.arriendo.amueblado = this.formArriendo.value.amueblado;
-    this.arriendo.mascota = this.formArriendo.value.mascotas;
+    this.arriendo.amueblado = this.formArriendo.value.amueblado === "" ? false : this.formArriendo.value.amueblado;;
+    this.arriendo.mascota = this.formArriendo.value.mascotas === "" ? false : this.formArriendo.value.mascotas;
 
     this.arriendo.detalleImagenes = []
     this.arriendo.detalleImagenes.push(this.imagen);
     
+    console.log(this.arriendo);
   }
 
   public subirImagen = (files : any) => {
