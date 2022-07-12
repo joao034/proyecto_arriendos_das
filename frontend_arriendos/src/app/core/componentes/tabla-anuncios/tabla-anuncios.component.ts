@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CargarAnunciosService } from 'src/app/services/cargar-anuncios.service';
 import { ArriendoI } from '../../../models/arriendo.interface';
 @Component({
@@ -7,28 +8,55 @@ import { ArriendoI } from '../../../models/arriendo.interface';
   styleUrls: ['./tabla-anuncios.component.css'],
 })
 export class TablaAnunciosComponent implements OnInit {
-  constructor(private apiAnuncios:CargarAnunciosService) {}
-  array:any=[];
-  ARRIENDOS!: ArriendoI[] ;
-
+  constructor(
+    private apiAnuncios: CargarAnunciosService,
+    private route: Router
+  ) {}
+  array: any = [];
+  ARRIENDOS!: ArriendoI[];
+  usuario: any;
+  idUsu: any;
+  tipoUsu: any;
   ngOnInit(): void {
-    this.cargarAnuncios();
+    this.checkLocalStorage();
   }
 
-  cargarAnuncios(){
-    this.apiAnuncios.cargarAnuncios().subscribe(anuncios=>{
-      this.array=anuncios;
-      this.ARRIENDOS=this.array;
+  cargarAnuncios(id: any, tipo: any) {
+    if(tipo==1){
+      this.apiAnuncios.cargarAnuncios().subscribe((anuncios) => {
+        this.array = anuncios;
+        this.ARRIENDOS = this.array;
+      });
+    }else{
+      this.apiAnuncios.cargarAnunciosByUser(id).subscribe((anuncios) => {
+        this.array = anuncios;
+        this.ARRIENDOS = this.array;
+      });
     }
-    )
+    
+  }
+
+  onClickNuevo() {
+    this.route.navigate(['/nuevo-arriendo']);
+  }
+
+  checkLocalStorage() {
+    if (localStorage.getItem('usuario')) {
+      this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
+      this.idUsu = this.usuario.idUsu;
+      this.tipoUsu = this.usuario.tipoUsu;
+      this.cargarAnuncios(this.idUsu, this.tipoUsu);
+    }
   }
 
   displayedColumns: string[] = [
     'idArr',
-    'tipoArr',
+    //'tipoArr',
     //'usuPro',
+    'descArr',
     'numHab',
     'numBanos',
+    'precio',
     'numPisos',
     //'numPersonas',
     //'ciudArr',
@@ -37,11 +65,8 @@ export class TablaAnunciosComponent implements OnInit {
     //'superficie',
     //'fecha',
     //'garage',
-    //'descArr',
     'chechArrendar',
-    'precio',
+    'nomCiu',
     'amueblado',
-    //'mascota'
   ];
-  //dataSource = this.ARRIENDOS;
 }
