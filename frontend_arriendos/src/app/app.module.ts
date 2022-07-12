@@ -29,6 +29,11 @@ import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anu
 import { PageNoLoginComponent } from './pages/page-no-login/page-no-login.component';
 import { NoLogComponent } from './core/componentes/no-log/no-log.component';
 
+//datepikcer
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +63,9 @@ import { NoLogComponent } from './core/componentes/no-log/no-log.component';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,    
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
