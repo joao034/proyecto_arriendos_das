@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
+import { CargarAnunciosService } from 'src/app/services/cargar-anuncios.service';
 
 @Component({
   selector: 'app-card',
@@ -15,11 +16,13 @@ export class CardComponent implements OnInit {
   
   recogerBusqueda($event:any){
     this.info = $event;
-    console.log('Hijo 2 = Info recibida => ');
-    console.log(JSON.parse(this.info));
+    this.apiAnuncios.busquedaAnuncios(this.info).subscribe(anuncios=>{
+      this.arriendos = anuncios;
+      console.log(this.arriendos);
+    });
   }
 
-  constructor(private apiArriendo : ApiArriendosService) { }
+  constructor(private apiArriendo : ApiArriendosService,private apiAnuncios:CargarAnunciosService) { }
 
   ngOnInit(): void {
     this.cargarArriendos()

@@ -58,6 +58,7 @@ export class BusquedaArriendoComponent implements OnInit {
   }
 
   onClickSearch(form:any){
+    form.mascota=form.mascota==""?false:true;
     this.busqueda.emit(JSON.stringify(form));
   }
 
