@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuarioI } from 'src/app/models/usuario.interface';
+
 import { ApiCrearUsuarioService } from 'src/app/services/api-crear-usuario.service';
 
 @Component({
@@ -27,17 +27,6 @@ export class CrearCuentaComponent implements OnInit {
     tipoUsu: new FormControl('2', Validators.required),
   });
 
-  newUser: UsuarioI = {
-    nomUsu: '',
-    apeUsu: '',
-    fechaNacUsu: new Date(Date.now()),
-    telUsu: '',
-    tel2Usu: '',
-    correoUsu: '',
-    usernameUsu: '',
-    passwordUsu: '',
-    tipoUsu: 2,    
-  }
 
 
   constructor(private route:Router, private userAPI:ApiCrearUsuarioService) { }
@@ -48,7 +37,7 @@ export class CrearCuentaComponent implements OnInit {
 
 
 
-  postForm(form: UsuarioI) {
+  postForm(form: any) {
     this.userAPI.createUser(form).subscribe(usuario => {
       console.log(usuario);
       if(usuario!=null){
