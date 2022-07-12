@@ -14,13 +14,12 @@ export interface ArriendoI{
     publicado:boolean;
     superficie:number;
     fecha:Date;
-    garage:boolean;
     descArr:string;
     chechArrendar:boolean;
     precio:number;
     amueblado:boolean;
-    garaje : boolean;
+    garage : boolean;
     mascota:boolean;
-    imagenes : FotoI[]; 
+    detalleImagenes : FotoI[]; 
     compartido : boolean;
 }

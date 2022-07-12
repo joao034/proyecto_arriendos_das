@@ -49,10 +49,11 @@
         </div>
         <input
           type="file"
+          #fileInput
           placeholder="Precio"
           formControlName="imagen"
           accept="image/png, image/jpeg"
-          (change)="capturarArchivo($event)"
+          (change)="subirImagen(fileInput.files)"
           required
         />
       </div>
@@ -134,7 +135,7 @@
     <div>
       <h2>Información extra</h2>
       <div class="m-3">
-        <mat-checkbox class="example-margin" formControlName="garaje"
+        <mat-checkbox class="example-margin" formControlName="garage"
           >Garaje</mat-checkbox
         >
       </div>

@@ -1,6 +1,7 @@
 
 
 export interface FotoI{
-    idArr : number;
-    path : string;
+    //id : number
+    //idArr : number;
+    imagenes : string;
 }

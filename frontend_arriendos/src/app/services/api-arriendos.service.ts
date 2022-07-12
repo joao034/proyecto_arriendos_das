@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ArriendoI} from '../models/arriendo.interface';
+import { FotoI } from '../models/foto.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ApiArriendosService {
     return this.http.get(`${this.url}/listaarriendos`)
   }
 
-  insertarArriendo(arriendo : ArriendoI){
+  insertarArriendo(arriendo : ArriendoI) : Observable<any>{
     return this.http.post(`${this.url}/arriendoes`, arriendo)
   }
 
@@ -27,6 +28,10 @@ export class ApiArriendosService {
 
   eliminarArriendo(){
     
+  }
+
+  subirImagen(formData: any): Observable<any>{
+    return this.http.post(`${this.url}/detalleImagenes/upload`, formData)
   }
 
 
