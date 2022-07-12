@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProvinciaI } from 'src/app/models/provincia.interface';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
@@ -14,6 +14,8 @@ export class BusquedaArriendoComponent implements OnInit {
   provincias!: ProvinciaI[];
   cantones:any=[];
   tipoArriendos:any=[];
+  @Output()
+  busqueda:EventEmitter<any>=new EventEmitter<any>();
   constructor(private apiSelects:CargarSelectsService) { }
 
   ngOnInit(): void {
@@ -22,12 +24,12 @@ export class BusquedaArriendoComponent implements OnInit {
   }
 
   busquedaForm=new FormGroup({
-    ciudad:new FormControl('',Validators.required),
-    canton:new FormControl('',Validators.required),
-    tipoArriendo:new FormControl('',Validators.required),
-    habitaciones:new FormControl('',Validators.required),
-    banios:new FormControl('',Validators.required),
-    compartido:new FormControl('',Validators.required)
+    idPro:new FormControl('',Validators.required),
+    idCiu:new FormControl('',Validators.required),
+    idTipArr:new FormControl('',Validators.required),
+    numHab:new FormControl('',Validators.required),
+    numBanos:new FormControl('',Validators.required),
+    mascota:new FormControl('',Validators.required)
   })
 
   cargarProvincias(){
@@ -55,5 +57,9 @@ export class BusquedaArriendoComponent implements OnInit {
    })
   }
 
+  onClickSearch(form:any){
+    form.mascota=form.mascota==""?false:true;
+    this.busqueda.emit(JSON.stringify(form));
+  }
 
 }
