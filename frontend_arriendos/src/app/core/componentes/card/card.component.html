@@ -2,11 +2,11 @@
   <mat-grid-tile *ngFor="let arriendo of arriendos">
     <div class="card">
       <picture>
-        <img class="imagen-card" src="/assets/casa.jpg" alt="" />
+        <img class="imagen-card" [src]="'http://localhost:26951/resources/images/' + arriendo.imagenes " alt="Imagen del arriendo" />
       </picture>
       <div class="contenido-card">
         <div class="centrado">
-          <b><h4>$ {{ arriendo.precio }}</h4></b>
+          <b><p>$ {{ arriendo.precio }}</p></b>
         </div>
         <!--Ciudad - Provincia-->
         <div class="centrado">
@@ -42,8 +42,7 @@
         </li>
       </ul>
       <div class="ver-anuncio-card">
-        <b><p *ngIf="arriendo.chechArrendar">Disponible</p></b>
-        <b><p *ngIf="!arriendo.chechArrendar">No Disponible</p></b>
+        <b><p>Superficie: {{arriendo.superficie}} m2</p></b>
         <button mat-raised-button color="primary">Ver anuncio</button>
       </div>
     </div>
