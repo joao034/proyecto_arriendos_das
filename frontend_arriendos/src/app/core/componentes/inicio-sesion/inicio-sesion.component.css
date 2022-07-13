@@ -28,11 +28,6 @@ body {
 	margin:0 auto;
 	position:relative;
 }
-#input{
-  /* Importante definir un width y un height para que no se vaya haciendo más pequeño al disminuir el tamaño */
-  width: 100%;
-  height: 50px;
-}
 
 #contact {
 	background:hsl(0, 20%, 96%);
