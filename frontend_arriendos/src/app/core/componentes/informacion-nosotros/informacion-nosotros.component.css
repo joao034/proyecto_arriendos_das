@@ -44,6 +44,7 @@
     background-position: center center;
     margin-bottom: 20px;
     margin-top: 20px;
+    filter: blur(2px);
 }
 
 .texto-info-nosotros{
