@@ -1,14 +1,21 @@
 .centrado{
     text-align: center;
+    color: #D5BDAF;
 }
 
 .centrado-vertical{
     align-items: center;
 }
 
+#contact {
+	background:hsl(0, 20%, 96%);
+	padding:25px;
+	margin:50px 0;
+}
+
 .titulo-nosotros{
     color: #D5BDAF;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: normal;
     margin-top: 10px;
 }
