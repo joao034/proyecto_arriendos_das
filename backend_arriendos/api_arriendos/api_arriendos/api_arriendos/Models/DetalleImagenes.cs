@@ -5,6 +5,7 @@ namespace Arriendos.Models
 {
     public partial class DetalleImagenes
     {
+        public int Id { get; set; }
         public int IdArr { get; set; }
         public string Imagenes { get; set; }
 
