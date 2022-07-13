@@ -34,7 +34,7 @@ export class FormularioArriendoComponent implements OnInit {
   ) {
     this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
     this.formArriendo = new FormGroup({
-      idArr : new FormControl(''),
+      //titulo: new FormControl(''),
       tipoArriendo: new FormControl('', Validators.required),
       precio: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),

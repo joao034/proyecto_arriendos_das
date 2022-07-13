@@ -22,7 +22,7 @@ export class EditArriendoComponent implements OnInit {
 
   constructor(private apiSelects : CargarSelectsService, private apiArriendo : ApiArriendosService) {
     this.formEditarArriendo = new FormGroup({
-      //titulo: new FormControl(''),
+      idArr           : new FormControl('', Validators.required),
       tipoArriendo: new FormControl('', Validators.required),
       precio: new FormControl('', Validators.required),
       descripcion: new FormControl('', Validators.required),
