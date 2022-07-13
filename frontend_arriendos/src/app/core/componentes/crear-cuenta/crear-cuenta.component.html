@@ -1,7 +1,8 @@
       <div class="container">
-          
-          <form id="contact" [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)" action="" class="form-col">
-            <h3>Crear Cuenta</h3>
+        <form id="contact">
+          <h3>Crear Cuenta</h3>
+          <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)" action="" class="form-col">
+
             <div>
               <mat-form-field appearance="outline" class="col-md-11">
                 <mat-label>Nombre</mat-label>
@@ -67,7 +68,7 @@
             <button mat-raised-button color="primary" type="submit">Crear Cuenta</button>
 
           </form>
-   
+        </form>
 
 
       </div>
