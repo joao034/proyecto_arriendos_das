@@ -33,6 +33,8 @@ import { NoLogComponent } from './core/componentes/no-log/no-log.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { PageEditarArriendoComponent } from './pages/page-editar-arriendo/page-editar-arriendo.component';
+import { EditarArriendoComponent } from './arriendos/components/editar-arriendo/editar-arriendo.component';
+import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arriendo.component';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { PageEditarArriendoComponent } from './pages/page-editar-arriendo/page-e
     PageTusAnunciosComponent,
     PageNoLoginComponent,
     NoLogComponent,
+    EditarArriendoComponent,
     PageEditarArriendoComponent,
+    EditArriendoComponent,
   ],
   imports: [
     BrowserModule,

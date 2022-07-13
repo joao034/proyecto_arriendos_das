@@ -5,13 +5,13 @@ import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
 
 @Component({
-  selector: 'app-editar-arriendo',
-  templateUrl: './editar-arriendo.component.html',
-  styleUrls: ['./editar-arriendo.component.css']
+  selector: 'app-edit-arriendo',
+  templateUrl: './edit-arriendo.component.html',
+  styleUrls: ['./edit-arriendo.component.css']
 })
-export class EditarArriendoComponent implements OnInit {
+export class EditArriendoComponent implements OnInit {
 
-  //formEditarArriendo : FormGroup
+  formEditarArriendo : FormGroup
   provincias : any = []
   tipoArriendos : any = []
   cantones : any = []
@@ -20,9 +20,31 @@ export class EditarArriendoComponent implements OnInit {
   private fileToUpload: File | undefined;
   private imagen : FotoI = {} as FotoI;
 
-  constructor(private apiSelects : CargarSelectsService, private apiArriendo : ApiArriendosService) { }
+  constructor(private apiSelects : CargarSelectsService, private apiArriendo : ApiArriendosService) {
+    this.formEditarArriendo = new FormGroup({
+      //titulo: new FormControl(''),
+      tipoArriendo: new FormControl('', Validators.required),
+      precio: new FormControl('', Validators.required),
+      descripcion: new FormControl('', Validators.required),
+      imagen: new FormControl('', Validators.required),
+      //informacion arriendo
+      numHabitaciones: new FormControl(''),
+      numBanos: new FormControl(''),
+      idProvincia: new FormControl('', Validators.required),
+      idCanton: new FormControl('', Validators.required),
+      direccion: new FormControl('', Validators.required),
+      superficie: new FormControl(''),
+      //informacion extra
+      garage: new FormControl(''),
+      amueblado: new FormControl(''),
+      mascotas: new FormControl(''),
+      //compartido: new FormControl(''),
+    });
+  }
 
   ngOnInit(): void {
+    this.cargarProvincias();
+    this.cargarTipoArriendos();
   }
 
   editarArriendo(){}
