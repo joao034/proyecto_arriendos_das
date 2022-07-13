@@ -27,5 +27,8 @@ namespace Arriendos.Models
         public string NomPro { get; set; }
         public string Usuario { get; set; }
         public string NomTipArr { get; set; }
+        public int IdCiu { get; set; }
+        public int IdPro { get; set; }
+        public string Imagenes { get; set; }
     }
 }

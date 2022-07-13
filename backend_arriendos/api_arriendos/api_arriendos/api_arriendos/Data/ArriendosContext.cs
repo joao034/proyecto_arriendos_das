@@ -275,6 +275,21 @@ namespace Arriendos.Data
                     .HasColumnType("int(11)")
                     .HasColumnName("ID_ARR");
 
+                entity.Property(e => e.IdCiu)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_CIU");
+
+                entity.Property(e => e.IdPro)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_PRO");
+
+                entity.Property(e => e.Imagenes)
+                    .IsRequired()
+                    .HasMaxLength(5000)
+                    .HasColumnName("IMAGENES")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
                 entity.Property(e => e.Mascota).HasColumnName("MASCOTA");
 
                 entity.Property(e => e.NomCiu)

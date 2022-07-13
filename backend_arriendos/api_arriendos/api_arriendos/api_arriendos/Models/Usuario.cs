@@ -13,7 +13,7 @@ namespace Arriendos.Models
         public int IdUsu { get; set; }
         public string NomUsu { get; set; }
         public string ApeUsu { get; set; }
-        public DateTime FechaNacUsu { get; set; }
+        public DateOnly FechaNacUsu { get; set; }
         public string TelUsu { get; set; }
         public string Tel2Usu { get; set; }
         public string CorreoUsu { get; set; }
