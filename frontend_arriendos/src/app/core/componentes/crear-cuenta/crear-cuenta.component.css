@@ -35,7 +35,7 @@ body {
 }
 
 #contact {
-	background:#F9F9F9;
+	background:hsl(0, 20%, 96%);
 	padding:25px;
 	margin:50px 0;
 }
@@ -47,19 +47,12 @@ body {
 	font-weight: 400;
 }
 
-#contact h4 {
-	margin:5px 0 15px;
-	display:block;
-	font-size:13px;
-}
-
-
 
 #contact button[type="submit"] {
 	cursor:pointer;
 	width:100%;
 	border:none;
-	background:#0CF;
+	background:rgb(35, 127, 150);
 	color:#FFF;
 	margin:0 0 5px;
 	padding:10px;
