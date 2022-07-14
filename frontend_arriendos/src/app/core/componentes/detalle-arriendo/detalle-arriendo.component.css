@@ -1,0 +1,123 @@
+.centrado{
+    text-align: center;
+}
+.card{
+    max-width: 300px;
+    background-color: #EDEDE9;
+    border: 1px solid #E0E0E0;
+}
+
+.info-precio-card{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.info-lugar-card{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.imagen-card{
+    max-width: 270px;
+}
+
+.iconos-card{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.iconos-card li{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.iconos-card li img{
+    flex: 0 0 50px;
+}
+.iconos-card li p{
+    font-weight: 700;
+}
+
+.ver-anuncio-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+
+.alinear-horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.alinear-vertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: auto;
+    padding-top: 10px;
+    padding-left: 10px;    
+    align-items:center;
+}
+
+.boton-favorito{
+    position: absolute;
+    top: 13%;
+    right:-4%;
+    transform: translate(-50%, -50%);
+}
+
+.contacto{
+    margin-right: 5%;
+    text-align: right;
+}
+
+.borde{
+    display: flex;
+    flex-direction: column;
+    border: 20px solid #E3D5CA;
+    padding: 10%;   
+    height: 95%; 
+    align-items: center;
+    justify-content: center;
+
+}
+
+.favorito{
+    color: #D5BDAF !important;    
+}
+
+.subtitulos{
+    font-size: 1.5rem;
+    
+}
+
+li{
+    padding: 10px;
+}
+
+.informacion{
+    font-size: 1.2rem;    
+    font-weight: bold;
+    padding: 10px;
+}
+
+.labels-info{
+    font-size: medium;
+    font-style: italic;
+}
+
+.title_center {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    color: #D5BDAF !important;    
+    font-weight: normal;
+    font-size: 2rem;
+  }

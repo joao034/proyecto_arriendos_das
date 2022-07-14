@@ -18,6 +18,7 @@
           </div>
           <div class="logueado btn btn-danger btn-round" *ngIf="!logueado">
             <p >{{this.usuario.usernameUsu}}</p>
+
             <button type="submit" (click)="onClickLogout()" >
               <mat-icon >logout</mat-icon>
             </button>

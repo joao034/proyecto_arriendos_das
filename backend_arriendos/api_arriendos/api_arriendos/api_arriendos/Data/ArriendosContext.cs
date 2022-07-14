@@ -195,14 +195,16 @@ namespace Arriendos.Data
 
             modelBuilder.Entity<DetalleImagenes>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("detalle_imagenes");
 
                 entity.HasCharSet("utf8")
                     .UseCollation("utf8_general_ci");
 
                 entity.HasIndex(e => e.IdArr, "ARRIENDO_INCORRECTO_IMG");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID");
 
                 entity.Property(e => e.IdArr)
                     .HasColumnType("int(11)")
@@ -214,7 +216,7 @@ namespace Arriendos.Data
                     .HasColumnName("IMAGENES");
 
                 entity.HasOne(d => d.IdArrNavigation)
-                    .WithMany()
+                    .WithMany(p => p.DetalleImagenes)
                     .HasForeignKey(d => d.IdArr)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ARRIENDO_INCORRECTO_IMG");
@@ -272,6 +274,21 @@ namespace Arriendos.Data
                 entity.Property(e => e.IdArr)
                     .HasColumnType("int(11)")
                     .HasColumnName("ID_ARR");
+
+                entity.Property(e => e.IdCiu)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_CIU");
+
+                entity.Property(e => e.IdPro)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_PRO");
+
+                entity.Property(e => e.Imagenes)
+                    .IsRequired()
+                    .HasMaxLength(5000)
+                    .HasColumnName("IMAGENES")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
 
                 entity.Property(e => e.Mascota).HasColumnName("MASCOTA");
 
