@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
+import { CargarAnunciosService } from 'src/app/services/cargar-anuncios.service';
 
 @Component({
   selector: 'app-card',
@@ -8,10 +9,20 @@ import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 })
 export class CardComponent implements OnInit {
 
-  arriendos : any = []
-  arriendo : string = ""
 
-  constructor(private apiArriendo : ApiArriendosService) { }
+  arriendos : any = [];
+  arriendo : string = "";
+  public info:any;
+  
+  recogerBusqueda($event:any){
+    this.info = $event;
+    this.apiAnuncios.busquedaAnuncios(this.info).subscribe(anuncios=>{
+      this.arriendos = anuncios;
+      console.log(this.arriendos);
+    });
+  }
+
+  constructor(private apiArriendo : ApiArriendosService,private apiAnuncios:CargarAnunciosService) { }
 
   ngOnInit(): void {
     this.cargarArriendos()

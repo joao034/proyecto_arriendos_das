@@ -76,8 +76,9 @@ namespace api_arriendos.Controllers
 
         // POST: api/Arriendoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //Agregar detallem 
         [HttpPost]
-        public async Task<ActionResult<Arriendo>> PostArriendo(Arriendo arriendo)
+        public async Task<ActionResult<Arriendo>> PostArriendo(Arriendo arriendo )
         {
             _context.Arriendos.Add(arriendo);
             await _context.SaveChangesAsync();

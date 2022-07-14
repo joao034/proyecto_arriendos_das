@@ -1,34 +1,60 @@
 <div class="container">
-  <form action="" enctype="multipart/form-data">
+  <form
+    action=""
+    enctype="multipart/form-data"
+    [formGroup]="formArriendo"
+    (ngSubmit)="insertarArriendo()"
+  >
     <!--Info general-->
-    <div >
+    <div>
       <h2>Información general</h2>
-      <div>
+      <!--<div>
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>Título</mat-label>
-          <input matInput placeholder="Título" />
+          <input matInput placeholder="Título" formControlName="titulo"/>
+        </mat-form-field>
+      </div>-->
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Tipo de arriendo</mat-label>
+          <mat-select formControlName="tipoArriendo">
+            <mat-option
+              *ngFor="let tipoArriendo of tipoArriendos"
+              [value]="tipoArriendo.idTipArr"
+            >
+              {{ tipoArriendo.nomTipArr }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>Precio</mat-label>
-          <input matInput placeholder="Precio" />
+          <input matInput placeholder="Precio" formControlName="precio" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field class="w-100" appearance="outline">
           <mat-label>Descripción</mat-label>
-          <textarea matInput placeholder="Descripción"></textarea>
+          <textarea
+            matInput
+            placeholder="Descripción"
+            formControlName="descripcion"
+          ></textarea>
         </mat-form-field>
       </div>
       <div>
         <div>
-          <label for="">Imagen</label>
+          <label for="">Seleccione una imagen</label>
         </div>
         <input
           type="file"
+          #fileInput
           placeholder="Precio"
+          formControlName="imagen"
           accept="image/png, image/jpeg"
+          (change)="subirImagen(fileInput.files)"
+          required
         />
       </div>
       <hr />
@@ -38,20 +64,35 @@
       <h2>Información propiedad</h2>
       <div>
         <mat-form-field appearance="outline" class="w-100">
-          <mat-label>Habitaciones</mat-label>
-          <input matInput placeholder="Habitaciones" type="number" min="0" />
+          <mat-label>Cantidad de Habitaciones</mat-label>
+          <input
+            matInput
+            placeholder="Habitaciones"
+            type="number"
+            min="0"
+            formControlName="numHabitaciones"
+          />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline" class="w-100">
-          <mat-label>Baños</mat-label>
-          <input matInput placeholder="Baños" type="number" min="0" />
+          <mat-label>Cantidad de Baños</mat-label>
+          <input
+            matInput
+            placeholder="Baños"
+            type="number"
+            min="0"
+            formControlName="numBanos"
+          />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>Provincia</mat-label>
-          <mat-select (valueChange)="onSelectedValueChange($event)">
+          <mat-select
+            (valueChange)="onSelectedValueChange($event)"
+            formControlName="idProvincia"
+          >
             <mat-option
               *ngFor="let provincia of provincias"
               [value]="provincia.idPro"
@@ -64,34 +105,64 @@
       <div>
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>Cantón</mat-label>
-          <mat-select>
+          <mat-select formControlName="idCanton">
             <mat-option *ngFor="let canton of cantones" [value]="canton.idCiu">
               {{ canton.nomCiu }}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-      <hr>
+      <div>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Dirección</mat-label>
+          <input matInput placeholder="Dirección" formControlName="direccion" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Superficie (m2)</mat-label>
+        <input
+          matInput
+          placeholder="Superficie (m2)"
+          type="number"
+          min="0"
+          formControlName="superficie"
+        />
+      </mat-form-field>
     </div>
     <!--Info extra-->
     <div>
       <h2>Información extra</h2>
       <div class="m-3">
-        <mat-checkbox class="example-margin">Garage</mat-checkbox>
+        <mat-checkbox class="example-margin" formControlName="garage"
+          >Garaje</mat-checkbox
+        >
       </div>
       <div class="m-3">
-        <mat-checkbox class="example-margin">Compartido</mat-checkbox>
+        <mat-checkbox class="example-margin" formControlName="amueblado"
+          >Amueblado</mat-checkbox
+        >
       </div>
       <div class="m-3">
-        <mat-checkbox class="example-margin">Mascotas</mat-checkbox>
+        <mat-checkbox class="example-margin" formControlName="mascotas"
+          >Mascotas</mat-checkbox
+        >
       </div>
-      <div class="m-3">
-        <mat-checkbox class="example-margin">Disponible</mat-checkbox>
-      </div>
-      <hr>
+      <!--<div class="m-3">
+        <mat-checkbox class="example-margin" formControlName="compartido"
+          >Compartido</mat-checkbox
+        >
+      </div>-->
+      <hr />
     </div>
     <div class="d-flex justify-content-end">
-      <button class="text-uppercase m-2" mat-raised-button color="primary">Crear anuncio</button>
+      <button class="text-uppercase m-2" mat-raised-button color="primary">
+        Crear anuncio
+      </button>
     </div>
   </form>
+  <div class="alert alert-success w-25" *ngIf="nuevoArriendo">
+    <p>Arriendo creado con éxito</p>
+  </div>
 </div>
