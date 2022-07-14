@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { DetalleArriendoComponent } from './core/componentes/detalle-arriendo/detalle-arriendo.component';
 import { BuscarArriendoComponent } from './pages/buscar-arriendo/buscar-arriendo.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ListaArriendosComponent } from './pages/lista-arriendos/lista-arriendos.component';
@@ -24,7 +25,9 @@ const routes: Routes = [
   {path:'buscar-arriendo',component:BuscarArriendoComponent},
   {path:'nuevo-arriendo',component:PageNuevoArriendoComponent},
   {path:'tus-anuncios',component:PageTusAnunciosComponent},
+  {path:'detalle-arriendo', component:DetalleArriendoComponent},
   {path:'editar-arriendo',component: PageEditarArriendoComponent}
+
 ];
 
 @NgModule({

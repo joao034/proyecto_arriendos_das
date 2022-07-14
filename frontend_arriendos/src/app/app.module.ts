@@ -32,9 +32,15 @@ import { NoLogComponent } from './core/componentes/no-log/no-log.component';
 //datepikcer
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+
+import { DetalleArriendoComponent } from './core/componentes/detalle-arriendo/detalle-arriendo.component';
+
+import {MatCardModule} from '@angular/material/card';
+
 import { PageEditarArriendoComponent } from './pages/page-editar-arriendo/page-editar-arriendo.component';
 import { EditarArriendoComponent } from './arriendos/components/editar-arriendo/editar-arriendo.component';
 import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arriendo.component';
+
 
 
 @NgModule({
@@ -59,6 +65,7 @@ import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arr
     PageTusAnunciosComponent,
     PageNoLoginComponent,
     NoLogComponent,
+    DetalleArriendoComponent,
     EditarArriendoComponent,
     PageEditarArriendoComponent,
     EditArriendoComponent,
@@ -71,7 +78,8 @@ import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arr
     HttpClientModule,
     ReactiveFormsModule,    
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
