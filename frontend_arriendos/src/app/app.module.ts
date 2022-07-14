@@ -32,6 +32,9 @@ import { NoLogComponent } from './core/componentes/no-log/no-log.component';
 //datepikcer
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { DetalleArriendoComponent } from './core/componentes/detalle-arriendo/detalle-arriendo.component';
+
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -56,6 +59,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     PageTusAnunciosComponent,
     PageNoLoginComponent,
     NoLogComponent,
+    DetalleArriendoComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     HttpClientModule,
     ReactiveFormsModule,    
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
