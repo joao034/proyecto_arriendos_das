@@ -65,7 +65,7 @@ import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arr
     PageTusAnunciosComponent,
     PageNoLoginComponent,
     NoLogComponent,
-    DetalleArriendoComponent
+    DetalleArriendoComponent,
     EditarArriendoComponent,
     PageEditarArriendoComponent,
     EditArriendoComponent,
