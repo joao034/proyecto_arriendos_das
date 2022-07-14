@@ -44,7 +44,16 @@
     background-position: center center;
     margin-bottom: 20px;
     margin-top: 20px;
-    filter: blur(2px);
+}
+
+.imagen-info2{
+    background-image:url(/assets/fondoborroso.jpg);
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .texto-info-nosotros{
