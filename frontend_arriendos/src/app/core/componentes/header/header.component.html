@@ -1,18 +1,24 @@
 <header class="header">
   <div class="container">
     <div class="barra">
-      <a href="/">Logo</a>
+      <a class="btn btn-danger btn-round" href="/">Logo</a>
       <nav class="navegacion">
-        <a href="/">Favoritos</a>
-        <a href="/tus-anuncios">Tus anuncios</a>
-        <a href="/buscar-arriendo">Buscar</a>
+        <div>
+          <a class="btn btn-danger btn-round" href="/">Favoritos</a>
+          <a>ㅤ</a>
+          <a class="btn btn-danger btn-round" href="/tus-anuncios">Tus anuncios</a>
+          <a>ㅤ</a>
+          <a class="btn btn-danger btn-round" href="/buscar-arriendo">Buscar</a>
+        </div>
         <div>
           <div *ngIf="logueado">
-            <div><a href="/login">Iniciar Sesión</a></div>
-            <div><a href="/signin">Crear Cuenta</a></div>
+            <div><a class="btn btn-danger btn-round" href="/login">Iniciar Sesión</a></div>
+            <hr color="black">
+            <div><a class="btn btn-danger btn-round" href="/signin">Crear Cuenta</a></div>
           </div>
-          <div class="logueado" *ngIf="!logueado">
-            <p >{{usuario.usernameUsu}}</p>
+          <div class="logueado btn btn-danger btn-round" *ngIf="!logueado">
+            <p >{{this.usuario.usernameUsu}}</p>
+
             <button type="submit" (click)="onClickLogout()" >
               <mat-icon >logout</mat-icon>
             </button>
@@ -22,6 +28,6 @@
     </div>
   </div>
   <div class="header__texto">
-    <h1>Consigue la casa o el negocio de tus sueños</h1>
+    <h1><b>La casa o el negocio de tus sueños</b></h1>
   </div>
 </header>
