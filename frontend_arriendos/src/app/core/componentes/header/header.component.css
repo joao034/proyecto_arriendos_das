@@ -1,5 +1,5 @@
 .header{
-    background-image:url(/assets/hero_2.jpg);
+    background-image:url(/assets/opcion3Casa.jpeg);
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,29 +38,29 @@
     margin-bottom: 0;
   }
   .btn-danger {
-    background-color: #f5593d;
-    border-color: #f5593d;
+    background-color: #D5BDAF;
+    border-color: #D5BDAF;
     color: #FFFFFF;
     opacity: 1;
     filter: alpha(opacity=100);
   }
   .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .show > .btn-danger.dropdown-toggle {
-    background-color: #f33816;
+    background-color: grey;
     color: #FFFFFF;
-    border-color: #f33816;
+    border-color: grey;
   }
   .btn-danger .caret {
     border-top-color: #FFFFFF;
   }
   .btn-danger.btn-link {
-    color: #f5593d;
+    color: grey;
   }
   .btn-danger.btn-link:hover, .btn-danger.btn-link:focus, .btn-danger.btn-link:active, .btn-danger.btn-link.active, .open > .btn-danger.btn-link.dropdown-toggle {
     background-color: transparent;
-    color: #f33816;
+    color: grey;
   }
   .btn-danger.btn-link .caret {
-    border-top-color: #f5593d;
+    border-top-color: grey;
   }
   .btn-danger .caret {
     border-top-color: #FFFFFF;
