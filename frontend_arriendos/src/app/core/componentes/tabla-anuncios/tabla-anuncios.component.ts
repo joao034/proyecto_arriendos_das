@@ -49,6 +49,10 @@ export class TablaAnunciosComponent implements OnInit {
     }
   }
 
+  redireccionEditar(id : any) {
+    this.route.navigate(['/editar-arriendo/', id]);
+  }
+
   displayedColumns: string[] = [
     'idArr',
     //'tipoArr',

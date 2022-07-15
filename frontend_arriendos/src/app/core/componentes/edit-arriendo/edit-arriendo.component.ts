@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { FotoI } from 'src/app/models/foto.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
@@ -11,47 +13,60 @@ import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
 })
 export class EditArriendoComponent implements OnInit {
 
-  formEditarArriendo : FormGroup
+  formEditarArriendo : FormGroup = new FormGroup({});
   provincias : any = []
   tipoArriendos : any = []
   cantones : any = []
 
-  nuevoArriendo : boolean = false
+  arriendoEditado : boolean = false
   private fileToUpload: File | undefined;
   private imagen : FotoI = {} as FotoI;
+  private idArriendo : any;
+  private arriendo : any
+  
 
-  constructor(private apiSelects : CargarSelectsService, private apiArriendo : ApiArriendosService) {
-    this.formEditarArriendo = new FormGroup({
-      idArr           : new FormControl('', Validators.required),
-      tipoArriendo: new FormControl('', Validators.required),
-      precio: new FormControl('', Validators.required),
-      descripcion: new FormControl('', Validators.required),
-      imagen: new FormControl('', Validators.required),
-      //informacion arriendo
-      numHabitaciones: new FormControl(''),
-      numBanos: new FormControl(''),
-      idProvincia: new FormControl('', Validators.required),
-      idCanton: new FormControl('', Validators.required),
-      direccion: new FormControl('', Validators.required),
-      superficie: new FormControl(''),
-      //informacion extra
-      garage: new FormControl(''),
-      amueblado: new FormControl(''),
-      mascotas: new FormControl(''),
-      //compartido: new FormControl(''),
-    });
+  constructor(private apiSelects : CargarSelectsService, 
+              private apiArriendo : ApiArriendosService, 
+              private activatedRoute : ActivatedRoute,
+              private router : Router) {
+
+    //capturo el id del arriendo que se quiere editar
+    this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
+
+    this.obtenerArriendoPorId(this.idArriendo);
+
+    this.crearFormulario();
+    
   }
 
   ngOnInit(): void {
     this.cargarProvincias();
     this.cargarTipoArriendos();
+    this.cargarCantones();
   }
 
-  editarArriendo(){}
+  editarArriendo(){
+    this.inicializarDatos();
+    console.log(this.arriendo);
+    this.apiArriendo.editarArriendo(this.idArriendo, this.arriendo).subscribe((res) => {
+      console.log(res);
+      if(res == null){
+        this.arriendoEditado = true;
+        alert('Arriendo editado correctamente');
+        this.router.navigate(['/tus-anuncios']);
+      }
+    });
+  }
 
   cargarProvincias() {
     this.apiSelects.cargarProvincias().subscribe((provincias) => {
       this.provincias = provincias;
+    });
+  }
+
+  cargarCantones(){
+    this.apiSelects.cargarCantones().subscribe((cantones) => {
+      this.cantones = cantones;
     });
   }
 
@@ -84,4 +99,78 @@ export class EditArriendoComponent implements OnInit {
     });
   };
 
+  obtenerArriendoPorId(id : number){
+    this.apiArriendo.obtenerArriendoPorId(id).subscribe((arriendo) => {
+      this.arriendo = arriendo;
+      this.setearDatosFormulario();
+    });
+
+  }
+
+  crearFormulario(){
+    this.formEditarArriendo = new FormGroup({
+      idArr : new FormControl('', Validators.required),
+      tipoArriendo: new FormControl('', Validators.required),
+      precio: new FormControl('', Validators.required),
+      descripcion: new FormControl('', Validators.required),
+      //imagen: new FormControl('', Validators.required),
+      //informacion arriendo
+      numHabitaciones: new FormControl(''),
+      numBanos: new FormControl(''),
+      idProvincia: new FormControl('', Validators.required),
+      idCanton: new FormControl('', Validators.required),
+      direccion: new FormControl('', Validators.required),
+      superficie: new FormControl(''),
+      //informacion extra
+      garage: new FormControl(''),
+      amueblado: new FormControl(''),
+      mascotas: new FormControl(''),
+      //compartido: new FormControl(''),
+    });
+  }
+
+  setearDatosFormulario(){
+    this.formEditarArriendo.setValue({
+      idArr : this.arriendo.idArr,
+      tipoArriendo: this.arriendo.tipoArr,
+      precio: this.arriendo.precio,
+      descripcion: this.arriendo.descArr,
+      //imagen: this.arriendo.imagenes,
+      //informacion arriendo
+      numHabitaciones: this.arriendo.numHab,
+      numBanos: this.arriendo.numBanos,
+      idProvincia: this.arriendo.idPro,
+      idCanton: this.arriendo.ciudArr,
+      direccion: this.arriendo.dirArr,
+      superficie: this.arriendo.superficie,
+      //informacion extra
+      garage: this.arriendo.garage,
+      amueblado: this.arriendo.amueblado,
+      mascotas: this.arriendo.mascota,
+    });
+    console.log(this.arriendo.tipoArr);
+  }
+
+
+  inicializarDatos(){
+    this.arriendo.tipoArr = this.formEditarArriendo.value.tipoArriendo;
+    this.arriendo.precio = this.formEditarArriendo.value.precio;
+    this.arriendo.numHab = this.formEditarArriendo.value.numHabitaciones;
+    this.arriendo.numBanos = this.formEditarArriendo.value.numBanos;
+    this.arriendo.ciudArr = this.formEditarArriendo.value.idCanton;
+    this.arriendo.dirArr = this.formEditarArriendo.value.direccion;
+    this.arriendo.superficie = this.formEditarArriendo.value.superficie === "" ? 0 : this.formEditarArriendo.value.superficie;; 
+    this.arriendo.garage = this.formEditarArriendo.value.garage === "" ? false : this.formEditarArriendo.value.garage;
+    this.arriendo.descArr = this.formEditarArriendo.value.descripcion;
+    this.arriendo.amueblado = this.formEditarArriendo.value.amueblado === "" ? false : this.formEditarArriendo.value.amueblado;;
+    this.arriendo.mascota = this.formEditarArriendo.value.mascotas === "" ? false : this.formEditarArriendo.value.mascotas;
+
+    //this.arriendo.detalleImagenes = []
+    //this.arriendo.detalleImagenes.push(this.imagen);
+    
+  }
+  
+
+
+  
 }

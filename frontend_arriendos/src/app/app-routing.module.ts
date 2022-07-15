@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:'nuevo-arriendo',component:PageNuevoArriendoComponent},
   {path:'tus-anuncios',component:PageTusAnunciosComponent},
   {path:'detalle-arriendo', component:DetalleArriendoComponent},
-  {path:'editar-arriendo',component: PageEditarArriendoComponent}
+  {path:'editar-arriendo/:id',component: PageEditarArriendoComponent}
 
 ];
 
