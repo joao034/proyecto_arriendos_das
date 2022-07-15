@@ -58,8 +58,8 @@
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let element">
         <div class="acciones m-2">
-          <button class="w-50" mat-raised-button color="primary" (click)="redireccionEditar(element.idArr)">Editar</button>
-          <button class="w-50" mat-raised-button color="warn">Eliminar</button>
+          <button class="w-60" mat-raised-button color="primary" (click)="redireccionEditar(element.idArr)">Editar</button>
+          <button class="w-60" mat-raised-button color="warn" (click)="eliminarArriendo(element.idArr)">Eliminar</button>
         </div>
       </td>
     </ng-container>
