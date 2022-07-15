@@ -39,11 +39,12 @@ namespace api_arriendos.Controllers
         [HttpPost("busqueda")]
         public async Task<ActionResult<IEnumerable<ListaArriendo>>> PostArriendosSearch(ListaArriendo busqueda)
         {
-            var anuncios = await _context.ListaArriendos.Where(anuncios => anuncios.CiudArr==busqueda.CiudArr && 
-            anuncios.TipoArr == busqueda.TipoArr &&
-            anuncios.NumHab==busqueda.NumHab &&
-            anuncios.NumBanos==busqueda.NumBanos &&
-            anuncios.Mascota == busqueda.Mascota).ToListAsync();
+            var anuncios = await _context.ListaArriendos.Where(anuncios => (busqueda.IdPro!=0?anuncios.IdPro == busqueda.IdPro:true) &&
+            (busqueda.IdCiu != 0 ? anuncios.IdCiu == busqueda.IdCiu : true) &&
+            (busqueda.TipoArr !=0 ? anuncios.TipoArr == busqueda.TipoArr:true) &&
+            (busqueda.NumHab != 0 ? anuncios.NumHab == busqueda.NumHab:true) &&
+            (busqueda.NumBanos!=0? anuncios.NumBanos == busqueda.NumBanos:true) &&
+            (busqueda.Mascota!=false ? anuncios.Mascota == busqueda.Mascota:true)).ToListAsync();
             return anuncios;
         }
 
