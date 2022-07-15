@@ -40,6 +40,8 @@ import {MatCardModule} from '@angular/material/card';
 import { PageEditarArriendoComponent } from './pages/page-editar-arriendo/page-editar-arriendo.component';
 import { EditarArriendoComponent } from './arriendos/components/editar-arriendo/editar-arriendo.component';
 import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arriendo.component';
+import { EditarUsuarioComponent } from './core/componentes/editar-usuario/editar-usuario.component';
+import { PageEditarUsuarioComponent } from './pages/page-editar-usuario/page-editar-usuario.component';
 
 
 
@@ -69,6 +71,8 @@ import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arr
     EditarArriendoComponent,
     PageEditarArriendoComponent,
     EditArriendoComponent,
+    EditarUsuarioComponent,
+    PageEditarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
