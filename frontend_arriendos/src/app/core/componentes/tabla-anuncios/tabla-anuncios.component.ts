@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 import { CargarAnunciosService } from 'src/app/services/cargar-anuncios.service';
 import { ArriendoI } from '../../../models/arriendo.interface';
 @Component({
@@ -10,13 +11,16 @@ import { ArriendoI } from '../../../models/arriendo.interface';
 export class TablaAnunciosComponent implements OnInit {
   constructor(
     private apiAnuncios: CargarAnunciosService,
-    private route: Router
+    private route: Router,
+    private apiArriendos : ApiArriendosService
   ) {}
+  
   array: any = [];
   ARRIENDOS!: ArriendoI[];
   usuario: any;
   idUsu: any;
   tipoUsu: any;
+
   ngOnInit(): void {
     this.checkLocalStorage();
   }
@@ -51,6 +55,19 @@ export class TablaAnunciosComponent implements OnInit {
 
   redireccionEditar(id : any) {
     this.route.navigate(['/editar-arriendo/', id]);
+  }
+
+  eliminarArriendo(id: number){
+    if(confirm('¿Está seguro de eliminar el arriendo?')){
+      this.apiArriendos.eliminarArriendo(id).subscribe((res)=>{ 
+        if(res == null){
+          alert('Arriendo eliminado');
+          this.cargarAnuncios(this.idUsu, this.tipoUsu);
+        }
+        
+      } );
+    }
+    
   }
 
   displayedColumns: string[] = [

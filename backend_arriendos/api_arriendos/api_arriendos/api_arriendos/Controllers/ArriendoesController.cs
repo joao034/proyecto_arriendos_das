@@ -96,6 +96,10 @@ namespace api_arriendos.Controllers
                 return NotFound();
             }
 
+            var imagen = await _context.DetalleImagenes.Where( imagen => (imagen.IdArr.Equals(arriendo.IdArr))).FirstOrDefaultAsync();
+            _context.DetalleImagenes.Remove(imagen);
+            await _context.SaveChangesAsync();
+
             _context.Arriendos.Remove(arriendo);
             await _context.SaveChangesAsync();
 

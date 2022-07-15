@@ -48,6 +48,13 @@ namespace api_arriendos.Controllers
             return anuncios;
         }
 
+        [HttpGet("idArriendo/{id}")]
+        public async Task<ActionResult<ListaArriendo>> GetArriendo(int id)
+        {
+            var arriendo = await _context.ListaArriendos.Where(arriendo => arriendo.IdArr == id).FirstAsync();
+            return arriendo;
+        }
+
     }
 }
 
