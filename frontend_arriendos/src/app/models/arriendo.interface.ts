@@ -20,6 +20,7 @@ export interface ArriendoI{
     amueblado:boolean;
     garage : boolean;
     mascota:boolean;
+    idPro:number;
 
     detalleImagenes : FotoI[]; 
     compartido : boolean;

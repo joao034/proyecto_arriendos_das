@@ -1,5 +1,5 @@
 import { Component, OnInit,EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ProvinciaI } from 'src/app/models/provincia.interface';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
 
@@ -24,12 +24,12 @@ export class BusquedaArriendoComponent implements OnInit {
   }
 
   busquedaForm=new FormGroup({
-    idPro:new FormControl('',Validators.required),
-    idCiu:new FormControl('',Validators.required),
-    idTipArr:new FormControl('',Validators.required),
-    numHab:new FormControl('',Validators.required),
-    numBanos:new FormControl('',Validators.required),
-    mascota:new FormControl('',Validators.required)
+    idPro:new FormControl(''),
+    idCiu:new FormControl(''),
+    idTipArr:new FormControl(''),
+    numHab:new FormControl(''),
+    numBanos:new FormControl(''),
+    mascota:new FormControl('')
   })
 
   cargarProvincias(){
@@ -59,6 +59,12 @@ export class BusquedaArriendoComponent implements OnInit {
 
   onClickSearch(form:any){
     form.mascota=form.mascota==""?false:true;
+    form.numHab=form.numHab==""?0:form.numHab;
+    form.numBanos=form.numBanos==""?0:form.numBanos;
+    form.idTipArr=form.idTipArr==""?0:form.idTipArr;
+    form.idCiu=form.idCiu==""?0:form.idCiu;
+    form.idPro=form.idPro==""?0:form.idPro;
+    //console.log(form);
     this.busqueda.emit(JSON.stringify(form));
   }
 

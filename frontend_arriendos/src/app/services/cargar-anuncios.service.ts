@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +21,8 @@ export class CargarAnunciosService {
       tipoArr: y['idTipArr'],
       numHab: y['numHab'],
       numBanos: y['numBanos'],
-      ciudArr: y['idCiu'],
+      idCiu: y['idCiu'],
+      idPro: y['idPro'],
       mascota: y['mascota'],
     };
     return this.http.post(

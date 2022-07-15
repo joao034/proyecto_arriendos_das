@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
     this.info = $event;
     this.apiAnuncios.busquedaAnuncios(this.info).subscribe(anuncios=>{
       this.arriendos = anuncios;
-      console.log(this.arriendos);
+      //console.log(this.arriendos);
     });
   }
 
