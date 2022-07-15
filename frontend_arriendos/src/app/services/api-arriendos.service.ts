@@ -21,8 +21,8 @@ export class ApiArriendosService {
     return this.http.post(`${this.url}/arriendoes`, arriendo)
   }
 
-  editarArriendo(){
-    
+  editarArriendo(id: number, arriendo: ArriendoI): Observable<any>{
+    return this.http.put(`${this.url}/arriendoes/${id}`, arriendo)
   }
 
   eliminarArriendo(){
@@ -33,5 +33,8 @@ export class ApiArriendosService {
     return this.http.post(`${this.url}/detalleImagenes/upload`, formData)
   }
 
+  obtenerArriendoPorId(id : number): Observable<any>{
+    return this.http.get(`${this.url}/arriendoes/${id}`)
+  }
 
 }

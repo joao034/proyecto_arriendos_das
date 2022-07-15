@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { FotoI } from 'src/app/models/foto.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
@@ -19,8 +20,16 @@ export class EditArriendoComponent implements OnInit {
   nuevoArriendo : boolean = false
   private fileToUpload: File | undefined;
   private imagen : FotoI = {} as FotoI;
+  private idArriendo : any;
+  
 
-  constructor(private apiSelects : CargarSelectsService, private apiArriendo : ApiArriendosService) {
+  constructor(private apiSelects : CargarSelectsService, 
+              private apiArriendo : ApiArriendosService, 
+              private activatedRoute : ActivatedRoute) {
+
+    //capturo el id del arriendo que se quiere editar
+    this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
+
     this.formEditarArriendo = new FormGroup({
       idArr           : new FormControl('', Validators.required),
       tipoArriendo: new FormControl('', Validators.required),
@@ -45,6 +54,7 @@ export class EditArriendoComponent implements OnInit {
   ngOnInit(): void {
     this.cargarProvincias();
     this.cargarTipoArriendos();
+    this.obtenerArriendoPorId(this.idArriendo);
   }
 
   editarArriendo(){}
@@ -83,5 +93,12 @@ export class EditArriendoComponent implements OnInit {
       console.log(this.fileToUpload?.name)
     });
   };
+
+  obtenerArriendoPorId(id : number){
+    this.apiArriendo.obtenerArriendoPorId(id).subscribe((arriendo) => {
+      console.log(arriendo)
+    });
+
+  }
 
 }
