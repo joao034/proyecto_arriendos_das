@@ -13,7 +13,7 @@ export interface ArriendoI{
     dirArr:string;
     publicado:boolean;
     superficie:number;
-    fecha:Date;
+    fecha:Date|string;
     descArr:string;
     chechArrendar:boolean;
     precio:number;
