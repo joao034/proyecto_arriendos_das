@@ -35,10 +35,9 @@ const routes: Routes = [
   {path:'tus-anuncios',component:PageTusAnunciosComponent},
   {path:'detalle-arriendo', component:DetalleArriendoComponent},
   {path:'editar-arriendo/:id',component: PageEditarArriendoComponent},
-
+  
   {path:'editar-usuario',component:PageEditarUsuarioComponent},
   {path:'usuarios', component:PageMostrarUsuariosComponent},
-
 
   {path:'reportes',component:PageReportesComponent},
   {path:'reportes/mes',component:PageMesComponent},

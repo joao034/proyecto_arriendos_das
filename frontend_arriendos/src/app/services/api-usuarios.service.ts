@@ -24,4 +24,9 @@ export class ApiUsuariosService {
     return this.http.get(`${this.url}/usuarios/${id}`)
   }
 
+  eliminarUsuario(id : number){
+    return this.http.delete(`${this.url}/usuarios/${id}`)
+  }
+
+
 }
