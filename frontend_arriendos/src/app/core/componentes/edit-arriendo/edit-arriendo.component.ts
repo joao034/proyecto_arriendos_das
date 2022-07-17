@@ -23,7 +23,7 @@ export class EditArriendoComponent implements OnInit {
   private imagen : FotoI = {} as FotoI;
   private idArriendo : any;
   private arriendo : any
-  
+  tituloPublicar : string = ""
 
   constructor(private apiSelects : CargarSelectsService, 
               private apiArriendo : ApiArriendosService, 
@@ -32,11 +32,10 @@ export class EditArriendoComponent implements OnInit {
 
     //capturo el id del arriendo que se quiere editar
     this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
-
     this.obtenerArriendoPorId(this.idArriendo);
-
-    this.crearFormulario();
     
+    this.crearFormulario();
+
   }
 
   ngOnInit(): void {
@@ -102,6 +101,8 @@ export class EditArriendoComponent implements OnInit {
   obtenerArriendoPorId(id : number){
     this.apiArriendo.obtenerArriendoPorId(id).subscribe((arriendo) => {
       this.arriendo = arriendo;
+      this.arriendo.publicado = arriendo.publicado;
+      this.arriendo.publicado == true ? this.tituloPublicar = 'Despublicar' : this.tituloPublicar = 'Publicar';
       this.setearDatosFormulario();
     });
 
@@ -170,7 +171,15 @@ export class EditArriendoComponent implements OnInit {
     
   }
   
-
+  publicarODespublicarArriendo(){
+    this.arriendo.publicado = !this.arriendo.publicado;
+    this.apiArriendo.editarArriendo(this.idArriendo, this.arriendo).subscribe((res) => {
+      if(res == null){
+        this.arriendo.publicado == true ? alert('Arriendo publicado') : alert('Arriendo despublicado');
+        this.router.navigate(['/tus-anuncios']);
+      }
+    });
+  }
 
   
 }
