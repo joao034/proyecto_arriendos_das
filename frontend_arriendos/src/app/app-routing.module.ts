@@ -38,7 +38,7 @@ const routes: Routes = [
   
   {path:'editar-usuario',component:PageEditarUsuarioComponent},
   {path:'usuarios', component:PageMostrarUsuariosComponent},
-  
+
   {path:'reportes',component:PageReportesComponent},
   {path:'reportes/mes',component:PageMesComponent},
   {path:'reportes/tipo',component:PageTipoComponent}
