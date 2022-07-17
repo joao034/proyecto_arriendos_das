@@ -10,9 +10,8 @@
     [formGroup]="busquedaForm"
     class="d-flex justify-content-around compartido"
     (ngSubmit)="onClickSearch(busquedaForm.value)"
-    
   >
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Provincia</mat-label>
       <mat-select (valueChange)="onSelectedValueChange($event)" formControlName="idPro">
         <mat-option
@@ -23,7 +22,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Cantón</mat-label>
       <mat-select formControlName="idCiu">
         <mat-option *ngFor="let canton of cantones" [value]="canton.idCiu">
@@ -31,7 +30,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Tipo arriendo</mat-label>
       <mat-select formControlName="idTipArr">
         <mat-option *ngFor="let tipo of tipoArriendos" [value]="tipo.idTipArr">
@@ -39,7 +38,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Habitaciones</mat-label>
       <input
         matInput
@@ -50,7 +49,7 @@
         formControlName="numHab"
       />
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Baños</mat-label>
       <input matInput type="number" placeholder="Baños" value="" min="0" formControlName="numBanos" />
     </mat-form-field>
