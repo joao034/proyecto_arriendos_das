@@ -26,7 +26,7 @@ namespace api_arriendos.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ListaArriendo>>> GetArriendos()
         {
-            return await _context.ListaArriendos.ToListAsync();
+            return await _context.ListaArriendos.Where(anuncios => anuncios.Publicado == true).ToListAsync();
         }
 
         [HttpGet("{id}")]
@@ -44,7 +44,8 @@ namespace api_arriendos.Controllers
             (busqueda.TipoArr !=0 ? anuncios.TipoArr == busqueda.TipoArr:true) &&
             (busqueda.NumHab != 0 ? anuncios.NumHab == busqueda.NumHab:true) &&
             (busqueda.NumBanos!=0? anuncios.NumBanos == busqueda.NumBanos:true) &&
-            (busqueda.Mascota!=false ? anuncios.Mascota == busqueda.Mascota:true)).ToListAsync();
+            (busqueda.Mascota!=false ? anuncios.Mascota == busqueda.Mascota:true) &&
+            anuncios.Publicado == true).ToListAsync();
             return anuncios;
         }
 

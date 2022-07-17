@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,11 @@ namespace api_arriendos
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
+            services.AddSwaggerGen(c =>
+           {
+               c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+           });
+
             services.Configure<FormOptions>(o =>
            {
                o.ValueLengthLimit = int.MaxValue;
@@ -69,7 +75,7 @@ namespace api_arriendos
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
                 RequestPath = new PathString("/Resources")
-            }); 
+            });
 
             app.UseRouting();
 
@@ -78,6 +84,13 @@ namespace api_arriendos
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
         }
     }
