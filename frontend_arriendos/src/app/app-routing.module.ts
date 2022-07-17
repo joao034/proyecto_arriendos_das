@@ -7,6 +7,7 @@ import { ListaArriendosComponent } from './pages/lista-arriendos/lista-arriendos
 import { LoginComponent } from './pages/login/login.component';
 import { PageEditarArriendoComponent } from './pages/page-editar-arriendo/page-editar-arriendo.component';
 import { PageEditarUsuarioComponent } from './pages/page-editar-usuario/page-editar-usuario.component';
+import { PageMostrarUsuariosComponent } from './pages/page-mostrar-usuarios/page-mostrar-usuarios.component';
 import { PageNuevoArriendoComponent } from './pages/page-nuevo-arriendo/page-nuevo-arriendo.component';
 import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anuncios.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'tus-anuncios',component:PageTusAnunciosComponent},
   {path:'detalle-arriendo', component:DetalleArriendoComponent},
   {path:'editar-arriendo/:id',component: PageEditarArriendoComponent},
-  {path:'editar-usuario',component:PageEditarUsuarioComponent}
+  {path:'editar-usuario',component:PageEditarUsuarioComponent},
+  {path:'usuarios', component:PageMostrarUsuariosComponent}
 
 ];
 

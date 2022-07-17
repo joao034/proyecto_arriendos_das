@@ -42,6 +42,9 @@ import { EditarArriendoComponent } from './arriendos/components/editar-arriendo/
 import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arriendo.component';
 import { EditarUsuarioComponent } from './core/componentes/editar-usuario/editar-usuario.component';
 import { PageEditarUsuarioComponent } from './pages/page-editar-usuario/page-editar-usuario.component';
+import { PageMostrarUsuariosComponent } from './pages/page-mostrar-usuarios/page-mostrar-usuarios.component';
+import { TablaUsuariosComponent } from './core/componentes/tabla-usuarios/tabla-usuarios.component';
+
 
 
 
@@ -73,6 +76,8 @@ import { PageEditarUsuarioComponent } from './pages/page-editar-usuario/page-edi
     EditArriendoComponent,
     EditarUsuarioComponent,
     PageEditarUsuarioComponent,
+    PageMostrarUsuariosComponent,
+    TablaUsuariosComponent,    
   ],
   imports: [
     BrowserModule,
