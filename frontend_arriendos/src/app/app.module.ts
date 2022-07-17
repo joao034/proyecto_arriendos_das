@@ -42,6 +42,10 @@ import { EditarArriendoComponent } from './arriendos/components/editar-arriendo/
 import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arriendo.component';
 import { ReportesComponent } from './core/componentes/reportes/reportes.component';
 import { PageReportesComponent } from './pages/page-reportes/page-reportes.component';
+import { MesComponent } from './core/componentes/mes/mes.component';
+import { TipoComponent } from './core/componentes/tipo/tipo.component';
+import { PageMesComponent } from './pages/page-mes/page-mes.component';
+import { PageTipoComponent } from './pages/page-tipo/page-tipo.component';
 
 
 
@@ -73,6 +77,10 @@ import { PageReportesComponent } from './pages/page-reportes/page-reportes.compo
     EditArriendoComponent,
     ReportesComponent,
     PageReportesComponent,
+    MesComponent,
+    TipoComponent,
+    PageMesComponent,
+    PageTipoComponent,
   ],
   imports: [
     BrowserModule,
