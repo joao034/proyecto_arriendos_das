@@ -11,3 +11,28 @@ table {
 .centrado{
   text-align: center;
 }
+
+#btnEditar{
+  background-color: #E3D5CA;
+  color: black;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 3px;
+}
+
+#btnEliminar{
+  background-color: #D19E78;
+  color: black;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 3px;
+}
+
+th{
+  background-color: #E3D5CA;
+  color: black;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+}
