@@ -53,6 +53,7 @@ import { MesComponent } from './core/componentes/mes/mes.component';
 import { TipoComponent } from './core/componentes/tipo/tipo.component';
 import { PageMesComponent } from './pages/page-mes/page-mes.component';
 import { PageTipoComponent } from './pages/page-tipo/page-tipo.component';
+import { PageFavoritosComponent } from './pages/page-favoritos/page-favoritos.component';
 
 
 
@@ -95,6 +96,7 @@ import { PageTipoComponent } from './pages/page-tipo/page-tipo.component';
     TipoComponent,
     PageMesComponent,
     PageTipoComponent,
+    PageFavoritosComponent,
 
   ],
   imports: [
