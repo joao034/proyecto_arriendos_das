@@ -22,6 +22,10 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Ciudads
+        /// <summary>
+        ///  Devuelve lista de ciudades
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Ciudad>>> GetCiudades()
         {
@@ -29,6 +33,10 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Ciudads/5
+        /// <summary>
+        ///  Devuelve una ciudad por su id 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Ciudad>> GetCiudad(int id)
         {
@@ -43,6 +51,10 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Ciudads/provinciaCiudad/5
+        /// <summary>
+        ///  Devuelve todas las ciudades que pertenecen a una provincia
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("provincia/{id}")]
         public async Task<ActionResult<IEnumerable<Ciudad>>> GetProvinciaCiudad(int id)
         {
@@ -58,6 +70,10 @@ namespace api_arriendos.Controllers
 
 
         // PUT: api/Ciudads/5
+        /// <summary>
+        ///  Modifica una ciudad
+        /// </summary>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCiudad(int id, Ciudad ciudad)
@@ -89,6 +105,10 @@ namespace api_arriendos.Controllers
         }
 
         // POST: api/Ciudads
+        /// <summary>
+        ///  Inserta una nueva ciudad
+        /// </summary>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Ciudad>> PostCiudad(Ciudad ciudad)
@@ -100,6 +120,10 @@ namespace api_arriendos.Controllers
         }
 
         // DELETE: api/Ciudads/5
+        /// <summary>
+        ///  Elimina una ciudad por el id
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCiudad(int id)
         {
