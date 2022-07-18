@@ -22,6 +22,12 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Usuarios
+        // GET: api/Arriendoes/5
+        /// <summary>
+        /// Retorna la lista de usuarios
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
@@ -29,6 +35,11 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Usuarios/5
+        /// <summary>
+        /// Retorna un usuario por su id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
@@ -43,6 +54,11 @@ namespace api_arriendos.Controllers
         }
 
         // PUT: api/Usuarios/5
+        /// <summary>
+        /// Modifica un usuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
@@ -74,6 +90,11 @@ namespace api_arriendos.Controllers
         }
 
         // POST: api/Usuarios
+        /// <summary>
+        /// Inserta un nuevo usuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
@@ -85,6 +106,11 @@ namespace api_arriendos.Controllers
         }
 
         // DELETE: api/Usuarios/5
+        /// <summary>
+        /// Elimana un usuario por su id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {
@@ -105,6 +131,11 @@ namespace api_arriendos.Controllers
             return _context.Usuarios.Any(e => e.IdUsu == id);
         }
 
+        /// <summary>
+        /// Login de usuario necesario usuario y contraseña 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost("Login")]
 
         public async Task<ActionResult<Usuario>> PostLogin(Usuario usuario)

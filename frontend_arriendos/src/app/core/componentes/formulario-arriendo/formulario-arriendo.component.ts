@@ -100,8 +100,7 @@ export class FormularioArriendoComponent implements OnInit {
     this.apiArriendo.insertarArriendo(this.arriendo).subscribe((arriendo) => {
       if(arriendo != null){
         this.nuevoArriendo = true;
-        //Redireccionar a la arriendos publicados por el usuario
-        this.router.navigate(['/arriendos']);
+        this.router.navigate(['/tus-anuncios']);
       }
     });
   }
@@ -121,7 +120,7 @@ export class FormularioArriendoComponent implements OnInit {
     this.arriendo.numBanos = this.formArriendo.value.numBanos;
     this.arriendo.ciudArr = this.formArriendo.value.idCanton;
     this.arriendo.dirArr = this.formArriendo.value.direccion;
-    this.arriendo.publicado = false;
+    this.arriendo.publicado = true;
     this.arriendo.superficie = this.formArriendo.value.superficie === "" ? 0 : this.formArriendo.value.superficie;; 
     this.arriendo.garage = this.formArriendo.value.garage === "" ? false : this.formArriendo.value.garage;
     this.arriendo.descArr = this.formArriendo.value.descripcion;
