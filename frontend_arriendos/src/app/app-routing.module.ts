@@ -17,6 +17,8 @@ import { PageReportesComponent } from './pages/page-reportes/page-reportes.compo
 import { PageTipoComponent } from './pages/page-tipo/page-tipo.component';
 import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anuncios.component';
 import { SiginComponent } from './pages/sigin/sigin.component';
+import { GuardGuard } from './guard.guard';
+import { PageFavoritosComponent } from './pages/page-favoritos/page-favoritos.component';
 
 const routes: Routes = [
   {path:'',component:LandingPageComponent},
@@ -29,20 +31,44 @@ const routes: Routes = [
     component: ListaArriendosComponent,
     loadChildren: () =>
       import('./arriendos/arriendos.module').then((m) => m.ArriendosModule),
+      canActivate:[GuardGuard],
   },
   {path:'buscar-arriendo',component:BuscarArriendoComponent},
-  {path:'nuevo-arriendo',component:PageNuevoArriendoComponent},
-  {path:'tus-anuncios',component:PageTusAnunciosComponent},
-  {path:'detalle-arriendo', component:DetalleArriendoComponent},
-  {path:'editar-arriendo/:id',component: PageEditarArriendoComponent},
+  {path:'nuevo-arriendo',
+  component:PageNuevoArriendoComponent,
+  canActivate:[GuardGuard]},
   
-  {path:'editar-usuario',component:PageEditarUsuarioComponent},
+  {path:'tus-anuncios',
+  component:PageTusAnunciosComponent,
+  canActivate:[GuardGuard],
+
+},
+  {path:'detalle-arriendo', component:DetalleArriendoComponent},
+  {path:'editar-arriendo/:id',
+  component: PageEditarArriendoComponent,
+  canActivate:[GuardGuard]},
+  
+  {path:'editar-usuario',
+  component:PageEditarUsuarioComponent,
+  canActivate:[GuardGuard]},
   {path:'usuarios', component:PageMostrarUsuariosComponent},
 
-  {path:'reportes',component:PageReportesComponent},
-  {path:'reportes/mes',component:PageMesComponent},
-  {path:'reportes/tipo',component:PageTipoComponent}
+  {path:'reportes',
+  component:PageReportesComponent,
+  canActivate:[GuardGuard],},
 
+  {path:'reportes/mes',
+  component:PageMesComponent,
+  canActivate:[GuardGuard],},
+
+  {path:'reportes/tipo',
+  component:PageTipoComponent,
+  canActivate:[GuardGuard],},
+
+  {path:'favoritos',
+   component: PageFavoritosComponent,
+   canActivate:[GuardGuard],
+  }
 ];
 
 @NgModule({

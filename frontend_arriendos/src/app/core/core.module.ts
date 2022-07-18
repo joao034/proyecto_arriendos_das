@@ -7,8 +7,6 @@ import { DetalleArriendoComponent } from './componentes/detalle-arriendo/detalle
 
 @NgModule({
   declarations: [
-  
-    DetalleArriendoComponent
   ],
   imports: [CommonModule, 
     MaterialModule,
