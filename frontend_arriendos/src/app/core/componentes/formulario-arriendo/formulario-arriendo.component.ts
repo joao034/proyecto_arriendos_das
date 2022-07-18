@@ -100,8 +100,7 @@ export class FormularioArriendoComponent implements OnInit {
     this.apiArriendo.insertarArriendo(this.arriendo).subscribe((arriendo) => {
       if(arriendo != null){
         this.nuevoArriendo = true;
-        //Redireccionar a la arriendos publicados por el usuario
-        this.router.navigate(['/arriendos']);
+        this.router.navigate(['/tus-anuncios']);
       }
     });
   }
