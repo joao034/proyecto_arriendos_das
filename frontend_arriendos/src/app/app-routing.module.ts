@@ -36,7 +36,7 @@ const routes: Routes = [
   {path:'detalle-arriendo', component:DetalleArriendoComponent},
   {path:'editar-arriendo/:id',component: PageEditarArriendoComponent},
   
-  {path:'editar-usuario',component:PageEditarUsuarioComponent},
+  {path:'editar-usuario/:id',component:PageEditarUsuarioComponent},
   {path:'usuarios', component:PageMostrarUsuariosComponent},
 
   {path:'reportes',component:PageReportesComponent},
