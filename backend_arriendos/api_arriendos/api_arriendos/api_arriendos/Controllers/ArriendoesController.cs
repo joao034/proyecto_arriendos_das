@@ -23,6 +23,10 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Arriendoes
+        /// <summary>
+        /// Retorna la lista de arriendos
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Arriendo>>> GetArriendos()
         {
@@ -30,6 +34,11 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Arriendoes/5
+        /// <summary>
+        /// Retorna un arriendo por su id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<Arriendo>> GetArriendo(int id)
         {
@@ -44,6 +53,10 @@ namespace api_arriendos.Controllers
         }
 
         // PUT: api/Arriendoes/5
+        /// <summary>
+        /// Modifica un arriendo
+        /// </summary>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArriendo(int id, Arriendo arriendo)
@@ -75,6 +88,10 @@ namespace api_arriendos.Controllers
         }
 
         // POST: api/Arriendoes
+        /// <summary>
+        /// Inserta un nuevo arriendo
+        /// </summary>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         //Agregar detallem 
         [HttpPost]
@@ -87,6 +104,10 @@ namespace api_arriendos.Controllers
         }
 
         // DELETE: api/Arriendoes/5
+        /// <summary>
+        ///  Elimina un arriendo por el id
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteArriendo(int id)
         {

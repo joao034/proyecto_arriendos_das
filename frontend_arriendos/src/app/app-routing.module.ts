@@ -48,9 +48,11 @@ const routes: Routes = [
   component: PageEditarArriendoComponent,
   canActivate:[GuardGuard]},
   
+
   {path:'editar-usuario',
   component:PageEditarUsuarioComponent,
   canActivate:[GuardGuard]},
+
   {path:'usuarios', component:PageMostrarUsuariosComponent},
 
   {path:'reportes',
