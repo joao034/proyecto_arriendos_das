@@ -45,6 +45,7 @@ export class TablaUsuariosComponent implements OnInit {
     this.route.navigate(['/editar-usuario/', id]);
   }
 
+  // metodo para eliminar usuario
   eliminarUsuario(id: number){
     if(confirm('¿Está seguro de eliminar el usuario?')){
       this.apiUsuario.eliminarUsuario(id).subscribe((res)=>{ 
