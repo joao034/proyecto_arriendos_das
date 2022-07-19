@@ -30,9 +30,7 @@ namespace Arriendos.Models
         public int IdCiu { get; set; }
         public int IdPro { get; set; }
         public string Imagenes { get; set; }
-
-        public string CorreoUsu { get; set; }
-
         public string TelUsu { get; set; }
+        public string CorreoUsu { get; set; }
     }
 }

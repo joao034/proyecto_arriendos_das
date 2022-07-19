@@ -7,7 +7,9 @@ namespace Arriendos.Models
     {
         public Arriendo()
         {
+            Calificaciones = new HashSet<Calificaciones>();
             DetalleImagenes = new HashSet<DetalleImagenes>();
+            MisFavoritos = new HashSet<MisFavorito>();
         }
 
         public int IdArr { get; set; }
@@ -32,6 +34,8 @@ namespace Arriendos.Models
         public virtual Ciudad CiudArrNavigation { get; set; }
         public virtual TipoArriendo TipoArrNavigation { get; set; }
         public virtual Usuario UsuProNavigation { get; set; }
+        public virtual ICollection<Calificaciones> Calificaciones { get; set; }
         public virtual ICollection<DetalleImagenes> DetalleImagenes { get; set; }
+        public virtual ICollection<MisFavorito> MisFavoritos { get; set; }
     }
 }

@@ -8,12 +8,14 @@ namespace Arriendos.Models
         public Usuario()
         {
             Arriendos = new HashSet<Arriendo>();
+            Calificaciones = new HashSet<Calificaciones>();
+            MisFavoritos = new HashSet<MisFavorito>();
         }
 
         public int IdUsu { get; set; }
         public string NomUsu { get; set; }
         public string ApeUsu { get; set; }
-        public DateTime FechaNacUsu { get; set; }
+        public DateOnly FechaNacUsu { get; set; }
         public string TelUsu { get; set; }
         public string Tel2Usu { get; set; }
         public string CorreoUsu { get; set; }
@@ -23,5 +25,7 @@ namespace Arriendos.Models
 
         public virtual TipoUsuario TipoUsuNavigation { get; set; }
         public virtual ICollection<Arriendo> Arriendos { get; set; }
+        public virtual ICollection<Calificaciones> Calificaciones { get; set; }
+        public virtual ICollection<MisFavorito> MisFavoritos { get; set; }
     }
 }

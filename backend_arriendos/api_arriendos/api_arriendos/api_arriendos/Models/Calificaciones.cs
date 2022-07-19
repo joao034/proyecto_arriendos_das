@@ -13,5 +13,6 @@ namespace Arriendos.Models
         public int Calificacion { get; set; }
 
         public virtual Usuario IdUsuNavigation { get; set; }
+        public virtual Arriendo IdArrNavigation{ get; set; }
     }
 }

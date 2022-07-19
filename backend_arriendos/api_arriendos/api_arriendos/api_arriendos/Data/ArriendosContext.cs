@@ -28,10 +28,11 @@ namespace Arriendos.Data
         public virtual DbSet<TipoArriendo> TipoArriendos { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<VistaCalificacione> VistaCalificaciones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.UseCollation("utf8mb4_general_ci")
+            modelBuilder.UseCollation("utf8mb4_unicode_ci")
                 .HasCharSet("utf8mb4");
 
             modelBuilder.Entity<Arriendo>(entity =>
@@ -137,32 +138,37 @@ namespace Arriendos.Data
 
             modelBuilder.Entity<Calificaciones>(entity =>
             {
-                entity.HasKey(e => e.Id)
-                     .HasName("PRIMARY");
-
                 entity.ToTable("calificaciones");
 
                 entity.HasCharSet("utf8")
                     .UseCollation("utf8_general_ci");
 
+                entity.HasIndex(e => e.IdArr, "Id_Arr");
+
                 entity.HasIndex(e => e.IdUsu, "USER_INCORRECTO");
 
-                entity.HasIndex(e => e.IdArr, "ARRIENDO_INCORRECTO_FAV");
-
-                entity.Property(e => e.IdArr)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("ID_ARR");
+                entity.Property(e => e.Id).HasColumnType("int(11)");
 
                 entity.Property(e => e.Calificacion)
                     .HasColumnType("int(11)")
                     .HasColumnName("CALIFICACION");
 
+                entity.Property(e => e.IdArr)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("Id_Arr");
+
                 entity.Property(e => e.IdUsu)
                     .HasColumnType("int(11)")
                     .HasColumnName("ID_USU");
 
+                entity.HasOne(d => d.IdArrNavigation)
+                    .WithMany(p => p.Calificaciones)
+                    .HasForeignKey(d => d.IdArr)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("calificaciones_ibfk_1");
+
                 entity.HasOne(d => d.IdUsuNavigation)
-                    .WithMany()
+                    .WithMany(p => p.Calificaciones)
                     .HasForeignKey(d => d.IdUsu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("USER_INCORRECTO");
@@ -236,6 +242,8 @@ namespace Arriendos.Data
 
                 entity.ToTable("__efmigrationshistory");
 
+                entity.UseCollation("utf8mb4_general_ci");
+
                 entity.Property(e => e.MigrationId).HasMaxLength(150);
 
                 entity.Property(e => e.ProductVersion)
@@ -256,6 +264,13 @@ namespace Arriendos.Data
                 entity.Property(e => e.CiudArr)
                     .HasColumnType("int(11)")
                     .HasColumnName("CIUD_ARR");
+
+                entity.Property(e => e.CorreoUsu)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("CORREO_USU")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
 
                 entity.Property(e => e.DescArr)
                     .IsRequired()
@@ -297,11 +312,6 @@ namespace Arriendos.Data
                     .UseCollation("utf8_general_ci")
                     .HasCharSet("utf8");
 
-                entity.Property(e => e.TelUsu)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("TEL_USU");
-
                 entity.Property(e => e.Mascota).HasColumnName("MASCOTA");
 
                 entity.Property(e => e.NomCiu)
@@ -310,11 +320,6 @@ namespace Arriendos.Data
                     .HasColumnName("NOM_CIU")
                     .UseCollation("utf8_general_ci")
                     .HasCharSet("utf8");
-
-                entity.Property(e => e.CorreoUsu)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("CORREO_USU");
 
                 entity.Property(e => e.NomPro)
                     .IsRequired()
@@ -356,6 +361,13 @@ namespace Arriendos.Data
                     .HasPrecision(10, 2)
                     .HasColumnName("SUPERFICIE");
 
+                entity.Property(e => e.TelUsu)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("TEL_USU")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
                 entity.Property(e => e.TipoArr)
                     .HasColumnType("int(11)")
                     .HasColumnName("TIPO_ARR");
@@ -375,9 +387,6 @@ namespace Arriendos.Data
 
             modelBuilder.Entity<MisFavorito>(entity =>
             {
-                entity.HasKey(e => e.Id)
-                    .HasName("PRIMARY");
-
                 entity.ToTable("mis_favoritos");
 
                 entity.HasCharSet("utf8")
@@ -387,6 +396,10 @@ namespace Arriendos.Data
 
                 entity.HasIndex(e => e.IdUsu, "USER_INCORRECTO_FAV");
 
+                entity.Property(e => e.Id).HasColumnType("int(11)");
+
+                entity.Property(e => e.Estado).HasColumnName("estado");
+
                 entity.Property(e => e.IdArr)
                     .HasColumnType("int(11)")
                     .HasColumnName("ID_ARR");
@@ -395,16 +408,14 @@ namespace Arriendos.Data
                     .HasColumnType("int(11)")
                     .HasColumnName("ID_USU");
 
-                entity.Property(e => e.Estado).HasColumnName("ESTADO");
-
                 entity.HasOne(d => d.IdArrNavigation)
-                    .WithMany()
+                    .WithMany(p => p.MisFavoritos)
                     .HasForeignKey(d => d.IdArr)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ARRIENDO_INCORRECTO_FAV");
 
                 entity.HasOne(d => d.IdUsuNavigation)
-                    .WithMany()
+                    .WithMany(p => p.MisFavoritos)
                     .HasForeignKey(d => d.IdUsu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("USER_INCORRECTO_FAV");
@@ -542,6 +553,53 @@ namespace Arriendos.Data
                     .HasForeignKey(d => d.TipoUsu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("TIPO_USER_INCORRECTO");
+            });
+
+            modelBuilder.Entity<VistaCalificacione>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vista_calificaciones");
+
+                entity.Property(e => e.ApeUsu)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("APE_USU")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.DescArr)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .HasColumnName("DESC_ARR")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.DirArr)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .HasColumnName("DIR_ARR")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID");
+
+                entity.Property(e => e.IdArr)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_ARR");
+
+                entity.Property(e => e.IdUsu)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_USU");
+
+                entity.Property(e => e.NomUsu)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("NOM_USU")
+                    .UseCollation("utf8_general_ci")
+                    .HasCharSet("utf8");
             });
 
             OnModelCreatingPartial(modelBuilder);
