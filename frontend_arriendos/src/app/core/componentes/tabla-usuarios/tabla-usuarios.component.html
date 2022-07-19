@@ -1,0 +1,70 @@
+<br>
+<br>
+<div style="background-color:black; height: 70px;">
+  <br>
+  <h1 style="color: #D5BDAF; text-align: center;">Usuarios</h1>
+</div>
+<br>
+<div class="container">  
+  <table mat-table [dataSource]="USUARIOS" class="mat-elevation-z8 mt-3 mb-3">
+    
+    <ng-container matColumnDef="idUsu">
+      <th mat-header-cell *matHeaderCellDef>Id.</th>
+      <td mat-cell *matCellDef="let element">{{ element.idUsu }}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="nomUsu">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let element">{{ element.nomUsu }}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="apeUsu">
+      <th mat-header-cell *matHeaderCellDef >Apellido</th>
+      <td mat-cell *matCellDef="let element" >{{ element.apeUsu }}</td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="fechaNacUsu" >
+      <th mat-header-cell *matHeaderCellDef >Fecha de Nacimiento</th>
+      <td mat-cell *matCellDef="let element" >{{element.fechaNacUsu | date:'mediumDate'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="telUsu" >
+      <th mat-header-cell *matHeaderCellDef >Teléfono</th>
+      <td mat-cell *matCellDef="let element" >{{ element.telUsu }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tel2Usu" >
+      <th mat-header-cell *matHeaderCellDef >Segundo Teléfono</th>
+      <td mat-cell *matCellDef="let element" >{{ element.tel2Usu }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="correoUsu" >
+      <th mat-header-cell *matHeaderCellDef >E-mail</th>
+      <td  class="p-3" mat-cell *matCellDef="let element">
+        {{ element.correoUsu }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="usernameUsu" >
+      <th mat-header-cell *matHeaderCellDef >Nombre de Usuario</th>
+      <td  mat-cell *matCellDef="let element" >{{ element.usernameUsu}}</td>
+    </ng-container>
+
+    <!-- Botones para acciones -->
+    <ng-container matColumnDef="acciones" >
+      <th mat-header-cell *matHeaderCellDef ></th>
+      <td mat-cell *matCellDef="let element" >
+        <div class="acciones m-2">
+          <button id="btnEditar" class="w-60" mat-raised-button color="primary" (click)="redireccionEditar(element.idUsu)">Editar</button>
+          <button id="btnEliminar" class="w-60" mat-raised-button color="warn" (click)="eliminarUsuario(element.idUsu)" >Eliminar</button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  </table>
+</div>

@@ -40,12 +40,21 @@ import {MatCardModule} from '@angular/material/card';
 import { PageEditarArriendoComponent } from './pages/page-editar-arriendo/page-editar-arriendo.component';
 import { EditarArriendoComponent } from './arriendos/components/editar-arriendo/editar-arriendo.component';
 import { EditArriendoComponent } from './core/componentes/edit-arriendo/edit-arriendo.component';
+
+import { EditarUsuarioComponent } from './core/componentes/editar-usuario/editar-usuario.component';
+import { PageEditarUsuarioComponent } from './pages/page-editar-usuario/page-editar-usuario.component';
+import { PageMostrarUsuariosComponent } from './pages/page-mostrar-usuarios/page-mostrar-usuarios.component';
+import { TablaUsuariosComponent } from './core/componentes/tabla-usuarios/tabla-usuarios.component';
+
+
 import { ReportesComponent } from './core/componentes/reportes/reportes.component';
 import { PageReportesComponent } from './pages/page-reportes/page-reportes.component';
 import { MesComponent } from './core/componentes/mes/mes.component';
 import { TipoComponent } from './core/componentes/tipo/tipo.component';
 import { PageMesComponent } from './pages/page-mes/page-mes.component';
 import { PageTipoComponent } from './pages/page-tipo/page-tipo.component';
+import { PageFavoritosComponent } from './pages/page-favoritos/page-favoritos.component';
+
 
 
 
@@ -75,12 +84,20 @@ import { PageTipoComponent } from './pages/page-tipo/page-tipo.component';
     EditarArriendoComponent,
     PageEditarArriendoComponent,
     EditArriendoComponent,
+
+    EditarUsuarioComponent,
+    PageEditarUsuarioComponent,
+    PageMostrarUsuariosComponent,
+    TablaUsuariosComponent,    
+
     ReportesComponent,
     PageReportesComponent,
     MesComponent,
     TipoComponent,
     PageMesComponent,
     PageTipoComponent,
+    PageFavoritosComponent,
+
   ],
   imports: [
     BrowserModule,

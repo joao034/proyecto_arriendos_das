@@ -24,6 +24,10 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/DetalleImagenes
+        /// <summary>
+        ///  Devuelve la lista detalle de imagenes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DetalleImagenes>>> GetDetalleImagenes()
         {
@@ -31,6 +35,10 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/DetalleImagenes/5
+        /// <summary>
+        ///  Devuelve un detalle de imagen por su id
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<DetalleImagenes>> GetDetalleImagenes(int id)
         {
@@ -45,6 +53,10 @@ namespace api_arriendos.Controllers
         }
 
         // PUT: api/DetalleImagenes/5
+        /// <summary>
+        ///  Modifica un detalle de imagen
+        /// </summary>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDetalleImagenes(int id, DetalleImagenes detalleImagenes)
@@ -76,6 +88,10 @@ namespace api_arriendos.Controllers
         }
 
         // POST: api/DetalleImagenes
+        /// <summary>
+        ///  Inserta un nuevo detalle de imagen 
+        /// </summary>
+        /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<DetalleImagenes>> PostDetalleImagenes(DetalleImagenes detalleImagenes)
@@ -86,6 +102,10 @@ namespace api_arriendos.Controllers
             return CreatedAtAction("GetDetalleImagenes", new { id = detalleImagenes.Id }, detalleImagenes);
         }
 
+        /// <summary>
+        ///  Elimina un detalle de imagen por el id
+        /// </summary>
+        /// <returns></returns>
         // DELETE: api/DetalleImagenes/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDetalleImagenes(int id)
@@ -107,6 +127,10 @@ namespace api_arriendos.Controllers
             return _context.DetalleImagenes.Any(e => e.Id == id);
         }
 
+        /// <summary>
+        ///  Metodo para subir una imagen
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("upload"), DisableRequestSizeLimit]
         public IActionResult Upload()
         {

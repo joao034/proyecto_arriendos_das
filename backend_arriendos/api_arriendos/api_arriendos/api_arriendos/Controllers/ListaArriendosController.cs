@@ -23,12 +23,20 @@ namespace api_arriendos.Controllers
         }
 
         // GET: api/Arriendoes
+        /// <summary>
+        ///  Devuelve la vista de lista de arriendos
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ListaArriendo>>> GetArriendos()
         {
-            return await _context.ListaArriendos.ToListAsync();
+            return await _context.ListaArriendos.Where(anuncios => anuncios.Publicado == true).ToListAsync();
         }
 
+        /// <summary>
+        ///  Obtiene un arriendo de la vista de lista de arriendos por usuario
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<ListaArriendo>>> GetArriendosByIdUser(int id)
         {
@@ -36,6 +44,10 @@ namespace api_arriendos.Controllers
             return anuncios;
         }
 
+        /// <summary>
+        ///  Devuelve una lista de arriendos por parametros de busqueda
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("busqueda")]
         public async Task<ActionResult<IEnumerable<ListaArriendo>>> PostArriendosSearch(ListaArriendo busqueda)
         {
@@ -44,10 +56,15 @@ namespace api_arriendos.Controllers
             (busqueda.TipoArr !=0 ? anuncios.TipoArr == busqueda.TipoArr:true) &&
             (busqueda.NumHab != 0 ? anuncios.NumHab == busqueda.NumHab:true) &&
             (busqueda.NumBanos!=0? anuncios.NumBanos == busqueda.NumBanos:true) &&
-            (busqueda.Mascota!=false ? anuncios.Mascota == busqueda.Mascota:true)).ToListAsync();
+            (busqueda.Mascota!=false ? anuncios.Mascota == busqueda.Mascota:true) &&
+            anuncios.Publicado == true).ToListAsync();
             return anuncios;
         }
 
+        /// <summary>
+        ///  Devuelve un arriendo por su id
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("idArriendo/{id}")]
         public async Task<ActionResult<ListaArriendo>> GetArriendo(int id)
         {
