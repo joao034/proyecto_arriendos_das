@@ -25,9 +25,10 @@ No requiere una instalación específica se maneja mediante el link de acceso.
 ## Construido con 🛠️
 
 
-* [Angular](https://angular.io/start) - El framework web usado
-* [TypeScript](https://www.typescriptlang.org/) 
-
+* [Angular](https://angular.io/start) - Frontend
+* [TypeScript](https://www.typescriptlang.org/) -Lenguaje
+* [.Net Core api de C#](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio) -Backend
+* [MYSQL](https://www.mysql.com/) -Base de Datos
 ## Versionado 📌
 
 Usamos [GitHub](https://github.com/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/joao034/proyecto_arriendos_das).
