@@ -9,6 +9,8 @@ namespace Arriendos.Models
         public int IdArr { get; set; }
         public int IdUsu { get; set; }
 
+        public bool Estado { get; set; }
+
         public virtual Arriendo IdArrNavigation { get; set; }
         public virtual Usuario IdUsuNavigation { get; set; }
     }
