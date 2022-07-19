@@ -1,6 +1,9 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
+import { CargarAnunciosService } from 'src/app/services/cargar-anuncios.service';
 
 @Component({
   selector: 'app-detalle-arriendo',
@@ -9,39 +12,29 @@ import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 })
 export class DetalleArriendoComponent implements OnInit {
 
-  arriendos : any = []
-  arriendo : string = ""
-  rowHeight!: string;
+  
+  idArriendo:any;
+  array: any = [];  
+  
 
-  constructor(private apiArriendo : ApiArriendosService,private breakpointObserver: BreakpointObserver) { }
+  constructor(private apiArriendo : ApiArriendosService, private route:Router, private activateRoute:ActivatedRoute) {
+
+   }
 
   ngOnInit(): void {
-    this.rowHeight = '80vh';
-    this.cargarArriendos()
-    this.detectBreakpoint()
+    this.idArriendo=this.activateRoute.snapshot.paramMap.get('id');
+    this.cargarArriendos(this.idArriendo)
   }
 
-  cargarArriendos(){
-    this.apiArriendo.listarArriendos().subscribe(
-      (data) => {
-        this.arriendos = data
-        console.log(this.arriendos)
-      },
-      (error) => {
-        console.log(error);
+
+  cargarArriendos(id:number){
+    this.apiArriendo.obtenerArriendoPorId(id).subscribe((data) => {
+        this.array = data;               
       }
     );
   }
 
-  
-
-
-  private detectBreakpoint(): void {
-    this.breakpointObserver.observe(['(max-width: 500px)']).subscribe(result => {
-      this.rowHeight = result.matches ? '100vh' : '80vh';
-    });
-  }
-
-
-
 }
+
+
+  

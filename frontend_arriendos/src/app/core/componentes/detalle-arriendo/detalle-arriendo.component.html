@@ -11,23 +11,23 @@
     </mat-card-header>
     <mat-card-content>
         <mat-grid-list cols="3"  rowHeight="550px">
-            <mat-grid-tile>
+            <mat-grid-tile >
                 <div class="borde">
                     <label class="labels-info" for="">                        
                         Nombre del propietario:
-                        <p class="informacion">Juan Perez</p>
+                        <p class="informacion"> {{array.usuario}}</p>
                     </label>
                     <label class="labels-info" for="">
                         Teléfono del propietario:
-                        <p class="informacion" >0984512632</p>
+                        <p class="informacion" ></p>
                     </label>
                     <label class="labels-info" for="">
                         Dirección del propietario
-                        <p class="informacion">Ambato</p>
+                        <p class="informacion">{{array.dirArr}}</p>
                     </label>
                     <label class="labels-info" for="">
                         Correo Electrónico del propietario
-                        <p class="informacion">pansitas.2001@gmail.com</p>
+                        <p class="informacion"></p>
                     </label>
                 </div>
             </mat-grid-tile>
@@ -35,7 +35,7 @@
             <mat-grid-tile>
                 <picture>
                     <div class="alinear-vertical">
-                        <img style="width: 95%;" src="/assets/casa.jpg">
+                        <img class="imagen-card" [src]="'http://localhost:26951/resources/images/' + array.imagenes " alt="Imagen del arriendo" /> 
                         <button class="boton-favorito" mat-fab color="white">
                             <mat-icon>favorite</mat-icon>
                         </button>
@@ -50,40 +50,40 @@
             </mat-grid-tile>
 
             <mat-grid-tile >
-                <div class="borde" *ngFor="let arriendo of arriendos">
-                    <h1>Arriendos Disponibles</h1>
+                <div class="borde">
+                    <h1>ARRIENDOS Disponibles</h1>
                     <div class="centrado">
                         <b>
-                            <h4>$ {{ arriendo.precio }}</h4>
+                            <h4>$ {{ array.precio }}</h4>
                         </b>
                     </div>
 
                     <div class="centrado">
-                        <h4> Descripción: {{ arriendo.descArr }}</h4>
+                        <h4> Descripción: {{ array.descArr }}</h4>
                     </div>
 
                     <ul class="iconos-card">
                         <li>
                             <img src="/assets/cuartos.png" alt="" />
-                            <p>{{ arriendo.numHab }}</p>
+                            <p>{{ array.numHab }}</p>
                         </li>
                         <li>
                             <img src="/assets/toilet.png" alt="" />
-                            <p>{{ arriendo.numBanos }}</p>
+                            <p>{{ array.numBanos }}</p>
                         </li>
                         <li>
                             <img src="/assets/garage.png" alt="" />
-                            <mat-icon *ngIf="arriendo.garage" > check </mat-icon>                            
+                            <mat-icon *ngIf="array.garage" > check </mat-icon>                            
                         </li>
                     </ul>
 
-                    <p class="centrado"> Tipo Arriendo: <b>{{arriendo.nomTipArr}}</b></p>
+                    <p class="centrado"> Tipo Arriendo: <b>{{array.nomTipArr}}</b></p>
 
 
 
                     <div class="centrado">
-                        <label for="">{{ arriendo.nomCiu }}</label> -
-                        <label for="">{{ arriendo.nomPro }}</label>
+                        <label for="">{{ array.nomCiu }}</label> -
+                        <label for="">{{ array.nomPro }}</label>
                     </div>
 
 
@@ -92,23 +92,23 @@
                     <div class="centrado">
                         <label for="">
                             Mascotas
-                            <mat-icon *ngIf="arriendo.numPersonas>1"> check </mat-icon>
+                            <mat-icon *ngIf="array.mascota"> check </mat-icon>
                         </label>
                     </div>
 
                     <div class="centrado">
                         <label>
                             Compartido
-                            <mat-icon *ngIf="arriendo.numPersonas>1"> check </mat-icon>
+                            <mat-icon *ngIf="array.numPersonas>1"> check </mat-icon>
                         </label>
                     </div>
 
                     <div class="centrado">
                         <b>
-                            <p *ngIf="arriendo.chechArrendar">Disponible</p>
+                            <p *ngIf="array.publicado">Disponible</p>
                         </b>
                         <b>
-                            <p *ngIf="!arriendo.chechArrendar">No Disponible</p>
+                            <p *ngIf="!array.publicado">No Disponible</p>
                         </b>
                     </div>
 
