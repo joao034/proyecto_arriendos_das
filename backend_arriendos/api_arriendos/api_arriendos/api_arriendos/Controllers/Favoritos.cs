@@ -50,6 +50,25 @@ namespace api_arriendos.Controllers
             return favorito;
         }
 
+        // GET: api/Favoritos/idUsuario/1
+        /// <summary>
+        ///  Devuelve la lista de favoritos de un usuario
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("idUsuario/{id}")]
+        public async Task<ActionResult<IEnumerable<MisFavorito>>> GetFavoritoByUser(int id)
+        {
+            var favorito = await _context.MisFavoritos.Where(f => f.IdUsu == id && f.Estado == true).ToListAsync();
+
+            if (favorito == null)
+            {
+                return NotFound();
+            }
+
+            return favorito;
+        }
+
+
         // POST: api/favoritos
         /// <summary>
         ///  Inserta un nuevo arriendo favorito
@@ -57,12 +76,16 @@ namespace api_arriendos.Controllers
         /// <returns></returns>
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Ciudad>> PostFavorito(MisFavorito favorito)
+        public async Task<ActionResult<MisFavorito>> PostFavorito(MisFavorito favorito)
         {
-            _context.MisFavoritos.Add(favorito);
-            await _context.SaveChangesAsync();
+            if (!ExisteFavorito(favorito.IdArr, favorito.IdUsu)) {
+                _context.MisFavoritos.Add(favorito);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("GetFavorito", new { id = favorito.Id }, favorito);
+            }
 
-            return CreatedAtAction("GetFavorito", new { id = favorito.Id }, favorito);
+            return null;
+            
         }
 
         // DELETE: api/Favoritos/5
@@ -84,6 +107,13 @@ namespace api_arriendos.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("Existe")]
+        private bool ExisteFavorito(int idArr, int idUsu)
+        {
+            return _context.MisFavoritos.Any(e => e.IdArr == idArr && e.IdUsu == idUsu);
+        }
+
 
 
 

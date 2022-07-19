@@ -290,6 +290,11 @@ namespace Arriendos.Data
                     .UseCollation("utf8_general_ci")
                     .HasCharSet("utf8");
 
+                entity.Property(e => e.TelUsu)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("TEL_USU");
+
                 entity.Property(e => e.Mascota).HasColumnName("MASCOTA");
 
                 entity.Property(e => e.NomCiu)
@@ -298,6 +303,11 @@ namespace Arriendos.Data
                     .HasColumnName("NOM_CIU")
                     .UseCollation("utf8_general_ci")
                     .HasCharSet("utf8");
+
+                entity.Property(e => e.CorreoUsu)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("CORREO_USU");
 
                 entity.Property(e => e.NomPro)
                     .IsRequired()
@@ -377,6 +387,8 @@ namespace Arriendos.Data
                 entity.Property(e => e.IdUsu)
                     .HasColumnType("int(11)")
                     .HasColumnName("ID_USU");
+
+                entity.Property(e => e.Estado).HasColumnName("ESTADO");
 
                 entity.HasOne(d => d.IdArrNavigation)
                     .WithMany()
