@@ -49,7 +49,7 @@ const routes: Routes = [
   canActivate:[GuardGuard]},
   
 
-  {path:'editar-usuario',
+  {path:'editar-usuario/:id',
   component:PageEditarUsuarioComponent,
   canActivate:[GuardGuard]},
 

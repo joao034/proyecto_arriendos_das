@@ -31,6 +31,8 @@ export class EditarUsuarioComponent implements OnInit {
   this.crearFormulario();
 }
 
+
+
 ngOnInit(): void {
   
 }
@@ -60,7 +62,7 @@ ngOnInit(): void {
 
   obtenerUsuarioPorId(id:any){
     this.apiUsuario.obtenerUsuarioPorId(id).subscribe((res) => {
-      this.usuario = res;
+      this.usuario = res;      
       this.editForm.setValue({
         nomUsu: this.usuario.nomUsu,
         apeUsu: this.usuario.apeUsu,
@@ -80,7 +82,7 @@ ngOnInit(): void {
     this.editForm = new FormGroup({
       nomUsu: new FormControl('', Validators.required),
       apeUsu: new FormControl('', Validators.required),
-      fechaNacUsu: new FormControl('', Validators.required),
+      fechaNacUsu: new FormControl('',Validators.required),
       telUsu: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(this.mobNumberPattern)]),
       tel2Usu: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(this.mobNumberPattern)]),
       correoUsu: new FormControl('', [Validators.required, Validators.email]),
