@@ -5,6 +5,7 @@ namespace Arriendos.Models
 {
     public partial class MisFavorito
     {
+        public int Id { get; set; }
         public int IdArr { get; set; }
         public int IdUsu { get; set; }
 
