@@ -4,10 +4,22 @@ table {
 
 .acciones{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 3px;
 }
 
 .centrado{
   text-align: center;
+}
+
+.botones{
+  display: flex;
+  flex-direction: column;
+}
+
+.calificacion{
+  width: 160px;
+  height: auto;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }

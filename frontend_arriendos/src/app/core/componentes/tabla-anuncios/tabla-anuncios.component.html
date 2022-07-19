@@ -56,10 +56,13 @@
 
     <ng-container matColumnDef="amueblado">
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
-      <td mat-cell *matCellDef="let element">
+      <td class="botones" mat-cell *matCellDef="let element">
         <div class="acciones m-2">
           <button class="w-60" mat-raised-button color="primary" (click)="redireccionEditar(element.idArr)">Editar</button>
           <button class="w-60" mat-raised-button color="warn" (click)="eliminarArriendo(element.idArr)">Eliminar</button>
+        </div>
+        <div>
+          <button class="calificacion" mat-raised-button color="primary" (click)="redireccionCalificaciones(element.idArr)">Calificaciones</button>
         </div>
       </td>
     </ng-container>

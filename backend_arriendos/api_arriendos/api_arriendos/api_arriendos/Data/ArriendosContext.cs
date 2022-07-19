@@ -137,7 +137,8 @@ namespace Arriendos.Data
 
             modelBuilder.Entity<Calificaciones>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.Id)
+                     .HasName("PRIMARY");
 
                 entity.ToTable("calificaciones");
 
@@ -145,6 +146,12 @@ namespace Arriendos.Data
                     .UseCollation("utf8_general_ci");
 
                 entity.HasIndex(e => e.IdUsu, "USER_INCORRECTO");
+
+                entity.HasIndex(e => e.IdArr, "ARRIENDO_INCORRECTO_FAV");
+
+                entity.Property(e => e.IdArr)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ID_ARR");
 
                 entity.Property(e => e.Calificacion)
                     .HasColumnType("int(11)")

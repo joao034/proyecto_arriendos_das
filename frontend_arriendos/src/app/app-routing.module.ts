@@ -19,6 +19,7 @@ import { PageTusAnunciosComponent } from './pages/page-tus-anuncios/page-tus-anu
 import { SiginComponent } from './pages/sigin/sigin.component';
 import { GuardGuard } from './guard.guard';
 import { PageFavoritosComponent } from './pages/page-favoritos/page-favoritos.component';
+import { PageCalificacionesComponent } from './pages/page-calificaciones/page-calificaciones.component';
 
 const routes: Routes = [
   {path:'',component:LandingPageComponent},
@@ -71,6 +72,8 @@ const routes: Routes = [
    component: PageFavoritosComponent,
    canActivate:[GuardGuard],
   }
+  ,
+  {path:'calficacion/:id',component:PageCalificacionesComponent}
 ];
 
 @NgModule({
