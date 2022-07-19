@@ -1,0 +1,50 @@
+<mat-grid-list cols="4" rowHeight="440px">
+  <mat-grid-tile *ngFor="let arriendo of arriendos">
+    <div class="card">
+      <picture>
+        <img class="imagen-card" [src]="'http://localhost:26951/resources/images/' + arriendo.imagenes " alt="Imagen del arriendo" />
+      </picture>
+      <div class="contenido-card">
+        <div class="centrado">
+          <b><p>$ {{ arriendo.precio }}</p></b>
+        </div>
+        <!--Ciudad - Provincia-->
+        <div class="centrado">
+          <label for="">{{ arriendo.nomCiu }}</label> -
+          <label for="">{{ arriendo.nomPro }}</label>
+        </div>
+
+        <p class="centrado">{{ arriendo.dirArr }}</p>
+        <p class="centrado"> Tipo Arriendo: <b>{{arriendo.nomTipArr}}</b></p>
+        <!--<label for=""
+            >Compartido
+            <input
+              type="checkbox"
+              disabled
+              *ngIf="arriendo.numPersonas > 1"
+              checked
+          /></label>
+        </div>
+        <div class="info-lugar-card">-->
+      </div>
+      <ul class="iconos-card">
+        <li>
+          <img src="/assets/cuartos.png" alt="" />
+          <p>{{ arriendo.numHab }}</p>
+        </li>
+        <li>
+          <img src="/assets/toilet.png" alt="" />
+          <p>{{ arriendo.numBanos }}</p>
+        </li>
+        <li>
+          <img src="/assets/garage.png" alt="" />
+          <input type="checkbox" disabled *ngIf="arriendo.garage" checked />
+        </li>
+      </ul>
+      <div class="ver-anuncio-card">
+        <b><p>Superficie: {{arriendo.superficie}} m2</p></b>
+        <button mat-raised-button color="primary">Ver anuncio</button>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

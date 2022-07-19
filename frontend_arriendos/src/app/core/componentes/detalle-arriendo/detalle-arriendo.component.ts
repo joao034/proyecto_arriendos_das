@@ -1,6 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
+import { FavoritosService } from 'src/app/services/favoritos.service';
 
 @Component({
   selector: 'app-detalle-arriendo',
@@ -12,8 +13,14 @@ export class DetalleArriendoComponent implements OnInit {
   arriendos : any = []
   arriendo : string = ""
   rowHeight!: string;
+  private favorito = {
+    idArriendo : 0,
+    idUsuario : 0
+  }
 
-  constructor(private apiArriendo : ApiArriendosService,private breakpointObserver: BreakpointObserver) { }
+  constructor(private apiArriendo : ApiArriendosService,
+              private breakpointObserver: BreakpointObserver,
+              private apiFavorito : FavoritosService) { }
 
   ngOnInit(): void {
     this.rowHeight = '80vh';
@@ -33,15 +40,22 @@ export class DetalleArriendoComponent implements OnInit {
     );
   }
 
-  
-
-
   private detectBreakpoint(): void {
     this.breakpointObserver.observe(['(max-width: 500px)']).subscribe(result => {
       this.rowHeight = result.matches ? '100vh' : '80vh';
     });
   }
 
+  agregarAFavoritos(){
+    this.apiFavorito.addFavorito(this.favorito).subscribe(
+      (data) => {
+        console.log(data)
+      }
+    )
+  }
 
+  obtenerIdArriendo(){
+    
+  }
 
 }

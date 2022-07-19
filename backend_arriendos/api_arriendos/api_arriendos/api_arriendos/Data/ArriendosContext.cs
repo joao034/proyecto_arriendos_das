@@ -358,7 +358,8 @@ namespace Arriendos.Data
 
             modelBuilder.Entity<MisFavorito>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.Id)
+                    .HasName("PRIMARY");
 
                 entity.ToTable("mis_favoritos");
 
