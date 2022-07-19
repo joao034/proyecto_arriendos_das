@@ -70,6 +70,10 @@ export class TablaAnunciosComponent implements OnInit {
     
   }
 
+  redireccionCalificaciones(id: number) {
+    this.route.navigate(['/calficacion/', id]);
+  }
+
   displayedColumns: string[] = [
     'idArr',
     //'tipoArr',
