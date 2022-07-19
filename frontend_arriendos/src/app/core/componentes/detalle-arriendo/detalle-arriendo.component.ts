@@ -16,7 +16,8 @@ export class DetalleArriendoComponent implements OnInit {
   rowHeight!: string;
   private favorito = {
     idArr : 0,
-    idUsu : 0
+    idUsu : 0,
+    estado : false
   }
 
   private idArriendo : any;
@@ -59,6 +60,7 @@ export class DetalleArriendoComponent implements OnInit {
   agregarAFavoritos(){
     this.favorito.idArr = this.idArriendo;
     this.favorito.idUsu = this.usuario.idUsu;
+    this.favorito.estado = true;
 
     this.apiFavorito.addFavorito(this.favorito).subscribe(
       (data) => {
@@ -68,6 +70,5 @@ export class DetalleArriendoComponent implements OnInit {
       }
     )
   }
-
 
 }
