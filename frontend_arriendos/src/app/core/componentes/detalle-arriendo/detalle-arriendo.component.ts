@@ -25,6 +25,7 @@ export class DetalleArriendoComponent implements OnInit {
   arriendo : string = ""
   rowHeight!: string;
   private favorito = {
+    id: 0,
     idArr : 0,
     idUsu : 0,
     estado : false
@@ -61,13 +62,28 @@ export class DetalleArriendoComponent implements OnInit {
   agregarAFavoritos(){
     this.favorito.idArr = this.idArriendo;
     this.favorito.idUsu = this.usuario.idUsu;
-    this.favorito.estado = true;
-
-    this.apiFavorito.addFavorito(this.favorito).subscribe(
+    this.apiFavorito.existeFavorito(this.favorito).subscribe(
       (data) => {
-        if(data != null){
-          alert('Arriendo agregado a favoritos')
+        if(data){
+          this.favorito.estado = true;
+          this.favorito.id = data.id;
+          this.apiFavorito.editarFavorito(this.favorito.id, this.favorito).subscribe(
+            data => {
+              alert('Arriendo agregado a favoritos')
+            }
+          )
+        }else{
+          //Nuevo favorito
+          this.favorito.estado = true;
+          this.apiFavorito.addFavorito(this.favorito).subscribe(
+            (data) => {
+              if(data != null){
+                alert('Arriendo agregado a favoritos')
+              }
+            }
+          )
         }
+
       }
     )
   }
