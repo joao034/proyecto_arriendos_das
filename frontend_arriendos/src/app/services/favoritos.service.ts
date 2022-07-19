@@ -22,4 +22,12 @@ export class FavoritosService {
     return this.http.delete(`${environment.url}/favoritos/${id}`);
   }
 
+  existeFavorito(favorito : any) : Observable<any>{
+    return this.http.post(`${environment.url}/favoritos/existe`, favorito);
+  }
+
+  editarFavorito(idFav : number, favorito : any) : Observable<any> {
+    return this.http.put(`${environment.url}/favoritos/${idFav}`, favorito);
+  }
+
 }
