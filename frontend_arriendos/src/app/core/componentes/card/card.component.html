@@ -43,7 +43,7 @@
       </ul>
       <div class="ver-anuncio-card">
         <b><p>Superficie: {{arriendo.superficie}} m2</p></b>
-        <button mat-raised-button color="primary">Ver anuncio</button>
+        <button mat-raised-button color="primary" (click)="detalleArriendo(arriendo.idArr)">Ver anuncio</button>
       </div>
     </div>
   </mat-grid-tile>
