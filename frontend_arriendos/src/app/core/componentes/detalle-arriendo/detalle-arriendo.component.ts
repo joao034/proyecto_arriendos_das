@@ -1,8 +1,12 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
+import { CargarAnunciosService } from 'src/app/services/cargar-anuncios.service';
 import { FavoritosService } from 'src/app/services/favoritos.service';
+
 
 @Component({
   selector: 'app-detalle-arriendo',
@@ -10,6 +14,12 @@ import { FavoritosService } from 'src/app/services/favoritos.service';
   styleUrls: ['./detalle-arriendo.component.css']
 })
 export class DetalleArriendoComponent implements OnInit {
+
+
+  
+  idArriendo:any;
+  array: any = [];  
+  
 
   arriendos : any = []
   arriendo : string = ""
@@ -20,42 +30,33 @@ export class DetalleArriendoComponent implements OnInit {
     estado : false
   }
 
-  private idArriendo : any;
   private usuario : any
 
   constructor(private apiArriendo : ApiArriendosService,
               private breakpointObserver: BreakpointObserver,
               private apiFavorito : FavoritosService,
+              private route:Router,
               private activatedRoute : ActivatedRoute) { 
   
     this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
     this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
 
+
    }
 
   ngOnInit(): void {
-    this.rowHeight = '80vh';
-    this.cargarArriendos()
-    this.detectBreakpoint()
+    this.idArriendo=this.activatedRoute.snapshot.paramMap.get('id');
+    this.cargarArriendos(this.idArriendo)
   }
 
-  cargarArriendos(){
-    this.apiArriendo.listarArriendos().subscribe(
-      (data) => {
-        this.arriendos = data
-        console.log(this.arriendos)
-      },
-      (error) => {
-        console.log(error);
+
+  cargarArriendos(id:number){
+    this.apiArriendo.obtenerArriendoPorId(id).subscribe((data) => {
+        this.array = data;               
       }
     );
   }
 
-  private detectBreakpoint(): void {
-    this.breakpointObserver.observe(['(max-width: 500px)']).subscribe(result => {
-      this.rowHeight = result.matches ? '100vh' : '80vh';
-    });
-  }
 
   agregarAFavoritos(){
     this.favorito.idArr = this.idArriendo;
@@ -70,5 +71,5 @@ export class DetalleArriendoComponent implements OnInit {
       }
     )
   }
-
 }
+  
