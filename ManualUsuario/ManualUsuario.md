@@ -10,11 +10,13 @@ El momento en que se cargue la página web se mostrará la página principal en 
 <img src="ImagenesManual\MenuGeneralPrincipal.jpg" alt="MenuGeneral" width="650px">
 </p>
 </div>
-<div>
-<p>
-<img src="ImagenesManual\DescripcionMenuGeneral.jpg" alt="MenuGeneral" width="250px">
-</p>
-</div>
+
+* La opción Logo redirecciona a la página principal
+* La opción Favoritos muestra los anuncios marcados de favoritos, esta información se mostrará cuando el usuario este logueado.
+* La opción Tus anuncios muestra los anuncios publicados por el usuario, esta información se mostrará cuando el usuario este logueado.
+* La opción buscar permite buscar mediante información específica
+* La opción Iniciar Sesión permite acceder al usuario a la información restringida
+* La opción Crear Cuenta permite crear una cuenta al usuario en caso que no cuente con una
 
 * **Sección 2 (Sobre Nosotros)**
 <div>
