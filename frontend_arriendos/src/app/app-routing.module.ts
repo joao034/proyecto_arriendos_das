@@ -32,7 +32,8 @@ const routes: Routes = [
   {path:'editar-arriendo/:id',component: PageEditarArriendoComponent},
   {path:'reportes',component:PageReportesComponent},
   {path:'reportes/mes',component:PageMesComponent},
-  {path:'reportes/tipo',component:PageTipoComponent}
+  {path:'reportes/tipo',component:PageTipoComponent},
+  {path:'anuncios',component:PageTusAnunciosComponent},
 ];
 
 @NgModule({

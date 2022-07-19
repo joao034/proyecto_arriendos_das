@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { FotoI } from 'src/app/models/foto.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
+import { ApiCrearUsuarioService } from 'src/app/services/api-crear-usuario.service';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
 
 @Component({
@@ -23,12 +24,14 @@ export class EditArriendoComponent implements OnInit {
   private imagen : FotoI = {} as FotoI;
   private idArriendo : any;
   private arriendo : any
-  
-
+  admin:boolean=false;
+  usuarios:any=[];
+  usuario:any;
+  logueado:boolean=false;
   constructor(private apiSelects : CargarSelectsService, 
               private apiArriendo : ApiArriendosService, 
               private activatedRoute : ActivatedRoute,
-              private router : Router) {
+              private router : Router,private apiUsuarios:ApiCrearUsuarioService) {
 
     //capturo el id del arriendo que se quiere editar
     this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
@@ -40,9 +43,33 @@ export class EditArriendoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.checkLocalStorage();
+    this.cargarUsuarios();
     this.cargarProvincias();
     this.cargarTipoArriendos();
     this.cargarCantones();
+  }
+
+  checkLocalStorage() {
+    if (localStorage.getItem('usuario')) {
+      this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
+      this.logueado = false;
+      if(this.usuario.idUsu==2){
+        this.admin = true;
+      }else{
+        this.admin = false;
+      }
+    } else {
+      this.logueado = true;
+    }
+  }
+
+  cargarUsuarios(){
+    this.apiUsuarios.getUsers().subscribe((usuarios) => {
+     this.usuarios = usuarios;
+     this.usuarios=this.usuarios.filter((usuario:any)=>usuario.tipoUsu==2);
+    }
+    );
   }
 
   editarArriendo(){

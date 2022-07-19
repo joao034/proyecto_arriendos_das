@@ -156,6 +156,24 @@
         </div>-->
         <hr />
       </div>
+      <div *ngIf="admin">
+        <br />
+        <h2>Información de usuario</h2>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Usuario</mat-label>
+          <mat-select formControlName="idCanton">
+            <mat-option>Ninguno</mat-option>
+            <mat-option
+              *ngFor="let usuario of usuarios"
+              [value]="usuario.idUsu"
+            >
+              {{ usuario.nomUsu }} {{ usuario.apeUsu }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <hr />
+      </div>
+
       <div class="d-flex justify-content-end">
         <button class="text-uppercase m-2" mat-raised-button color="primary">
           Editar anuncio
