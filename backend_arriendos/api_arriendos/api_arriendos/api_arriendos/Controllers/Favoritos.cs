@@ -78,14 +78,44 @@ namespace api_arriendos.Controllers
         [HttpPost]
         public async Task<ActionResult<MisFavorito>> PostFavorito(MisFavorito favorito)
         {
-            if (!ExisteFavorito(favorito.IdArr, favorito.IdUsu)) {
                 _context.MisFavoritos.Add(favorito);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction("GetFavorito", new { id = favorito.Id }, favorito);
+        }
+
+
+        // PUT: api/favoritos
+        /// <summary>
+        ///  Edita un favorito
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutFavorito(int id, MisFavorito ciudad)
+        {
+            if (id != ciudad.Id)
+            {
+                return BadRequest();
             }
 
-            return null;
-            
+            _context.Entry(ciudad).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CiudadExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
         // DELETE: api/Favoritos/5
@@ -109,12 +139,16 @@ namespace api_arriendos.Controllers
         }
 
         [HttpPost("Existe")]
-        private bool ExisteFavorito(int idArr, int idUsu)
+        public async Task<ActionResult<MisFavorito>> ExisteFavorito(MisFavorito favorito)
         {
-            return _context.MisFavoritos.Any(e => e.IdArr == idArr && e.IdUsu == idUsu);
+            var fav = await _context.MisFavoritos.FirstOrDefaultAsync(s => s.IdArr == favorito.IdArr && s.IdUsu == favorito.IdUsu);    
+            return fav;
         }
 
-
+        private bool CiudadExists(int id)
+        {
+            return _context.MisFavoritos.Any(e => e.Id == id);
+        }
 
 
     }
