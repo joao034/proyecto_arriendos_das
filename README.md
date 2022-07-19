@@ -4,10 +4,11 @@ El proyecto se basa en ser mediador entre un arrendatario y un arrendador. El ar
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
-
+* Crear un nuevo repositorio con el nombre de usuario de github_username + gitthub.io
+* Agregar el repositorio al proyecto. 
+```
+      git remote add origin https://github.com/github_username/github_username.github.io.git
+```
 
 ### Pre-requisitos 📋
 
@@ -38,13 +39,13 @@ _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para 
 
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+* Configura ambientes para establecer reglas antes de que un job pueda proceder y para limitar el acceso a los secretos.
+* Utiliza la concurrencia para controlar la cantidad de despliegues que se ejecutan al mismo tiempo.
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [Angular](https://angular.io/start) - El framework web usado
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
