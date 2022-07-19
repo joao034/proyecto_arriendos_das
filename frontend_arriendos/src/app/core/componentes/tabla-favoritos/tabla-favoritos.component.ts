@@ -43,4 +43,8 @@ export class TablaFavoritosComponent implements OnInit {
 
   }
 
+  redireccionarDetalleArriendo(idArr : any){
+    this.router.navigate(['/detalle-arriendo/', idArr]);
+  }
+
 }

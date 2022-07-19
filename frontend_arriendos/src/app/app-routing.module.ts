@@ -43,7 +43,7 @@ const routes: Routes = [
   canActivate:[GuardGuard],
 
 },
-  {path:'detalle-arriendo', component:DetalleArriendoComponent},
+  {path:'detalle-arriendo/:id', component:DetalleArriendoComponent},
   {path:'editar-arriendo/:id',
   component: PageEditarArriendoComponent,
   canActivate:[GuardGuard]},
