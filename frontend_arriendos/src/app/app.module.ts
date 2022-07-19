@@ -54,8 +54,12 @@ import { TipoComponent } from './core/componentes/tipo/tipo.component';
 import { PageMesComponent } from './pages/page-mes/page-mes.component';
 import { PageTipoComponent } from './pages/page-tipo/page-tipo.component';
 import { PageFavoritosComponent } from './pages/page-favoritos/page-favoritos.component';
+
 import { CalificacionComponent } from './core/componentes/calificacion/calificacion.component';
 import { PageCalificacionesComponent } from './pages/page-calificaciones/page-calificaciones.component';
+
+import { TablaFavoritosComponent } from './core/componentes/tabla-favoritos/tabla-favoritos.component';
+
 
 
 
@@ -101,6 +105,8 @@ import { PageCalificacionesComponent } from './pages/page-calificaciones/page-ca
     PageFavoritosComponent,
     CalificacionComponent,
     PageCalificacionesComponent,
+    TablaFavoritosComponent,
+
 
   ],
   imports: [
