@@ -23,7 +23,9 @@ export class CardComponent implements OnInit {
     });
   }
 
-  constructor(private apiArriendo : ApiArriendosService,private apiAnuncios:CargarAnunciosService, private route:Router) { }
+  constructor(private apiArriendo : ApiArriendosService,
+              private apiAnuncios:CargarAnunciosService,
+              private router : Router) { }
 
   ngOnInit(): void {
     this.cargarArriendos()
@@ -41,9 +43,8 @@ export class CardComponent implements OnInit {
     );
   }
 
-
-  detalleArriendo(id:any){
-    this.route.navigate(['/detalle-arriendo/', id]);
+  redireccionDetalleArriendo(idArr : number){
+    this.router.navigate(['/detalle-arriendo/', idArr]);
   }
 
 }

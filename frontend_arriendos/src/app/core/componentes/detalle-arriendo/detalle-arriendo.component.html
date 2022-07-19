@@ -19,7 +19,7 @@
                     </label>
                     <label class="labels-info" for="">
                         Teléfono del propietario:
-                        <p class="informacion" ></p>
+                        <p class="informacion" >{{array.telUsu}}</p>
                     </label>
                     <label class="labels-info" for="">
                         Dirección del propietario
@@ -27,7 +27,7 @@
                     </label>
                     <label class="labels-info" for="">
                         Correo Electrónico del propietario
-                        <p class="informacion"></p>
+                        <p class="informacion">{{array.correoUsu}}</p>
                     </label>
                 </div>
             </mat-grid-tile>
@@ -35,8 +35,9 @@
             <mat-grid-tile>
                 <picture>
                     <div class="alinear-vertical">
-                        <img class="imagen-card" [src]="'http://localhost:26951/resources/images/' + array.imagenes " alt="Imagen del arriendo" /> 
-                        <button class="boton-favorito" mat-fab color="white">
+                        <img style="width: 95%;" [src]="'http://localhost:26951/resources/images/' + array.imagenes " alt="Imagen del arriendo">
+                        <button class="boton-favorito" mat-fab color="white" (click)="agregarAFavoritos()">
+
                             <mat-icon>favorite</mat-icon>
                         </button>
                         

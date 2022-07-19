@@ -16,4 +16,8 @@ export class ApiCrearUsuarioService {
     return this.http.post(`${this.url}/Usuarios`,user);
   }
 
+  getUsers():Observable<any>{
+    return this.http.get(`${this.url}/Usuarios`);
+  }
+
 }

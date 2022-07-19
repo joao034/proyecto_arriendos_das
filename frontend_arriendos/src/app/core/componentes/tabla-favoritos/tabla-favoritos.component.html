@@ -1,3 +1,10 @@
+<br>
+<br>
+<div style="background-color:black; height: 70px;">
+  <br>
+  <h1 style="color: #D5BDAF; text-align: center;">Tus Favoritos</h1>
+</div>
+
 <mat-grid-list cols="4" rowHeight="440px">
   <mat-grid-tile *ngFor="let arriendo of arriendos">
     <div class="card">
@@ -43,7 +50,7 @@
       </ul>
       <div class="ver-anuncio-card">
         <b><p>Superficie: {{arriendo.superficie}} m2</p></b>
-        <button mat-raised-button color="primary" (click)="redireccionDetalleArriendo(arriendo.idArr)">Ver anuncio</button>
+        <button mat-raised-button color="primary" (click)="redireccionarDetalleArriendo(arriendo.idArr)">Ver anuncio</button>
       </div>
     </div>
   </mat-grid-tile>
