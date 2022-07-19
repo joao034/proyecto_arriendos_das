@@ -1,5 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 import { FavoritosService } from 'src/app/services/favoritos.service';
 
@@ -14,13 +15,22 @@ export class DetalleArriendoComponent implements OnInit {
   arriendo : string = ""
   rowHeight!: string;
   private favorito = {
-    idArriendo : 0,
-    idUsuario : 0
+    idArr : 0,
+    idUsu : 0
   }
+
+  private idArriendo : any;
+  private usuario : any
 
   constructor(private apiArriendo : ApiArriendosService,
               private breakpointObserver: BreakpointObserver,
-              private apiFavorito : FavoritosService) { }
+              private apiFavorito : FavoritosService,
+              private activatedRoute : ActivatedRoute) { 
+  
+    this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
+    this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
+
+   }
 
   ngOnInit(): void {
     this.rowHeight = '80vh';
@@ -47,15 +57,17 @@ export class DetalleArriendoComponent implements OnInit {
   }
 
   agregarAFavoritos(){
+    this.favorito.idArr = this.idArriendo;
+    this.favorito.idUsu = this.usuario.idUsu;
+
     this.apiFavorito.addFavorito(this.favorito).subscribe(
       (data) => {
-        console.log(data)
+        if(data != null){
+          alert('Arriendo agregado a favoritos')
+        }
       }
     )
   }
 
-  obtenerIdArriendo(){
-    
-  }
 
 }
