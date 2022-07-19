@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { FotoI } from 'src/app/models/foto.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
+import { ApiCrearUsuarioService } from 'src/app/services/api-crear-usuario.service';
 import { CargarSelectsService } from 'src/app/services/cargar-selects.service';
 
 @Component({
@@ -16,6 +17,8 @@ export class FormularioArriendoComponent implements OnInit {
   cantones: any = [];
   tipoArriendos: any = [];
   logueado: boolean = true;
+  admin:boolean=false;
+  usuarios:any=[];
   nuevoArriendo : boolean = false;
 
   formArriendo: FormGroup;
@@ -30,7 +33,8 @@ export class FormularioArriendoComponent implements OnInit {
   constructor(
     private apiSelects: CargarSelectsService,
     private apiArriendo: ApiArriendosService,
-    private router: Router
+    private router: Router,
+    private apiUsuarios:ApiCrearUsuarioService
   ) {
     this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
     this.formArriendo = new FormGroup({
@@ -58,16 +62,29 @@ export class FormularioArriendoComponent implements OnInit {
     this.checkLocalStorage();
     this.cargarProvincias();
     this.cargarTipoArriendos();
+    this.cargarUsuarios();
   }
 
   checkLocalStorage() {
     if (localStorage.getItem('usuario')) {
       this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
-      console.log(this.usuario.usernameUsu);
       this.logueado = false;
+      if(this.usuario.idUsu==2){
+        this.admin = true;
+      }else{
+        this.admin = false;
+      }
     } else {
       this.logueado = true;
     }
+  }
+
+  cargarUsuarios(){
+    this.apiUsuarios.getUsers().subscribe((usuarios) => {
+     this.usuarios = usuarios;
+     this.usuarios=this.usuarios.filter((usuario:any)=>usuario.tipoUsu==2);
+    }
+    );
   }
 
   cargarProvincias() {
@@ -145,7 +162,7 @@ export class FormularioArriendoComponent implements OnInit {
     this.imagen.imagenes = this.fileToUpload.name;
 
     this.apiArriendo.subirImagen(formData).subscribe( res =>{
-      console.log(this.fileToUpload?.name)
+      //console.log(this.fileToUpload?.name)
     });
   };
 
