@@ -256,3 +256,40 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Cuadros de texto para ingresar la información requerida
 * Tabla que muestra las calificaciones recibidas 
 * Botón Agregar envía la información de la calificación asignada
+
+### *Componente Reportes*
+
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\ReporteAdmin.jpg" alt="Anuncios" width="600px">
+</p>
+</div>
+
+* Muestra la información total de los anuncios publicados de los usuarios
+* Botón Mes redirecciona al reporte por mes que se publicó el anuncio
+* Botón Tipo redirecciona al reporte por el tipo de propiedad 
+
+### *Componente Reportes Mes*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\ReporteMes.jpg" alt="Anuncios" width="600px">
+</p>
+</div>
+
+* Botón Volver redirecciona al Reporte General
+* Seleción del Mes del que se desea obtener la información
+* Muestra la información filtrada de los anuncios publicados de los usuarios 
+
+### *Componente Reportes Tipo*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\ReportesTipo.jpg" alt="Anuncios" width="600px">
+</p>
+</div>
+
+* Botón Volver redirecciona al Reporte General
+* Seleción del Tipo de propiedad del que se desea obtener la información
+* Muestra la información filtrada de los anuncios publicados de los usuarios 
