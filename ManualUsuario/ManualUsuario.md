@@ -169,6 +169,19 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Botón Despublicar elimina el anuncio de la sección de Tus Anuncios
 * Botón Editar Anuncio si la información requerida se edita
 
+### *Componente Calificaciones*
+
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\CalificacionesPersona.jpg" alt="Anuncios" width="400px">
+</p>
+</div>
+
+* Cuadros de texto para ingresar la información requerida
+* Tabla que muestra las calificaciones recibidas 
+* Botón Agregar envía la información de la calificación asignada
+
 ## **Administrador**
 <hr>
 
@@ -230,3 +243,16 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Sección 3 cuenta con cuadros para seleccionar la información extra
 * Botón Despublicar elimina el anuncio de la sección de Tus Anuncios
 * Botón Editar Anuncio si la información requerida se edita
+
+### *Componente Calificaciones*
+
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\CalificacionesPersona.jpg" alt="Anuncios" width="400px">
+</p>
+</div>
+
+* Cuadros de texto para ingresar la información requerida
+* Tabla que muestra las calificaciones recibidas 
+* Botón Agregar envía la información de la calificación asignada
