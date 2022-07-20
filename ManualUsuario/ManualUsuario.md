@@ -83,6 +83,17 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Muestra los resultados de la búsqueda por medio de tarjetas 
 * Botón de Ver Anuncio redirecciona a el anuncio completo de la propiedad
 
+### *Componente Ver Anuncio*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\VerAnuncioPersona.jpg" alt="Busqueda" width="600px">
+</p>
+</div>
+
+* Muestra la información completa de la propiedad
+* Corazón al dar click el Anuncio pasará a formar parte de los favoritos
+
 ## **Administrador**
 <hr>
 
