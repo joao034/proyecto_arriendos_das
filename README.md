@@ -39,7 +39,3 @@ Usamos [GitHub](https://github.com/) para el versionado. Para todas las versione
 * **Ludwing Barriga** 
 * **Joao Jácome** 
 * **Dayanara Robles** 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia ...
