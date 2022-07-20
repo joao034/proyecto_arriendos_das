@@ -94,10 +94,37 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Muestra la información completa de la propiedad
 * Corazón al dar click el Anuncio pasará a formar parte de los favoritos
 
+## **Usuario**
+<hr>
+
+### *Menu Horizontal*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\MenuPersona.jpg" alt="Busqueda" width="650px">
+</p>
+</div>
+
+* La opción Logo redirecciona a la página principal
+* La opción Favoritos muestra los anuncios marcados de favoritos, esta información se mostrará cuando el usuario este logueado
+* La opción Tus anuncios muestra los anuncios publicados por el usuario, esta información se mostrará cuando el usuario este logueado
+* La opción Buscar permite buscar mediante información específica
+* La opción con icono de puerta hará que tu sesión se cierre o finalice
 ## **Administrador**
 <hr>
 
-## **Arrendador**
-<hr>
+### *Menu Horizontal*
 
-## **Arrendatario**
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\MenuAdmin.jpg" alt="Menu" width="650px">
+</p>
+</div>
+
+* La opción Logo redirecciona a la página principal
+* La opción Usuarios muestra los usuarios existentes en la aplicación web
+* La opción Tus anuncios muestra los anuncios publicados por los usuarios
+* La opción Reportes muestra el componente que permite generar reportes mediante parámetros
+* La opción con icono de puerta hará que tu sesión se cierre o finalice
+
+
