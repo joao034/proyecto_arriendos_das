@@ -37,8 +37,8 @@
                     <div class="alinear-vertical">
                         <img style="width: 95%;" [src]="'http://localhost:26951/resources/images/' + array.imagenes " alt="Imagen del arriendo">
                         <button class="boton-favorito" mat-fab color="white" (click)="agregarAFavoritos()">
-                            <mat-icon *ngIf="favorito.estado">favorite</mat-icon>
-                            <mat-icon *ngIf="!favorito.estado" class="fav">favorite</mat-icon>
+                            <mat-icon *ngIf="!favorito.estado">favorite</mat-icon>
+                            <mat-icon *ngIf="favorito.estado" class="fav">favorite</mat-icon>
                         </button>
                         
                         <div class="calificacion">
