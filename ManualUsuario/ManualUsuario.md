@@ -2,7 +2,7 @@
 ## **Manual de usuario**
 <hr>
 
-### Componentes Generales
+### **Componentes Generales**
 El momento en que se cargue la página web se mostrará la página principal en la cual se contará con varios apartados.
 #### **Sección 1 (Menú Horizontal)**
 <div>
@@ -106,10 +106,23 @@ El momento en que se cargue la página web se mostrará la página principal en 
 </div>
 
 * La opción Logo redirecciona a la página principal
-* La opción Favoritos muestra los anuncios marcados de favoritos, esta información se mostrará cuando el usuario este logueado
+* La opción Favoritos muestra los anuncios marcados de favoritos del usuario
 * La opción Tus anuncios muestra los anuncios publicados por el usuario, esta información se mostrará cuando el usuario este logueado
 * La opción Buscar permite buscar mediante información específica
 * La opción con icono de puerta hará que tu sesión se cierre o finalice
+
+### *Componente Tus Favoritos*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\TusFavPersona.jpg" alt="Busqueda" width="650px">
+</p>
+</div>
+
+* Muestra la información básica de la propiedad
+* Botón Ver Anuncio el cual redirecciona al anuncio de la propiedad mostrando la información completa
+* Botón Quitar el cual elimina al anuncio de la sección de Tus Favoritos
+
 ## **Administrador**
 <hr>
 
@@ -128,3 +141,4 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * La opción con icono de puerta hará que tu sesión se cierre o finalice
 
 
+-
