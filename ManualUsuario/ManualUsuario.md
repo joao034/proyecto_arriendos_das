@@ -125,6 +125,7 @@ El momento en que se cargue la página web se mostrará la página principal en 
 
 ### *Componente Tus Anuncios*
 
+
 <div>
 <p style = 'text-align:center;'>
 <img src="ImagenesManual\TusAnunciosPersona.jpg" alt="Anuncios" width="650px">
@@ -136,6 +137,21 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Botón Editar redirecciona al Formulario precargado con la información que se visualiza en la fila para modificar un anuncio
 * Botón Eliminar permite eliminar el anuncio seleccionado de la fila
 * Botón Calificaciones redirecciona al Formulario para asignar una calificación
+
+### *Componente Formulario Arriendo*
+
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\FormularioArriendoPersona.jpg" alt="Anuncios" width="400px">
+</p>
+</div>
+
+* Sección 1 cuenta con cuadros de textos sobre la información general, se debe llenar la información requerida
+* Opción para cargar la imagen mediante el botón Elegir Archivo
+* Sección 2 cuenta con cuadros de textos sobre la información propiedad, se debe llenar la información requerida
+* Sección 3 cuenta con cuadros para seleccionar la información extra
+* Botón Crear el Anuncio si la información requerida es correcta
 
 ## **Administrador**
 <hr>
@@ -167,4 +183,19 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Botón Editar redirecciona al Formulario precargado con la información que se visualiza en la fila para modificar un anuncio
 * Botón Eliminar permite eliminar el anuncio seleccionado de la fila
 * Botón Calificaciones redirecciona al Formulario para asignar una calificación
+
+### *Componente Formulario Arriendo*
+
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\FormularioArriendoPersona.jpg" alt="Anuncios" width="400px">
+</p>
+</div>
+
+* Sección 1 cuenta con cuadros de textos sobre la información general, se debe llenar la información requerida
+* Opción para cargar la imagen mediante el botón Elegir Archivo
+* Sección 2 cuenta con cuadros de textos sobre la información propiedad, se debe llenar la información requerida
+* Sección 3 cuenta con cuadros para seleccionar la información extra
+* Botón Crear el Anuncio si la información requerida es correcta
 -
