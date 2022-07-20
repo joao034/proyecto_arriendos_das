@@ -123,6 +123,20 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Botón Ver Anuncio el cual redirecciona al anuncio de la propiedad mostrando la información completa
 * Botón Quitar el cual elimina al anuncio de la sección de Tus Favoritos
 
+### *Componente Tus Anuncios*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\TusAnunciosPersona.jpg" alt="Anuncios" width="650px">
+</p>
+</div>
+
+* Muestra una tabla con los anuncios que el usuario ha creado
+* Botón Nuevo redirecciona al Formulario para crear un anuncio
+* Botón Editar redirecciona al Formulario precargado con la información que se visualiza en la fila para modificar un anuncio
+* Botón Eliminar permite eliminar el anuncio seleccionado de la fila
+* Botón Calificaciones redirecciona al Formulario para asignar una calificación
+
 ## **Administrador**
 <hr>
 
@@ -140,5 +154,17 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * La opción Reportes muestra el componente que permite generar reportes mediante parámetros
 * La opción con icono de puerta hará que tu sesión se cierre o finalice
 
+### *Componente Tus Anuncios*
 
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\TusAnunciosPersona.jpg" alt="Anuncios" width="650px">
+</p>
+</div>
+
+* Muestra una tabla con los anuncios que los usuarios han creado
+* Botón Nuevo redirecciona al Formulario para crear un anuncio
+* Botón Editar redirecciona al Formulario precargado con la información que se visualiza en la fila para modificar un anuncio
+* Botón Eliminar permite eliminar el anuncio seleccionado de la fila
+* Botón Calificaciones redirecciona al Formulario para asignar una calificación
 -
