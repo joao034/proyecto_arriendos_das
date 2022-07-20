@@ -151,7 +151,23 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Opción para cargar la imagen mediante el botón Elegir Archivo
 * Sección 2 cuenta con cuadros de textos sobre la información propiedad, se debe llenar la información requerida
 * Sección 3 cuenta con cuadros para seleccionar la información extra
-* Botón Crear el Anuncio si la información requerida es correcta
+* Botón Crear Anuncio si la información requerida es correcta
+
+### *Componente Editar Formulario Arriendo*
+
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\EditarArriendoPersona.jpg" alt="Anuncios" width="400px">
+</p>
+</div>
+
+* Sección 1 cuenta con cuadros de textos sobre la información general
+* Opción para cargar la imagen mediante el botón Elegir Archivo
+* Sección 2 cuenta con cuadros de textos sobre la información propiedad
+* Sección 3 cuenta con cuadros para seleccionar la información extra
+* Botón Despublicar elimina el anuncio de la sección de Tus Anuncios
+* Botón Editar Anuncio si la información requerida se edita
 
 ## **Administrador**
 <hr>
@@ -198,4 +214,19 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * Sección 2 cuenta con cuadros de textos sobre la información propiedad, se debe llenar la información requerida
 * Sección 3 cuenta con cuadros para seleccionar la información extra
 * Botón Crear el Anuncio si la información requerida es correcta
--
+
+### *Componente Editar Formulario Arriendo*
+
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\EditarArriendoPersona.jpg" alt="Anuncios" width="400px">
+</p>
+</div>
+
+* Sección 1 cuenta con cuadros de textos sobre la información general
+* Opción para cargar la imagen mediante el botón Elegir Archivo
+* Sección 2 cuenta con cuadros de textos sobre la información propiedad
+* Sección 3 cuenta con cuadros para seleccionar la información extra
+* Botón Despublicar elimina el anuncio de la sección de Tus Anuncios
+* Botón Editar Anuncio si la información requerida se edita
