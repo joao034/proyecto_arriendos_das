@@ -37,14 +37,38 @@
                     <div class="alinear-vertical">
                         <img style="width: 95%;" [src]="'http://localhost:26951/resources/images/' + array.imagenes " alt="Imagen del arriendo">
                         <button class="boton-favorito" mat-fab color="white" (click)="agregarAFavoritos()">
-
-                            <mat-icon>favorite</mat-icon>
+                            <mat-icon *ngIf="favorito.estado">favorite</mat-icon>
+                            <mat-icon *ngIf="!favorito.estado" class="fav">favorite</mat-icon>
                         </button>
                         
+                        <div class="calificacion">
                         <label class="subtitulos">
                             <mat-icon class="favorito">star</mat-icon>
-                            4.5                        
+                            {{promedio}}                       
                         </label>
+                        <div class="estrellas-contenedor">
+                            <button mat-flat-button [disabled]="!habilitado" class="boton-estrella" (click)="onClickCalificar1()" (dblclick)="quitar()">
+                                <mat-icon *ngIf="!st1" class="estrellas">star</mat-icon>
+                                <mat-icon *ngIf="st1" class="estrellas-calif">star</mat-icon>
+                            </button>
+                            <button mat-flat-button [disabled]="!habilitado" class="boton-estrella"  (click)="onClickCalificar2()">
+                                <mat-icon *ngIf="!st2" class="estrellas" >star</mat-icon>
+                                <mat-icon *ngIf="st2" class="estrellas-calif">star</mat-icon>
+                            </button>
+                            <button mat-flat-button [disabled]="!habilitado" class="boton-estrella" (click)="onClickCalificar3()">
+                                <mat-icon *ngIf="!st3" class="estrellas" >star</mat-icon>
+                                <mat-icon *ngIf="st3" class="estrellas-calif">star</mat-icon>
+                            </button>
+                            <button mat-flat-button [disabled]="!habilitado" class="boton-estrella" (click)="onClickCalificar4()">
+                                <mat-icon *ngIf="!st4" class="estrellas" >star</mat-icon>
+                                <mat-icon *ngIf="st4" class="estrellas-calif">star</mat-icon>
+                            </button>
+                            <button mat-flat-button [disabled]="!habilitado" class="boton-estrella" (click)="onClickCalificar5()">
+                                <mat-icon *ngIf="!st5" class="estrellas" >star</mat-icon>
+                                <mat-icon *ngIf="st5" class="estrellas-calif">star</mat-icon>
+                            </button>
+                        </div>
+                        </div>
 
                     </div>
                 </picture>

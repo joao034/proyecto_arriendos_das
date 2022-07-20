@@ -23,3 +23,10 @@ table {
   margin-left: 5px;
   margin-bottom: 5px;
 }
+.principales{
+  background: #D19E78 !important;
+}
+
+.secundarios{
+  background: #D5BDAF !important;
+}
