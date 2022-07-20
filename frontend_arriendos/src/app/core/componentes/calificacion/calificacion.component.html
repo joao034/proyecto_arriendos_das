@@ -30,7 +30,7 @@
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
         <td class="botones" mat-cell *matCellDef="let element">
           <div class="acciones m-2">
-            <button class="w-60" mat-raised-button color="primary" (click)="onClickEliminar(element.id)" >Quitar</button>
+            <button class="w-60 secundario" mat-raised-button color="primary" (click)="onClickEliminar(element.id)" >Quitar</button>
           </div>
         </td>
       </ng-container>
@@ -49,14 +49,14 @@
           <mat-select formControlName="idUsu">
             <mat-option>Ninguno</mat-option>
             <mat-option
-              *ngFor="let usuario of usuarios"
+              *ngFor="let usuario of select"
               [value]="usuario.idUsu"
             >
               {{ usuario.nomUsu }} {{ usuario.apeUsu }}
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <button class="mb-3" type="submit" mat-raised-button color="primary">Agregar</button>
+        <button class="mb-3 principal" type="submit" mat-raised-button color="primary">Agregar</button>
       </form>
     </div>
   </div>

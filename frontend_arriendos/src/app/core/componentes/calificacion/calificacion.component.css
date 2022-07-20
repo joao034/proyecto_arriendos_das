@@ -1,3 +1,9 @@
 table{
     width: 100%;
 }
+.principal{
+    background: #D19E78 !important;
+}
+.secundario{
+    background: #D5BDAF !important;
+}

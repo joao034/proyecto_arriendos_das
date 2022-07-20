@@ -143,3 +143,6 @@ li{
     cursor: pointer;
 }
 
+.fav{
+    color: red;
+}

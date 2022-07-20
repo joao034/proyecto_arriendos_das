@@ -1,3 +1,9 @@
 table{
     width: 100%;
 }
+button{
+    background: #D19E78 !important;
+    height: 45px;
+    width: 100px;
+    margin-bottom: 50px;
+}

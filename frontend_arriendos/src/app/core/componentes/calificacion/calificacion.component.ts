@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ApiCalificacionesService } from 'src/app/services/api-calificaciones.service';
 import { ApiCrearUsuarioService } from '../../../services/api-crear-usuario.service';
+import 'lodash';
+declare var _:any;
 
 @Component({
   selector: 'app-calificacion',
@@ -16,17 +18,18 @@ export class CalificacionComponent implements OnInit {
     private apiCalificaciones: ApiCalificacionesService
   ) {
     this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
-    this.cargarUsuarios();
-    this.cargarCalificaciones();
+    this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
   }
 
   ngOnInit(): void {
+    this.cargarUsuarios();
   }
   idArriendo: any;
   usuarios: any = [];
   select: any = [];
   agregados: any = [];
   calificaciones: any = [];
+  usuario:any;
 
   formCalificaciones: FormGroup = new FormGroup({
     idUsu: new FormControl(''),
@@ -43,21 +46,17 @@ export class CalificacionComponent implements OnInit {
       this.select=this.usuarios;
       this.agregados=this.usuarios;
     });
+    this.cargarCalificaciones();
   }
 
   filtrarUsuarios() {
     for(let i=0;this.calificaciones.length>i;i++){
-      
-      this.cargarSelect(this.calificaciones[i].idUsu);
+      this.cargarSelect(this.calificaciones[i]);
     }
-    console.log(this.calificaciones);
   }
 
-  cargarSelect(idUsu: any) {
-    const index=this.select.indexOf(idUsu);
-    if(index!==-1){
-      this.select.splice(index,1);
-    }
+  cargarSelect(usu: any) {
+    this.select=_.filter(this.select,function(o:any){return o.idUsu != usu.idUsu;});
   }
 
 
@@ -82,7 +81,6 @@ export class CalificacionComponent implements OnInit {
         if(res == null){
           this.cargarCalificaciones();
         }
-        
       } );
     }
   }

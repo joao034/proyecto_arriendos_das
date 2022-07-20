@@ -27,7 +27,7 @@ export class DetalleArriendoComponent implements OnInit {
   arriendos : any = []
   arriendo : string = ""
   rowHeight!: string;
-  private favorito = {
+   favorito = {
     idArr : 0,
     idUsu : 0,
     estado : false

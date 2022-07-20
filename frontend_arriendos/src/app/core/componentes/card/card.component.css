@@ -47,3 +47,7 @@
     align-items: center;
     margin-bottom: 10px;
 }
+
+button{
+    background: #D19E78 !important;
+}
