@@ -37,7 +37,7 @@
 }
 
 .imagen-info{
-    background-image:url(/assets/hero_2.jpg);
+    background-image:url(/assets/hero_4.jpg);
     height: 150px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -60,4 +60,8 @@
     width: 200px;
     text-align: center;
     line-height: 2;
+}
+
+h1{
+    color:white;
 }

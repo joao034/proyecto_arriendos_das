@@ -600,6 +600,10 @@ namespace Arriendos.Data
                     .HasColumnName("NOM_USU")
                     .UseCollation("utf8_general_ci")
                     .HasCharSet("utf8");
+
+                entity.Property(e => e.Calificacion)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("CALIFICACION");
             });
 
             OnModelCreatingPartial(modelBuilder);

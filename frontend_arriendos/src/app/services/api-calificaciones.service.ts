@@ -20,4 +20,20 @@ export class ApiCalificacionesService {
     return this.http.get(`${this.url}/Calificaciones/${idArr}`);
   }
 
+  getCalificacionesVistaByIdArriendo(idArr:any):Observable<any>{
+    return this.http.get(`${this.url}/CalificacionesVista/${idArr}`);
+  }
+
+  postCalificaciones(calificacion:any):Observable<any>{
+    return this.http.post(`${this.url}/Calificaciones`,calificacion);
+  }
+
+  deleteCalificaciones(idCal:any):Observable<any>{
+    return this.http.delete(`${this.url}/Calificaciones/${idCal}`);
+  }
+
+  putCalificaciones(idCal:number,calificacion:any):Observable<any>{
+    return this.http.put(`${this.url}/Calificaciones/${idCal}`,calificacion);
+  }
+
 }

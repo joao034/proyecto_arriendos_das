@@ -1,33 +1,33 @@
 <header class="header">
   <div class="container">
     <div class="barra">
-      <a class="btn btn-danger btn-round" href="/">Logo</a>
+      <a href="/"><img class="logo" src="/assets/logo.png" alt="logo"></a>
       <nav class="navegacion">
         <div *ngIf="admin">
-          <a class="btn btn-danger btn-round" href="/usuarios">Usuarios</a>
+          <a class="" href="/usuarios">Usuarios</a>
           <a>ㅤ</a>
-          <a class="btn btn-danger btn-round" href="/tus-anuncios">Anuncios</a>
+          <a class="" href="/tus-anuncios">Anuncios</a>
           <a>ㅤ</a>
-          <a class="btn btn-danger btn-round" href="/reportes">Reportes</a>
+          <a class="" href="/reportes">Reportes</a>
         </div>
         <div *ngIf="!admin">
-          <a class="btn btn-danger btn-round" href="/favoritos">Favoritos</a>
+          <a class="" href="/favoritos">Favoritos</a>
           <a>ㅤ</a>
-          <a class="btn btn-danger btn-round" href="/tus-anuncios">Tus anuncios</a>
+          <a class="" href="/tus-anuncios">Tus anuncios</a>
           <a>ㅤ</a>
-          <a class="btn btn-danger btn-round" href="/buscar-arriendo">Buscar</a>
+          <a class="" href="/buscar-arriendo">Buscar</a>
         </div>
         <div>
           <div *ngIf="logueado">
-            <div><a class="btn btn-danger btn-round" href="/login">Iniciar Sesión</a></div>
+            <div><a class="" href="/login">Iniciar Sesión</a></div>
             <hr color="black">
-            <div><a class="btn btn-danger btn-round" href="/signin">Crear Cuenta</a></div>
+            <div><a class="" href="/signin">Crear Cuenta</a></div>
           </div>
-          <div class="logueado btn btn-danger btn-round" *ngIf="!logueado">
-            <p >{{this.usuario.usernameUsu}}</p>
+          <div class="logueado " *ngIf="!logueado">
+            <p >{{this.usuario.nomUsu}}</p>
 
-            <button type="submit" (click)="onClickLogout()" >
-              <mat-icon >logout</mat-icon>
+            <button class="log-out" mat-flat-button type="submit" (click)="onClickLogout()" >
+              <mat-icon class="icono" >logout</mat-icon>
             </button>
           </div>
         </div>

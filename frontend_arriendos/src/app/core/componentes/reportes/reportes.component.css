@@ -4,3 +4,17 @@
 table{
     width: 100%;
 }
+
+.principal{
+    background: #D19E78 !important;
+}
+
+.secundario{
+    background: #D5BDAF !important;
+}
+
+button{
+    height: 45px;
+    width: 100px;
+    margin-bottom: 50px;
+}

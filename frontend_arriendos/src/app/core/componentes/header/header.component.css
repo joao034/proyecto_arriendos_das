@@ -1,5 +1,5 @@
 .header{
-    background-image:url(/assets/opcion3Casa.jpeg);
+    background-image:url(/assets/hero_4.jpg);
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -8,6 +8,7 @@
 .header a{
     color: #fff;
     text-decoration: none;
+    font-size: large;
 }
 .header__texto{
     text-align: center;
@@ -29,7 +30,11 @@
 }
 
 .logueado{
-    color:white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color:white;
     display: flex;
     gap: 5px;
 }
@@ -68,4 +73,19 @@
   }
   .btn-round {
     border-radius: 30px;
+  }
+
+  .logo{
+    width: 100px;
+    height: 100px;
+  }
+
+  .log-out{
+    background: transparent !important;
+  }
+
+  .icono{
+    width: 30px;
+    height: 30px;
+    color: #fff;
   }

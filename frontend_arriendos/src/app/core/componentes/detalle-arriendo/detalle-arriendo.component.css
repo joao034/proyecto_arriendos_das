@@ -121,3 +121,28 @@ li{
     font-weight: normal;
     font-size: 2rem;
   }
+
+.estrellas{
+    color: #CDCDCD;
+    cursor: pointer;
+}
+
+
+.calificacion{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.boton-estrella{
+    background-color: white !important;
+}
+
+.estrellas-calif{
+    color: orange;
+    cursor: pointer;
+}
+
+.fav{
+    color: red;
+}
