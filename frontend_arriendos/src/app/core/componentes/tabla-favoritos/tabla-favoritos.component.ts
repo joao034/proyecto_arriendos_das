@@ -64,6 +64,7 @@ export class TablaFavoritosComponent implements OnInit {
           (data) => {
             if(data == null){
               alert('Se quitó el arriendo de favoritos');
+              window.location.reload();
             }else
               alert('No se pudo quitar el arriendo de favoritos');
           });

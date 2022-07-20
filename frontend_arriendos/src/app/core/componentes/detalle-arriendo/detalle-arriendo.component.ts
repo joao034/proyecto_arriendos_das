@@ -40,8 +40,9 @@ export class DetalleArriendoComponent implements OnInit {
               private activatedRoute : ActivatedRoute) { 
   
     this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
-    this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
-
+    if(localStorage.getItem('usuario')){
+      this.usuario = JSON.parse(localStorage.getItem('usuario')!.toString());
+    }
 
    }
 

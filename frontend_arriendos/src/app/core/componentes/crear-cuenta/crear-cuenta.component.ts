@@ -34,14 +34,12 @@ export class CrearCuentaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
-
   postForm(form: any) {
+    console.log(form)
     this.userAPI.createUser(form).subscribe(usuario => {
       console.log(usuario);
       if(usuario!=null){
-        this.route.navigate(['/']);
+        this.route.navigate(['/login']);
       }
     })
   }
