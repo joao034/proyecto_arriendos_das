@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { relativeTimeThreshold } from 'moment';
-import { ArriendoI } from 'src/app/models/arriendo.interface';
 import { ApiArriendosService } from 'src/app/services/api-arriendos.service';
 import { FavoritosService } from 'src/app/services/favoritos.service';
 
@@ -16,6 +14,13 @@ export class TablaFavoritosComponent implements OnInit {
   arriendos : any = [];
   private usuario: any;
   private idArriendo: number = 1;
+
+  favorito = {
+    id : 0,
+    idArr: 0,
+    idUsu: 0,
+    estado: false
+  }
 
 
   constructor(private router : Router, private apiFavoritos : FavoritosService, private apiArriendo : ApiArriendosService) { 
@@ -47,4 +52,22 @@ export class TablaFavoritosComponent implements OnInit {
     this.router.navigate(['/detalle-arriendo/', idArr]);
   }
 
+  quitarFavorito(idArr: number){
+    this.favorito.idArr = idArr;
+    this.favorito.idUsu = this.usuario.idUsu;
+
+    this.apiFavoritos.existeFavorito(this.favorito).subscribe( 
+      (data) => {
+        this.favorito.id = data.id;
+        this.favorito.estado = false;
+        this.apiFavoritos.editarFavorito(this.favorito.id, this.favorito).subscribe( 
+          (data) => {
+            if(data == null){
+              alert('Se quitó el arriendo de favoritos');
+            }else
+              alert('No se pudo quitar el arriendo de favoritos');
+          });
+    });
+
+  }
 }
