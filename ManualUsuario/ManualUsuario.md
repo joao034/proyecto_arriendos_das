@@ -199,6 +199,30 @@ El momento en que se cargue la página web se mostrará la página principal en 
 * La opción Reportes muestra el componente que permite generar reportes mediante parámetros
 * La opción con icono de puerta hará que tu sesión se cierre o finalice
 
+### *Componente Usuarios*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\UsuarioAdmin.jpg" alt="Anuncios" width="650px">
+</p>
+</div>
+
+* Muestra una tabla con los usuarios existentes
+* Botón Editar redirecciona al Formulario precargado con la información que se visualiza en la fila para modificar un usuario
+* Botón Eliminar permite eliminar el usuario seleccionado de la fila
+
+### *Componente Editar Cuenta Usuario*
+
+<div>
+<p style = 'text-align:center;'>
+<img src="ImagenesManual\EditarCuentaUsuarioAdmin.jpg" alt="Anuncios" width="500px">
+</p>
+</div>
+
+* Muestra el formulario precargado con la información inicial con la posibilidad de modificar todos los campos
+* Botón Actualizar información guarda la información modificada
+* Botón Volver redirecciona a la información de todos los usuarios
+
 ### *Componente Tus Anuncios*
 
 <div>
