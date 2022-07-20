@@ -12,5 +12,6 @@ namespace Arriendos.Models
         public int IdUsu { get; set; }
         public string NomUsu { get; set; }
         public string ApeUsu { get; set; }
+        public int Calificacion { get; set; }
     }
 }

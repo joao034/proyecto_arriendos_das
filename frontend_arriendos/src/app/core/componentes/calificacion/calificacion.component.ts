@@ -16,12 +16,11 @@ export class CalificacionComponent implements OnInit {
     private apiCalificaciones: ApiCalificacionesService
   ) {
     this.idArriendo = this.activatedRoute.snapshot.paramMap.get('id');
+    this.cargarUsuarios();
+    this.cargarCalificaciones();
   }
 
   ngOnInit(): void {
-    this.cargarUsuarios();
-    this.cargarCalificaciones();
-    
   }
   idArriendo: any;
   usuarios: any = [];
@@ -31,6 +30,8 @@ export class CalificacionComponent implements OnInit {
 
   formCalificaciones: FormGroup = new FormGroup({
     idUsu: new FormControl(''),
+    idArr:new FormControl(''),
+    calificacion: new FormControl(''),
   });
 
   cargarUsuarios() {
@@ -46,21 +47,22 @@ export class CalificacionComponent implements OnInit {
 
   filtrarUsuarios() {
     for(let i=0;this.calificaciones.length>i;i++){
+      
       this.cargarSelect(this.calificaciones[i].idUsu);
-      this.cargarAgregados(this.calificaciones[i].idUsu);
     }
+    console.log(this.calificaciones);
   }
 
   cargarSelect(idUsu: any) {
-    this.select = this.usuarios.filter((usuario: any) => usuario.idUsu == idUsu);
+    const index=this.select.indexOf(idUsu);
+    if(index!==-1){
+      this.select.splice(index,1);
+    }
   }
 
-  cargarAgregados(idUsu:any){
-    this.agregados=this.usuarios.filter((usuario:any)=>usuario.idUsu!=idUsu);
-  }
 
   cargarCalificaciones() {
-    this.apiCalificaciones.getCalificacionesByIdArriendo(this.idArriendo).subscribe((calificaciones) => {
+    this.apiCalificaciones.getCalificacionesVistaByIdArriendo(this.idArriendo).subscribe((calificaciones) => {
       this.calificaciones = calificaciones;
       this.filtrarUsuarios();
     });
@@ -70,8 +72,28 @@ export class CalificacionComponent implements OnInit {
     'id',
     'idArr',
     'idUsu',
-    'calificacion'
+    'calificacion',
+    'dirArr'
   ];
 
-  onClickAgregar(form: any) {}
+  onClickEliminar(id: any) {
+    if(confirm('¿Está seguro de eliminar?')){
+      this.apiCalificaciones.deleteCalificaciones(id).subscribe((res)=>{ 
+        if(res == null){
+          this.cargarCalificaciones();
+        }
+        
+      } );
+    }
+  }
+
+  onClickAgregar(form: any) {
+    form.idArr = this.idArriendo;
+    form.calificacion = 0;
+    this.apiCalificaciones.postCalificaciones(form).subscribe((calificaciones) => {
+      this.cargarCalificaciones();
+    });
+  }
+
+  
 }
