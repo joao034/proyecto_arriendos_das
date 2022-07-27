@@ -49,7 +49,7 @@
         </li>
       </ul>
       <div class="ver-anuncio-card">
-        <b><p>Superficie: {{arriendo.superficie}} m2</p></b>
+        <button mat-raised-button color="primary" (click)="quitarFavorito(arriendo.idArr)">Quitar</button>
         <button mat-raised-button color="primary" (click)="redireccionarDetalleArriendo(arriendo.idArr)">Ver anuncio</button>
       </div>
     </div>
