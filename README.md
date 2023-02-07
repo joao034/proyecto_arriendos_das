@@ -1,6 +1,6 @@
 # Aplicación web de búsqueda de arriendos en el Ecuador
 
-Aplicación web que permita encontrar fácilmente apartamentos y locales de negocio disponibles, en donde un usuario interesado en encontrar un arriendo podrá usar aplicación aplicando filtros de búsqueda como la ciudad, el precio, número de habitaciones, con el fin de encontrar una opción que se adecué a sus necesidades.
+Aplicación web que permita encontrar fácilmente apartamentos y locales de negocio disponibles. El usuario interesado en encontrar un arriendo podrá usar la aplicación aplicando filtros de búsqueda como la ciudad, el precio, número de habitaciones, con el fin de encontrar una opción que se adecué a sus necesidades.
 
 ## Comenzando 🚀
 
